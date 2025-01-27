@@ -91,7 +91,7 @@ export const B2bForm: FC<Props> = ({ stage, setStage }) => {
 
       // Отправляем запрос
       const res = await axios.post(
-        "https://itse.turkmenexpo.com/app/api/v1/form",
+        "https://qacis.turkmenexpo.com/app/api/v1/form",
         formData,
         {
           headers: {
