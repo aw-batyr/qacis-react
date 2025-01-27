@@ -18,7 +18,7 @@ export const Home: FC<Props> = ({ className }) => {
   }, []);
 
   return (
-    <div className={cn("pb-[120px]", className)}>
+    <div className={cn("pb-20", className)}>
       <HomeHero />
       <HomeAbout />
       <Partners />
