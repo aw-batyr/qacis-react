@@ -11,6 +11,7 @@ export default {
       },
       colors: {
         primary: "#3A81C4",
+        reverse_primary: "#DEEAF5",
         primary_02: "#DEEAF5",
         primary_10: "#1D4062",
         on_primary: "#ffffff",
