@@ -4,15 +4,15 @@ export const navBtns = [
     link: "/delegate-form",
   },
   {
-    title: "B2B | B2G встечи",
-    link: "/B2B-B2G",
+    title: "Список участников",
+    link: "",
   },
   {
     title: "Программа",
     link: "",
   },
   {
-    title: "Список участников",
+    title: "Стать спонсором",
     link: "",
   },
 ];
