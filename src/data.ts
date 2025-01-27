@@ -28,7 +28,7 @@ export const navData = [
   },
   {
     title: "Новости",
-    link: "",
+    link: "/news",
   },
   {
     title: "Контакты",
