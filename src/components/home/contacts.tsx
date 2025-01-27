@@ -44,10 +44,8 @@ const contacts = [
 
 export const Contacts: FC<Props> = ({ className }) => {
   return (
-    <section className={cn("bg-surface_high pt-10 pb-20", className)}>
+    <section className={cn("bg-surface_high pt-20 pb-10", className)}>
       <Container>
-        <h2 className="text-3xl mb-10">Время мероприятий</h2>
-
         <div className="flex flex-col gap-6">
           <div className="p-10 bg-surface_container flex items-center gap-6">
             {contacts.map((item) => (
