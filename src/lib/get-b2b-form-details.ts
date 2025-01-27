@@ -91,7 +91,7 @@ export const defaultValuesOfB2b = {
   job_title: "",
   participants_number: "",
   country: "",
-  email_address: "",
+  email_address: "a",
   phone_number: "",
   website: "",
   meeting_objective: "",
