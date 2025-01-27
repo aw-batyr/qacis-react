@@ -88,30 +88,30 @@ export const Stage3: FC<Props> = () => {
 
       <div className="flex flex-col gap-8">
         <div className="">
-          <h3 className="text-3xl mt-10">Attachments</h3>
+          <h3 className="text-3xl mt-10">Приложения:</h3>
           <h5 className="text-on_surface_v">
-            (Please attach the following documents as applicable)
+            (Пожалуйста приложите следующие документы, если это необходимо)
           </h5>
         </div>
 
         <Field
           control={control}
           name="company_profile"
-          label="Company/organization profile"
+          label="Название компании/организации"
           type="file"
           textDark
         />
         <Field
           control={control}
           name="proposal_presentation"
-          label="Proposal presentation"
+          label="Предложение/презентация"
           type="file"
           textDark
         />
         <Field
           control={control}
           name="relevant_certification"
-          label="Relevant certification/licenses"
+          label="Соответствующие сертификаты/лицензии"
           type="file"
           textDark
         />
