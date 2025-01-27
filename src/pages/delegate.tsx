@@ -66,50 +66,6 @@ export const Delegate: FC<Props> = ({ className }) => {
               className="w-[808px] mx-auto mt-20 mb-[120px] flex flex-col gap-8"
               onSubmit={form.handleSubmit(onSubmit)}
             >
-              <FormField
-                control={form.control}
-                name="space_package"
-                render={({ field }) => (
-                  <FormItem className="space-y-5">
-                    <FormLabel className="text-xl">
-                      Выберите один из вариантов:
-                    </FormLabel>
-
-                    <FormControl>
-                      <RadioGroup
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                        className="flex flex-col space-y-4 ml-3"
-                      >
-                        <FormItem className="flex items-center space-x-5 space-y-0">
-                          <FormControl>
-                            <RadioGroupItem
-                              value={"space"}
-                              checked={field.value === "space"}
-                            />
-                          </FormControl>
-                          <FormLabel className="text-base">
-                            Только стенд
-                          </FormLabel>
-                        </FormItem>
-
-                        <FormItem className="flex items-center space-x-5 space-y-0">
-                          <FormControl>
-                            <RadioGroupItem
-                              value={"package"}
-                              checked={field.value === "package"}
-                            />
-                          </FormControl>
-                          <FormLabel className="text-base">
-                            Комплексное предложение
-                          </FormLabel>
-                        </FormItem>
-                      </RadioGroup>
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
               <Field
                 label="Название компании/организации"
                 name="company_name"
@@ -127,13 +83,6 @@ export const Delegate: FC<Props> = ({ className }) => {
                 name="job_title"
                 control={form.control}
                 error={errors.job_title}
-              />
-              <Field
-                label="Количество участников"
-                type="number"
-                name="participants_number"
-                control={form.control}
-                error={errors.participants_number}
               />
               <Field
                 label="Страна"
