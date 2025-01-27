@@ -57,7 +57,7 @@ export const Field = ({
 
           <FormControl>
             <>
-              {type !== "file" && (
+              {type !== "file" ? (
                 <Input
                   type={type}
                   placeholder={placeholder}
@@ -65,10 +65,7 @@ export const Field = ({
                   disabled={disabled}
                   className={error && "border-[#BA1A1A]"}
                 />
-              )}
-
-              {/* Обработка файлов */}
-              {type === "file" && (
+              ) : (
                 <div className="relative">
                   <Input
                     ref={ref}
@@ -90,6 +87,8 @@ export const Field = ({
                   )}
                 </div>
               )}
+
+              {/* Обработка файлов */}
             </>
           </FormControl>
           <FormMessage
