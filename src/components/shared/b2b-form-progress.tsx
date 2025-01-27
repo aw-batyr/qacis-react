@@ -42,7 +42,6 @@ export const B2bFormProgress: FC<Props> = ({ className, stage }) => {
             }
             className={cn(
               "bg-primary_container w-1/2 absolute top-0 left-0 rounded-[2px] z-[3] h-2"
-              //   stage === 2 ? "w-[75%]" : stage === 3 && "w-full"
             )}
           />
 
