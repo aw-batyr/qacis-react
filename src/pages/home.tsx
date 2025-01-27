@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import {
   HomeHero,
   HomeAbout,
@@ -15,6 +15,10 @@ interface Props {
 }
 
 export const Home: FC<Props> = ({ className }) => {
+  useEffect(() => {
+    window.scrollTo({ behavior: "smooth", top: 0 });
+  }, []);
+
   return (
     <div className={cn("pb-[120px]", className)}>
       <HomeHero />
