@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Container } from "../layout";
 import { Link } from "react-router-dom";
 import { navData } from "@/data";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 
 interface Props {
   className?: string;
