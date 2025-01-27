@@ -44,4 +44,8 @@
   .p {
     @apply text-lg text-on_primary_v;
   }
+
+  .progress-circle {
+    @apply size-14 rounded-full text-2xl z-10 text-[#5F6674];
+  }
 }
