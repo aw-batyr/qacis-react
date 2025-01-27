@@ -23,10 +23,10 @@ export const Home: FC<Props> = ({ className }) => {
     <div className={cn("pb-[120px]", className)}>
       <HomeHero />
       <HomeAbout />
-      <Speakers />
-      <Sponsors />
-      <News />
       <Partners />
+      {/* <Speakers /> */}
+      {/* <Sponsors /> */}
+      <News />
       <Contacts />
     </div>
   );
