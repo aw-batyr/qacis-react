@@ -103,6 +103,7 @@ export const B2bForm: FC<Props> = ({ stage, setStage }) => {
       if (res.status === 201) {
         console.log("Форма успешно отправлена!");
         setSuccess(true);
+        setStage(0);
       }
     } catch (error) {
       console.error("Ошибка при отправке формы:", error);
