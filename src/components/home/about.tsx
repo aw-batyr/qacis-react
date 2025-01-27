@@ -39,9 +39,11 @@ export const HomeAbout: FC<Props> = ({ className }) => {
             целом, конечно, новая модель организационной деятельности в
             значительной степени обусловливает важность соответствующих.
           </p>
-          <Button variant="outline" className="w-fit">
-            Подробнее
-          </Button>
+          <Link to={"/about"}>
+            <Button variant="outline" className="w-fit">
+              Подробнее
+            </Button>
+          </Link>
         </div>
       </Container>
     </section>
