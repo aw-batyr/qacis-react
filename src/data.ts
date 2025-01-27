@@ -1,10 +1,10 @@
 export const navBtns = [
   {
     title: "Стать делегатом",
-    link: "",
+    link: "/delegate-form",
   },
   {
-    title: "B2B | B2G",
+    title: "B2B | B2G встечи",
     link: "/B2B-B2G",
   },
   {
@@ -20,7 +20,7 @@ export const navBtns = [
 export const navData = [
   {
     title: "О конференции ",
-    link: "",
+    link: "/about",
   },
   {
     title: "Гид",
