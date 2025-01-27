@@ -46,7 +46,7 @@ export const Contacts: FC<Props> = ({ className }) => {
   return (
     <section className={cn("bg-surface_high pt-10 pb-20", className)}>
       <Container>
-        <h2 className="h2 mb-10">Время мероприятий</h2>
+        <h2 className="text-3xl mb-10">Время мероприятий</h2>
 
         <div className="flex flex-col gap-6">
           <div className="p-10 bg-surface_container flex items-center gap-6">
@@ -55,7 +55,7 @@ export const Contacts: FC<Props> = ({ className }) => {
             ))}
           </div>
 
-          <Link to="/stand-form" className="w-fit mx-auto">
+          <Link to="/delegate-form" className="w-fit mx-auto">
             <Button>Стать делегатом</Button>
           </Link>
         </div>
