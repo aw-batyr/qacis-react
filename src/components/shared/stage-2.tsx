@@ -18,7 +18,7 @@ export const Stage2: FC<Props> = ({ handleNext }) => {
       animate={{ opacity: 1, y: 0, transition: { delay: 0.5, duration: 0.3 } }}
       exit={{ opacity: 0, y: 100 }}
     >
-      <h3 className="h2 mb-8">Цели встречи:</h3>
+      <h3 className="text-3xl mb-8">Цели встречи:</h3>
 
       <div className="flex flex-col gap-8">
         <Field
@@ -43,7 +43,7 @@ export const Stage2: FC<Props> = ({ handleNext }) => {
           label="Соответствующее государственное учреждение/департамент"
         />
 
-        <h3 className="h2 mt-4">
+        <h3 className="text-3xl mt-4">
           Информация о компании/организации:
           {/* Company/Organization Profile: */}
         </h3>
@@ -75,10 +75,9 @@ export const Stage2: FC<Props> = ({ handleNext }) => {
       </div>
 
       <Button
-        variant={"secondary"}
         type="button"
         onClick={handleNext}
-        className="w-full mt-10"
+        className="w-full mt-10 bg-secondary_container text-on_secondary_container hover:bg-secondary_container/90"
       >
         Далее
       </Button>

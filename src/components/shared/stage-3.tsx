@@ -18,7 +18,7 @@ export const Stage3: FC<Props> = () => {
       animate={{ opacity: 1, y: 0, transition: { delay: 0.5, duration: 0.3 } }}
       transition={{ duration: 1 }}
     >
-      <h3 className="h2 mb-8">
+      <h3 className="text-3xl mb-8">
         Логистика встречи:
         {/* Meeting Logistics */}
       </h3>
@@ -58,7 +58,7 @@ export const Stage3: FC<Props> = () => {
           // label="Additional technical or logistical requirements (e.g. AV equipment, interpreters, etc)"
         />
 
-        <h3 className="h2 mt-4">
+        <h3 className="text-3xl mt-4">
           Название компании/организации
           {/* Company/Organization Profile: */}
         </h3>
@@ -88,7 +88,7 @@ export const Stage3: FC<Props> = () => {
 
       <div className="flex flex-col gap-8">
         <div className="">
-          <h3 className="h2 mt-10">Attachments</h3>
+          <h3 className="text-3xl mt-10">Attachments</h3>
           <h5 className="text-on_surface_v">
             (Please attach the following documents as applicable)
           </h5>
