@@ -1,3 +1,4 @@
+export { Loading } from "./loading";
 export { B2bFormProgress } from "./b2b-form-progress";
 export { B2bForm } from "./b2b-form";
 export { Field } from "./field";
