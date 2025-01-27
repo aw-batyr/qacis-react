@@ -3,8 +3,6 @@ import { z } from "zod";
 export type DelegateFormType = z.infer<typeof delegateFormSchema>;
 
 export const delegateFormSchema = z.object({
-  space_package: z.string(),
-
   company_name: z
     .string()
     .min(3, { message: "Название компании должно быть не менее 3 символов" }),
@@ -16,11 +14,6 @@ export const delegateFormSchema = z.object({
   job_title: z
     .string()
     .min(3, { message: "Должность должна быть не менее 3 символов" }),
-
-  participants_number: z.preprocess(
-    (val) => Number(val),
-    z.number().min(1, "Укажите количество участников")
-  ),
 
   country: z
     .string()
@@ -38,11 +31,9 @@ export const delegateFormSchema = z.object({
 });
 
 export const delegateDefaultValues = {
-  space_package: "space",
   company_name: "",
   rep_name: "",
   job_title: "",
-  participants_number: 1,
   country: "",
   email: "",
   phone: "",
