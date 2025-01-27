@@ -21,10 +21,12 @@ export const NewsInner: FC = () => {
     <Container className="py-20 pb-[120px]">
       <section className="w-[868px] mx-auto flex flex-col gap-10">
         <div>
-          <h1 className="text-on_surface text-[32px] leading-10">
+          <h1 className="text-on_surface text-[32px] leading-10 mb-2">
             {data?.title}
           </h1>
-          <h4>{data?.published_at}</h4>
+          <h4>
+            {data?.published_at.slice(0, 10).split("-").reverse().join(".")}
+          </h4>
         </div>
 
         <div className="w-full h-[480px]">
@@ -43,9 +45,12 @@ export const NewsInner: FC = () => {
       <section>
         <h2 className="text-3xl mb-6">Читайте также:</h2>
         <div className="grid grid-cols-3 gap-6">
-          {news?.slice(0, 3).map((item) => (
-            <NewsCard {...item} key={item.title} />
-          ))}
+          {news
+            ?.filter((item) => item.id !== pageId)
+            .slice(0, 3)
+            .map((item) => (
+              <NewsCard {...item} key={item.title} />
+            ))}
         </div>
       </section>
     </Container>
