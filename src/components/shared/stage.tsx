@@ -27,7 +27,7 @@ export const Stage: FC<Props> = ({ handleNext }) => {
       exit={{ opacity: 0, y: "100%", transition: { duration: 0.2 } }}
       className="w-full"
     >
-      <h3 className="h2 mb-8">Информация об экспоненте:</h3>
+      <h3 className="text-2xl mb-8">Информация об экспоненте:</h3>
 
       <div className="flex flex-col gap-8">
         <FormField
@@ -127,10 +127,9 @@ export const Stage: FC<Props> = ({ handleNext }) => {
       </div>
 
       <Button
-        variant={"secondary"}
         type="button"
         onClick={handleNext}
-        className="w-full mt-10"
+        className="w-full mt-10 bg-secondary_container text-on_secondary_container hover:bg-secondary_container/90"
       >
         Далее
       </Button>
