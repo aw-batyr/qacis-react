@@ -44,7 +44,10 @@ export const Partners: FC<Props> = ({ className }) => {
         >
           <div className="embla__container flex items-center">
             {data.map((item) => (
-              <div className="bg-[#E0E6EB] flex embla__slide mr-6 min-w-0 flex-[0_0_288px] items-center justify-center h-[128px] w-full">
+              <div
+                key={item.logo}
+                className="bg-[#E0E6EB] flex embla__slide mr-6 min-w-0 flex-[0_0_288px] items-center justify-center h-[128px] w-full"
+              >
                 <img src={item.logo} alt="logo" className="object-contain" />
               </div>
             ))}
