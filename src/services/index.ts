@@ -1,5 +1,5 @@
 import axios from "axios";
-import { NewsDatum, NewsInnerType, NewsType } from "./types/news";
+import { NewsInnerType, NewsType } from "./types/news";
 
 const URL = "https://qacis.turkmenexpo.com/app/api/v1";
 
