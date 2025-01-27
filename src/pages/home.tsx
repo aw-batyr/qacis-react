@@ -3,8 +3,6 @@ import { FC, useEffect } from "react";
 import {
   HomeHero,
   HomeAbout,
-  Speakers,
-  Sponsors,
   News,
   Partners,
   Contacts,
