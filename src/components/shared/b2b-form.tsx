@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence } from "motion/react";
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,8 +9,6 @@ import {
   FormType,
 } from "@/lib/get-b2b-form-details";
 import { Form } from "../ui/form";
-import { Button } from "../ui/button";
-import { Link } from "react-router-dom";
 import { FormSuccesStatus, Stage, Stage2, Stage3 } from "./";
 
 interface Props {

@@ -7,7 +7,6 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-import axios from "axios";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { AnimatePresence, motion } from "motion/react";
 import {
