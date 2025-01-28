@@ -9,16 +9,16 @@ interface Props {
 
 export const times = [
   {
-    name: "Монтаж выставки",
-    date: "1 — 27 апреля 2025 года",
+    name: "День регистрации",
+    date: "28 апреля 2025 года",
   },
   {
-    name: "Работа",
-    date: "29 — 1 мая 2025 года",
+    name: "День 1",
+    date: "29 апреля 2025 года",
   },
   {
-    name: "Демонтаж",
-    date: "1 — 2 мая 2025 года",
+    name: "День 2",
+    date: "30 апреля 2025 года",
   },
 ];
 
@@ -26,7 +26,7 @@ export const Time: FC<Props> = ({ className }) => {
   return (
     <section className={cn("bg-surface_container py-[160px]", className)}>
       <Container>
-        <h2 className="text-3xl mb-6">Время выставки</h2>
+        <h2 className="text-3xl mb-6">Время работы конференции</h2>
         <div className="flex items-center gap-6">
           {times.map((item) => (
             <TimeCard
