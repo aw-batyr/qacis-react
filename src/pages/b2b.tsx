@@ -1,3 +1,4 @@
+import { Cover } from "@/components/layout";
 import { B2bForm, B2bFormProgress } from "@/components/shared";
 import { FC, useEffect, useState } from "react";
 
@@ -13,17 +14,11 @@ export const B2b: FC<Props> = () => {
 
   return (
     <div className={"pb-[120px]"}>
-      <div className="relative flex items-center h-[216px] w-full justify-center">
-        <img
-          src="/cover.png"
-          className="-z-10 absolute size-full object-cover top-0 left-0"
-        />
-        <h1 className="text-on_primary text-5xl">B2B | B2G встречи</h1>
-      </div>
+      <Cover title="B2B | B2G встречи" />
 
       {stage !== 0 && <B2bFormProgress stage={stage} />}
 
-      <div className="w-[808px] mx-auto">
+      <div className="max-w-[828px] px-5 mx-auto">
         <B2bForm stage={stage} setStage={setStage} />
       </div>
     </div>
