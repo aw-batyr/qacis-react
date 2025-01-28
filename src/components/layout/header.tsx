@@ -37,7 +37,7 @@ export const Header: FC<Props> = ({ className }) => {
             <Link to={"/B2B-B2G"}>
               <Button
                 size={"sm"}
-                className="bg-reverse_primary text-on_primary_container hover:bg-reverse_primary/90 "
+                className="bg-alternative text-on_alternative hover:bg-alternative/90 "
               >
                 B2B | B2G встречи
               </Button>
@@ -45,7 +45,7 @@ export const Header: FC<Props> = ({ className }) => {
             <Link to={"/B2B-B2G"}>
               <Button
                 size={"sm"}
-                className="bg-reverse_primary text-on_primary_container  hover:bg-reverse_primary/90  "
+                className="bg-alternative text-on_alternative  hover:bg-alternative/90  "
               >
                 Официальная поддержка
               </Button>
