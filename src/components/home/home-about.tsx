@@ -28,7 +28,7 @@ export const HomeAbout: FC<Props> = ({ className }) => {
 
         <div className="flex flex-col gap-6 mt-10 md:mt-16">
           <h2 className="h2 text-on_primary">О конференции</h2>
-          <p className="p">
+          <p className="p !text-on_primary_v">
             Международная конференция «Гарантия качества в Туркменистане,
             соответствующая международным стандартам» 29–30 апреля, Ашхабад В
             эпоху глобализации, когда соответствие международным стандартам

@@ -26,20 +26,20 @@ const data = [
 
 export const Program: FC<Props> = ({ className }) => {
   return (
-    <section className={cn("py-20", className)}>
+    <section className={cn("md:py-20 py-10", className)}>
       <Container>
         <h2 className="text-3xl mb-6 text-center">Что вас ждет?</h2>
-        <h4 className="text-xl mb-4 normal text-center">
+        <h4 className="md:text-xl text-lg mb-4 normal text-center">
           Конференция предложит насыщенную программу:
         </h4>
 
-        <div className="flex items-center gap-6">
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
           {data.map((item) => (
-            <article className="p-4 rounded-[2px] bg-gradient-to-t from-[#D8E6F3] to-[#EFF5FA]">
-              <h4 className="text-xl text-on_primary_container mb-2">
+            <article className="md:p-4 p-2 rounded-[2px] bg-gradient-to-t from-[#D8E6F3] to-[#EFF5FA]">
+              <h4 className="md:text-xl text-base text-on_primary_container mb-2">
                 {item.title}
               </h4>
-              <p className="text-base normal  text-on_surface_v">
+              <p className="md:text-base text-sm normal text-on_surface_v">
                 {item.subtitle}
               </p>
             </article>

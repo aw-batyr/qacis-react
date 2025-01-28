@@ -11,7 +11,7 @@ export const Cover: FC<Props> = ({ title }) => {
         src="/cover.png"
         className="-z-10 absolute size-full object-cover top-0 left-0"
       />
-      <h1 className="text-on_primary text-5xl">{title}</h1>
+      <h1 className="text-on_primary md:text-5xl text-3xl">{title}</h1>
     </div>
   );
 };

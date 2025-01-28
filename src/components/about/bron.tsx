@@ -11,7 +11,7 @@ interface Props {
 export const Bron: FC<Props> = ({ className }) => {
   return (
     <section
-      className={cn("py-20 relative h-[384px] overflow-hidden", className)}
+      className={cn("md:py-20 py-10 relative overflow-hidden", className)}
     >
       <img
         src="/CTA.png"
@@ -19,17 +19,17 @@ export const Bron: FC<Props> = ({ className }) => {
       />
 
       <Container>
-        <h2 className="text-3xl text-center !text-on_primary mb-6">
+        <h2 className="h2 text-center !text-on_primary md:mb-6 mb-1.5">
           Приглашение к участию
         </h2>
-        <p className="text-center text-lg text-primary_02 max-w-[808px] mx-auto mb-10">
+        <p className="text-center md:text-lg text-sm md:text-primary_02 text-primary_02/60 max-w-[808px] mx-auto mb-10">
           Торгово-промышленная палата Туркменистана приглашает бизнес-сообщество
           со всего мира присоединиться к этому уникальному событию, которое
           станет важным шагом к укреплению позиций Туркменистана на глобальной
           экономической арене.
         </p>
 
-        <div className="flex items-center gap-6">
+        <div className="flex flex-col md:flex-row items-center gap-6">
           <Link to={"/delegate-form"} className="w-full">
             <Button className="w-full bg-white text-primary hover:bg-white/90 ">
               Стать делегатом

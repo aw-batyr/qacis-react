@@ -8,13 +8,13 @@ interface Props {
 
 export const Info: FC<Props> = ({ className }) => {
   return (
-    <section className={cn("py-20", className)}>
-      <Container className="flex flex-col gap-16">
+    <section className={cn("md:py-20 py-10", className)}>
+      <Container className="flex flex-col md:gap-16 gap-8">
         <div className="flex flex-col gap-6">
-          <h2 className="text-3xl">
+          <h2 className="h2">
             Международная конференция «Гарантия качества в Туркменистане
           </h2>
-          <div className="flex flex-col gap-3 text-on_surface_v text-lg">
+          <div className="flex flex-col gap-3 p">
             <p>
               Международная конференция «Гарантия качества в Туркменистане,
               соответствующая международным стандартам» 29–30 апреля, Ашхабад
@@ -39,9 +39,9 @@ export const Info: FC<Props> = ({ className }) => {
         </div>
 
         <div className="flex flex-col gap-6">
-          <h2 className="text-3xl">Почему это важно для вашего бизнеса?</h2>
+          <h2 className="h2">Почему это важно для вашего бизнеса?</h2>
 
-          <div className="flex flex-col gap-3 text-on_surface_v text-lg">
+          <div className="flex flex-col gap-3 p">
             <p>
               В условиях роста конкуренции и усиления требований к качеству
               сертификация становится неотъемлемым элементом успешной

@@ -26,14 +26,18 @@ const data = [
 
 export const Theme: FC<Props> = ({ className }) => {
   return (
-    <section className={cn("bg-surface_container py-20", className)}>
-      <Container className="flex flex-col gap-10">
-        <h2 className="text-3xl">Кому будет полезно?</h2>
+    <section className={cn("bg-surface_container md:py-20 py-10", className)}>
+      <Container className="flex flex-col gap-6 md:gap-10">
+        <h2 className="h2">Кому будет полезно?</h2>
 
-        <div className="flex items-center gap-6">
+        <div className="flex flex-col md:flex-row items-center gap-6">
           {data.map((item) => (
             <div key={item.title} className="flex items-center gap-4 w-full">
-              <img src={item.icon} alt="theme icon" />
+              <img
+                src={item.icon}
+                alt="theme icon"
+                className="size-12 md:size-auto"
+              />
 
               <div>
                 <h4 className="text-lg text-primary mb-2">{item.title}</h4>
@@ -43,7 +47,7 @@ export const Theme: FC<Props> = ({ className }) => {
           ))}
         </div>
 
-        <div className="flex flex-col gap-3 text-lg text-on_surface_v">
+        <div className="flex flex-col gap-3 p">
           <p>
             Конференция станет значимым событием, укрепляющим позиции
             Туркменистана на мировой арене, способствующим развитию

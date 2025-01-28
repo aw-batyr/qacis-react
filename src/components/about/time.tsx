@@ -24,10 +24,12 @@ export const times = [
 
 export const Time: FC<Props> = ({ className }) => {
   return (
-    <section className={cn("bg-surface_container py-[160px]", className)}>
+    <section
+      className={cn("bg-surface_container md:py-[160px] py-10", className)}
+    >
       <Container>
-        <h2 className="text-3xl mb-6">Время работы конференции</h2>
-        <div className="flex items-center gap-6">
+        <h2 className="h2 mb-6">Время работы конференции</h2>
+        <div className="flex flex-col md:flex-row items-center gap-6">
           {times.map((item) => (
             <TimeCard
               bottomClassName="!bg-white rounded-b-[2px]"
