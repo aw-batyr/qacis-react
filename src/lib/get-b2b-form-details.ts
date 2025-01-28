@@ -27,7 +27,7 @@ export const formSchema = z.object({
   website: z.string().optional(),
 
   // stage 2
-  meeting_objective: z.string().optional(),
+  meeting_objective: z.string().min(5, { message: "Укажите цель встречи" }),
   proposal_description: z.string().optional(),
   government_agency: z.string().optional(),
   sector_industry: z.string().optional(),
@@ -86,15 +86,15 @@ export type FormType = z.infer<typeof formSchema>;
 // Значения по умолчанию
 export const defaultValuesOfB2b = {
   type: "B2B",
-  company_name: "",
-  representative_name: "",
-  job_title: "",
-  participants_number: "",
-  country: "",
-  email_address: "",
-  phone_number: "",
+  company_name: "test",
+  representative_name: "test",
+  job_title: "tets",
+  participants_number: "tes",
+  country: "tes",
+  email_address: "tes@gmail.com",
+  phone_number: "tesdsasdasad",
   website: "",
-  meeting_objective: "",
+  meeting_objective: "tesat",
   proposal_description: "",
   government_agency: "",
   sector_industry: "",
