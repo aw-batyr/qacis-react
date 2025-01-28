@@ -11,8 +11,8 @@ export const News: FC = () => {
   if (isPending) return <Loading />;
 
   return (
-    <Container className="pt-20 pb-[120px]">
-      <h1 className="text-center text-5xl mb-10">Новости</h1>
+    <Container className="page-padding">
+      <h1 className="text-center md:text-5xl text-3xl mb-10">Новости</h1>
 
       <div className="grid md:grid-cols-3 grid-cols-1 gap-6">
         {data?.map((item) => (
