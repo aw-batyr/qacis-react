@@ -18,10 +18,10 @@ export const NewsInner: FC = () => {
   if (isPending) return <Loading />;
 
   return (
-    <Container className="py-20 pb-[120px]">
-      <section className="w-[868px] mx-auto flex flex-col gap-10">
+    <Container className="pt-10 pb-20 md:pt-20 md:pb-[120px]">
+      <section className="max-w-[888px] py-5 mx-auto flex flex-col md:gap-10 gap-6">
         <div>
-          <h1 className="text-on_surface text-[32px] leading-10 mb-2">
+          <h1 className="text-on_surface md:text-[32px] text-3xl leading-10 mb-2">
             {data?.title}
           </h1>
           <h4>
@@ -29,7 +29,7 @@ export const NewsInner: FC = () => {
           </h4>
         </div>
 
-        <div className="w-full h-[480px]">
+        <div className="w-full max-h-[480px]">
           <img
             src={data?.featured_images[0]?.path || ""}
             alt="news image"
@@ -37,14 +37,16 @@ export const NewsInner: FC = () => {
           />
         </div>
 
-        <p className="text-lg text-on_surface_v">{data?.content}</p>
+        <p className="md:text-lg text-base md:medium normal text-on_surface_v">
+          {data?.content}
+        </p>
       </section>
 
-      <hr className="mt-10 mb-20" />
+      <hr className="mt-10 md:mb-20 mb-[60px]" />
 
       <section>
-        <h2 className="text-3xl mb-6">Читайте также:</h2>
-        <div className="grid grid-cols-3 gap-6">
+        <h2 className="h2 mb-6">Читайте также:</h2>
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-6">
           {news
             ?.filter((item) => item.id !== pageId)
             .slice(0, 3)
