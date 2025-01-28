@@ -8,7 +8,7 @@ export interface NewsDatum {
   id: number;
   title: string;
   content: string;
-  published_at: Date;
+  published_at: string;
   featured_images: FeaturedImage[];
   translations: any[];
 }
