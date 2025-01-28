@@ -8,7 +8,7 @@ export const HomeHero: FC = () => {
           <img
             src="/banner.png"
             alt="banner"
-            className="size-full object-cover max-h-[600px] min-h-[420px]"
+            className="size-full object-cover md:max-h-[600px] md:min-h-[420px] max-h-[420px] min-h-[355px]"
           />
         </div>
       </div>

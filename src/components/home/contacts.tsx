@@ -47,14 +47,14 @@ export const Contacts: FC<Props> = ({ className }) => {
     <section className={cn("bg-surface_high pt-20 pb-10", className)}>
       <Container>
         <div className="flex flex-col gap-6">
-          <div className="p-10 bg-surface_container flex items-center gap-6">
+          <div className="md:p-10 py-10 md:bg-surface_container flex flex-col md:flex-row items-center gap-6">
             {contacts.map((item) => (
               <ContactCard {...item} key={item.title} className="w-full" />
             ))}
           </div>
 
-          <Link to="/delegate-form" className="w-fit mx-auto">
-            <Button>Стать делегатом</Button>
+          <Link to="/delegate-form" className="flex justify-center w-full">
+            <Button className="md:w-fit w-full">Стать делегатом</Button>
           </Link>
         </div>
       </Container>

@@ -20,7 +20,7 @@ export const News: FC<Props> = ({ className }) => {
       <Container className="flex flex-col gap-8">
         <h3 className="text-3xl text-on_primary">Новости</h3>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-6">
           {isPending ? (
             <Loading />
           ) : (
@@ -36,8 +36,10 @@ export const News: FC<Props> = ({ className }) => {
           )}
         </div>
 
-        <Link to="news" className="w-fit mx-auto">
-          <Button variant={"outline"}>Все новости</Button>
+        <Link to="news" className="md:w-fit w-full mx-auto">
+          <Button variant={"outline"} className="w-full">
+            Все новости
+          </Button>
         </Link>
       </Container>
     </section>
