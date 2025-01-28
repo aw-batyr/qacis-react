@@ -9,6 +9,7 @@ interface Props {
   date?: string;
   title?: string;
   featured_images?: FeaturedImage[];
+  published_at: string;
   className?: string;
 }
 
@@ -17,6 +18,7 @@ export const NewsCard: FC<Props> = ({
   featured_images,
   title,
   id,
+  published_at,
 }) => {
   return (
     <Link to={`/news/${id}`}>
@@ -25,17 +27,14 @@ export const NewsCard: FC<Props> = ({
       >
         <div className="flex flex-col gap-4 px-6 pt-6">
           <div className="flex items-center justify-between">
-            <div>
-              <span>17 </span>
-              <span>января</span>
-            </div>
+            <h4>{published_at.slice(0, 10).split("-").reverse().join(".")}</h4>
 
             <ArrowRight />
           </div>
 
           <hr />
 
-          <h3 className="text-[20px] leading-[130%] line-clamp-3">{title} </h3>
+          <h3 className="text-[20px] leading-[130%] line-clamp-3">{title}</h3>
         </div>
 
         <img
