@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Container } from "./";
 import { Link } from "react-router-dom";
 import { navData } from "@/data";
-import { LangMenu } from "../shared";
+import { Burger, LangMenu } from "../shared";
 import { Button } from "../ui";
 
 interface Props {
@@ -12,18 +12,18 @@ interface Props {
 
 export const Header: FC<Props> = ({ className }) => {
   return (
-    <header className={cn("h-20 md:h-[92px] bg-primary_10 py-2", className)}>
+    <header className={cn("h-20 lg:h-[92px] bg-primary_10 py-2", className)}>
       <Container className="flex items-center justify-between">
         <div className="flex items-center gap-10">
           <Link to="/">
             <img
               src="/logo.svg"
               alt="logo"
-              className="md:size-auto h-12 w-auto"
+              className="lg:size-auto h-12 w-auto"
             />
           </Link>
 
-          <div className="md:flex hidden items-center gap-6 text-sm text-on_primary">
+          <div className="lg:flex hidden items-center gap-6 text-sm text-on_primary">
             {navData.map(({ title, link }) => (
               <Link key={title} to={link}>
                 {title}
@@ -33,7 +33,7 @@ export const Header: FC<Props> = ({ className }) => {
         </div>
 
         <div className="flex items-center gap-10">
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
             <Link to={"/B2B-B2G"}>
               <Button
                 size={"sm"}
@@ -52,6 +52,7 @@ export const Header: FC<Props> = ({ className }) => {
             </Link>
           </div>
           <LangMenu />
+          <Burger />
         </div>
       </Container>
     </header>
