@@ -4,3 +4,4 @@ export { Delegate } from "./delegate";
 export { About } from "./about";
 export { News } from "./news";
 export { NewsInner } from "./news-inner";
+export { BecomeSponsor } from "./become-sponsor";
