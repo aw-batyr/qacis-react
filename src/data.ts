@@ -1,7 +1,7 @@
 export const navBtns = [
   {
     title: "Стать делегатом",
-    link: "/delegate-form",
+    link: "/become-delegate",
   },
   {
     title: "Список участников",
@@ -13,7 +13,7 @@ export const navBtns = [
   },
   {
     title: "Стать спонсором",
-    link: "",
+    link: "/become-sponsor",
   },
 ];
 
