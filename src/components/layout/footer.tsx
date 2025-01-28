@@ -29,10 +29,31 @@ export const Footer: FC<Props> = ({ className }) => {
             ))}
           </div>
           <div className="text-white flex items-center justify-end gap-6">
-            <Facebook className="" />
-            <Instagram />
-            <img src="/in.svg" alt="linkedin" />
-            <img src="/x.svg" alt="X" />
+            <Link
+              to="https://www.facebook.com/profile.php?id=61567254728028"
+              target="_blank"
+            >
+              <Facebook className="" />
+            </Link>
+            <Link
+              to="https://www.instagram.com/turkmenexpo_tm?igsh=bnhkOWpmNWcwcHBq"
+              target="_blank"
+            >
+              <Instagram />
+            </Link>
+            <Link
+              to="https://www.linkedin.com/company/turkmen-expo"
+              target="_blank"
+            >
+              <img src="/in.svg" alt="linkedin" />
+            </Link>
+
+            <Link
+              to="https://x.com/turkmenexpo?t=D-XSa8d0AC8GAv5peAzteA&s=09"
+              target="_blank"
+            >
+              <img src="/x.svg" alt="X" />
+            </Link>
           </div>
         </div>
 
