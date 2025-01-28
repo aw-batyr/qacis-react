@@ -1,5 +1,6 @@
 import { Field, FormSuccesStatus } from "@/components/shared";
 import { Button } from "@/components/ui/button";
+
 import {
   Form,
   FormControl,
@@ -7,25 +8,28 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { AnimatePresence, motion } from "motion/react";
 import {
   delegateDefaultValues,
   delegateFormSchema,
   DelegateFormType,
 } from "@/lib/get-delegate-form-details";
+
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { AnimatePresence, motion } from "motion/react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FC, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { Loader } from "lucide-react";
+import { useScrollTop } from "@/hooks/use-scroll-top";
 import { Cover } from "@/components/layout";
+import { useForm } from "react-hook-form";
+import { FC, useState } from "react";
 import { postSponsor } from "@/services";
+import { Loader } from "lucide-react";
 
 interface Props {
   className?: string;
 }
 
 export const BecomeSponsor: FC<Props> = ({ className }) => {
+  useScrollTop();
   const [success, setSuccess] = useState(false);
   const form = useForm<DelegateFormType>({
     resolver: zodResolver(delegateFormSchema),
@@ -41,10 +45,6 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
       console.error("POST sponsor error", error);
     }
   };
-
-  useEffect(() => {
-    window.scrollTo({ behavior: "smooth", top: 0 });
-  }, [success]);
 
   const { errors } = form.formState;
 
