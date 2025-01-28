@@ -1,7 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, B2b, Delegate, About, News, NewsInner } from "./pages";
+import {
+  Home,
+  B2b,
+  Delegate,
+  About,
+  News,
+  NewsInner,
+  BecomeSponsor,
+} from "./pages";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "./index.css";
@@ -22,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         element: <Delegate />,
-        path: "delegate-form",
+        path: "become-delegate",
       },
       {
         element: <About />,
@@ -35,6 +43,10 @@ const router = createBrowserRouter([
       {
         element: <NewsInner />,
         path: "news/:id",
+      },
+      {
+        element: <BecomeSponsor />,
+        path: "become-sponsor",
       },
     ],
   },
