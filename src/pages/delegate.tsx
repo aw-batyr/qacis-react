@@ -19,12 +19,17 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FC, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Loader } from "lucide-react";
+import { Cover } from "@/components/layout";
+import { postDelegate } from "@/services";
+import { useScrollTop } from "@/hooks/use-scroll-top";
 
 interface Props {
   className?: string;
 }
 
 export const Delegate: FC<Props> = ({ className }) => {
+  useScrollTop();
+
   const [success, setSuccess] = useState(false);
   const form = useForm<DelegateFormType>({
     resolver: zodResolver(delegateFormSchema),
@@ -32,29 +37,25 @@ export const Delegate: FC<Props> = ({ className }) => {
   });
 
   const onSubmit = async (data: DelegateFormType) => {
-    const res = await axios.post(
-      "https://qacis.turkmenexpo.com/app/api/v1/become_delegate",
-      data
-    );
+    // const res = await axios.post(
+    //   "https://qacis.turkmenexpo.com/app/api/v1/become_delegate",
+    //   data
+    // );
 
-    if (res.status === 201) setSuccess(true);
+    try {
+      const status = await postDelegate(data);
+
+      if (status) setSuccess(true);
+    } catch (error) {
+      console.error("Become delegate post error", error);
+    }
   };
-
-  useEffect(() => {
-    window.scrollTo({ behavior: "smooth", top: 0 });
-  }, [success]);
 
   const { errors } = form.formState;
 
   return (
     <div className={className}>
-      <div className="relative flex items-center h-[216px] w-full justify-center">
-        <img
-          src="/cover.png"
-          className="-z-10 absolute size-full object-cover top-0 left-0"
-        />
-        <h1 className="text-on_primary text-5xl">Стать делегатом</h1>
-      </div>
+      <Cover title="Стать делегатом" />
 
       <AnimatePresence>
         {!success && (
@@ -63,7 +64,7 @@ export const Delegate: FC<Props> = ({ className }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="w-[808px] mx-auto mt-20 mb-[120px] flex flex-col gap-8"
+              className="max-w-[828px] mx-auto  px-5 mt-20 mb-[120px] flex flex-col gap-8"
               onSubmit={form.handleSubmit(onSubmit)}
             >
               <Field
