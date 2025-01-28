@@ -53,7 +53,7 @@ export const Contacts: FC<Props> = ({ className }) => {
             ))}
           </div>
 
-          <Link to="/delegate-form" className="flex justify-center w-full">
+          <Link to="/become-delegate" className="flex justify-center w-full">
             <Button className="md:w-fit w-full">Стать делегатом</Button>
           </Link>
         </div>

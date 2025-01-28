@@ -30,7 +30,7 @@ export const Bron: FC<Props> = ({ className }) => {
         </p>
 
         <div className="flex flex-col md:flex-row items-center gap-6">
-          <Link to={"/delegate-form"} className="w-full">
+          <Link to={"/become-delegate"} className="w-full">
             <Button className="w-full bg-white text-primary hover:bg-white/90 ">
               Стать делегатом
             </Button>
