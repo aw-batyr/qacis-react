@@ -13,7 +13,7 @@ export const HomeAbout: FC<Props> = ({ className }) => {
   return (
     <section className={cn("bg-[url('/geo-bg.png')] pb-16", className)}>
       <Container>
-        <div className="flex items-center gap-6 -mt-5">
+        <div className="flex flex-col md:flex-row items-center gap-6 -mt-5">
           {navBtns.map(({ title, link }) => (
             <Link key={title} to={link} className="w-full">
               <Button
@@ -26,8 +26,8 @@ export const HomeAbout: FC<Props> = ({ className }) => {
           ))}
         </div>
 
-        <div className="flex flex-col gap-6 mt-16">
-          <h2 className="text-3xl text-on_primary">О конференции</h2>
+        <div className="flex flex-col gap-6 mt-10 md:mt-16">
+          <h2 className="h2 text-on_primary">О конференции</h2>
           <p className="p">
             Международная конференция «Гарантия качества в Туркменистане,
             соответствующая международным стандартам» 29–30 апреля, Ашхабад В
@@ -38,7 +38,7 @@ export const HomeAbout: FC<Props> = ({ className }) => {
             международным стандартам», приобретает особое значение.
           </p>
           <Link to={"/about"}>
-            <Button variant="outline" className="w-fit">
+            <Button variant="outline" className="md:w-fit w-full">
               Подробнее
             </Button>
           </Link>
