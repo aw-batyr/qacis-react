@@ -37,6 +37,10 @@
     @apply font-["Gilroy-Regular"] font-normal;
   }
 
+  .h2 {
+    @apply md:text-3xl text-2xl;
+  }
+
   .semibold {
     @apply font-["Gilroy-Semibold"] font-semibold;
   }
