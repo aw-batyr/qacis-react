@@ -37,6 +37,10 @@
     @apply font-["Gilroy-Regular"] font-normal;
   }
 
+  .medium {
+    @apply font-['Gilroy-Medium'] font-medium;
+  }
+
   .h2 {
     @apply md:text-3xl text-2xl;
   }
@@ -46,10 +50,14 @@
   }
 
   .p {
-    @apply text-lg text-on_primary_v;
+    @apply md:text-lg text-base md:medium normal text-on_surface_v;
   }
 
   .progress-circle {
     @apply size-14 rounded-full text-2xl z-10 text-[#5F6674];
+  }
+
+  .page-padding {
+    @apply pt-10 pb-20 md:pt-20 md:pb-[120px];
   }
 }
