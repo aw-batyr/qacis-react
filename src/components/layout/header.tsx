@@ -32,7 +32,7 @@ export const Header: FC<Props> = ({ className }) => {
           </div>
         </div>
 
-        <div className="flex items-center gap-10">
+        <div className="flex items-center lg:gap-10 gap-5">
           <div className="hidden lg:flex items-center gap-6">
             <Link to={"/B2B-B2G"}>
               <Button
