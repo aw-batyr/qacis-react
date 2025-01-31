@@ -14,6 +14,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "./index.css";
 import App from "./App";
+import Contacts from "./pages/contacts";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         element: <BecomeSponsor />,
         path: "become-sponsor",
+      },
+      {
+        element: <Contacts />,
+        path: "contacts",
       },
     ],
   },
