@@ -57,33 +57,6 @@ export const Stage3: FC<Props> = () => {
           label="Дополнительные технические или логистические требования (например, аудио-видео оборудование, переводчики и т.д.)"
           // label="Additional technical or logistical requirements (e.g. AV equipment, interpreters, etc)"
         />
-
-        <h3 className="text-3xl mt-4">
-          Название компании/организации
-          {/* Company/Organization Profile: */}
-        </h3>
-
-        <Field
-          control={control}
-          name={"sector_industry"}
-          error={formState.errors.sector_industry as FieldError}
-          placeholder=""
-          label="Sector Industry"
-        />
-        <Field
-          control={control}
-          name={"key_services"}
-          error={formState.errors.key_services as FieldError}
-          placeholder=""
-          label="Key Services/Products"
-        />
-        <Field
-          control={control}
-          name={"government_experience"}
-          error={formState.errors.government_experience as FieldError}
-          placeholder=""
-          label="Previous Experience working with Governments (if applicable)"
-        />
       </div>
 
       <div className="flex flex-col gap-8">
