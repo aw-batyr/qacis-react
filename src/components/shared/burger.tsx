@@ -44,6 +44,8 @@ export const Burger: FC<Props> = () => {
           </Link>
         </SheetHeader>
 
+        <hr className="opacity-50 mt-10 " />
+
         <div className="my-5 flex flex-col gap-4"></div>
 
         <div className="flex flex-col gap-6">
