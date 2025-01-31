@@ -38,7 +38,7 @@ export const Burger: FC<Props> = () => {
           </Link>
 
           <Link to="/B2B-B2G" onClick={() => setOpen(false)}>
-            <Button className="text-base w-full bg-reverse_primary text-primary_10">
+            <Button className="text-base w-full bg-reverse_primary hover:bg-reverse_primary/90 text-primary_10">
               B2B | B2G встречи
             </Button>
           </Link>
