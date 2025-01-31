@@ -80,21 +80,19 @@ export const formSchema = z.object({
     .optional(),
 });
 
-// Тип для формы
 export type FormType = z.infer<typeof formSchema>;
 
-// Значения по умолчанию
 export const defaultValuesOfB2b = {
   type: "B2B",
-  company_name: "test",
-  representative_name: "test",
-  job_title: "tets",
-  participants_number: "tes",
-  country: "tes",
-  email_address: "tes@gmail.com",
-  phone_number: "tesdsasdasad",
+  company_name: "",
+  representative_name: "",
+  job_title: "",
+  participants_number: "",
+  country: "",
+  email_address: "",
+  phone_number: "",
   website: "",
-  meeting_objective: "tesat",
+  meeting_objective: "",
   proposal_description: "",
   government_agency: "",
   sector_industry: "",
