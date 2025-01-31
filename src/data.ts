@@ -32,6 +32,6 @@ export const navData = [
   },
   {
     title: "Контакты",
-    link: "",
+    link: "/contacts",
   },
 ];
