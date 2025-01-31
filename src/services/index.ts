@@ -1,6 +1,7 @@
 import axios from "axios";
 import { NewsInnerType, NewsType } from "./types/news";
 import { DelegateFormType } from "@/lib/get-delegate-form-details";
+import { ContactsFormType } from "@/lib/get-contacts-form-details";
 
 const URL = "https://qacis.turkmenexpo.com/app/api/v1";
 
@@ -32,6 +33,12 @@ export const postB2b = async (data: FormData): Promise<boolean> => {
 
 export const postSponsor = async (data: DelegateFormType): Promise<boolean> => {
   const res = axios.post(`${URL}/become_sponsor`, data);
+
+  return (await res).status === 201;
+};
+
+export const postContact = async (data: ContactsFormType) => {
+  const res = axios.post(`${URL}/contact_form`, data);
 
   return (await res).status === 201;
 };
