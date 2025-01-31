@@ -8,15 +8,10 @@ interface Props {
 
 export const Place: FC<Props> = ({ className }) => {
   return (
-    <section
-      className={cn(
-        "flex lg:flex-row flex-col ;g:pt-0 pt-10 items-center gap-6 relative h-[556px] overflow-hidden",
-        className
-      )}
-    >
-      <Container>
-        <h3 className="h2 lg:w-[312px] mb-6">Место проведения</h3>
-        <p className="p lg:w-[490px] normal">
+    <section className={cn(" gap-6 relative overflow-hidden", className)}>
+      <Container className="md:py-20 py-10 ">
+        <h3 className="h2 mb-6 xl:max-w-[496px]">Место проведения</h3>
+        <p className="text-lg text-on_surface_v normal xl:max-w-[496px] mb-10">
           Торгово-промышленная палата Туркменистана создана в целях содействия
           развитию экономики Туркменистана, ее интегрированию в мировую
           хозяйственную систему, формированию современной промышленной,
@@ -26,13 +21,14 @@ export const Place: FC<Props> = ({ className }) => {
           зарубежными партнерами.
         </p>
 
-        <img
-          src="/map.png"
-          alt="map"
-          className="lg:block hidden absolute top-0 right-0 lg:w-[900px] h-full object-cover"
-        />
+        <div className="size-full xl:hidden">
+          <img src="/map.png" alt="map" className="size-full object-cover" />
+        </div>
       </Container>
-      <img src="/map.png" alt="map" className="w-full h-auto lg:hidden" />
+
+      <div className="h-full 2xl:w-[850px] xl:w-[650px] xl:block hidden absolute top-0 right-0">
+        <img src="/map.png" alt="" className="size-full object-cover" />
+      </div>
     </section>
   );
 };

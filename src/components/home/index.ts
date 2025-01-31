@@ -5,3 +5,4 @@ export { HomeAbout } from "./home-about";
 export { Speakers } from "./speakers";
 export { Sponsors } from "./sponsors";
 export { News } from "./home-news";
+export { HomeOffers } from "./home-offers";

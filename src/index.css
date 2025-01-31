@@ -60,4 +60,12 @@
   .page-padding {
     @apply pt-10 pb-20 md:pt-20 md:pb-[120px];
   }
+
+  .dot {
+    @apply w-5 h-1 cursor-pointer bg-on_surface_v rounded-[2px];
+  }
+
+  .dot-active {
+    @apply w-5 h-1 bg-on_surface rounded-[2px];
+  }
 }

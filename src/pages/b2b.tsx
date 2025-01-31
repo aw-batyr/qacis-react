@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const B2b: FC<Props> = () => {
-  const [stage, setStage] = useState(1);
+  const [stage, setStage] = useState(3);
   useEffect(() => {
     window.scrollTo({ behavior: "smooth", top: 0 });
   }, [stage]);

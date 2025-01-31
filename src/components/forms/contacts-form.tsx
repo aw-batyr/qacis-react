@@ -78,7 +78,7 @@ export const ContactsForm: FC<Props> = ({ className }) => {
               name="company"
               control={form.control}
               label="Название компании"
-              error={errors.name}
+              error={errors.company}
             />
             <Field
               onPrimary

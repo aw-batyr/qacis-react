@@ -7,9 +7,10 @@ import { Loader } from "lucide-react";
 
 interface Props {
   className?: string;
+  handlePrev: VoidFunction;
 }
 
-export const Stage3: FC<Props> = () => {
+export const Stage3: FC<Props> = ({ handlePrev }) => {
   const { control, formState } = useFormContext();
 
   return (
@@ -19,8 +20,7 @@ export const Stage3: FC<Props> = () => {
       transition={{ duration: 1 }}
     >
       <h3 className="text-3xl mb-8">
-        Логистика встречи:
-        {/* Meeting Logistics */}
+        Детали встречи: {/* Meeting Logistics */}
       </h3>
 
       <div className="flex flex-col gap-6">
@@ -90,17 +90,28 @@ export const Stage3: FC<Props> = () => {
         />
       </div>
 
-      <Button
-        disabled={formState.isSubmitting}
-        type="submit"
-        className="w-full mt-10"
-      >
-        {formState.isSubmitting ? (
-          <Loader className="animate-spin" />
-        ) : (
-          "Отправить"
-        )}
-      </Button>
+      <div className="flex items-center gap-6 mt-10">
+        <Button
+          onClick={handlePrev}
+          variant={"outline"}
+          type="button"
+          className="text-on_surface"
+        >
+          Вернуться назад
+        </Button>
+
+        <Button
+          disabled={formState.isSubmitting}
+          type="submit"
+          className="w-full"
+        >
+          {formState.isSubmitting ? (
+            <Loader className="animate-spin" />
+          ) : (
+            "Отправить"
+          )}
+        </Button>
+      </div>
     </motion.div>
   );
 };

@@ -72,6 +72,8 @@ export const B2bForm: FC<Props> = ({ stage, setStage }) => {
     }
   };
 
+  const handlePrev = () => setStage((prev: number) => prev - 1);
+
   const onSubmit = async (values: FormType) => {
     try {
       const formData = new FormData();
@@ -115,10 +117,14 @@ export const B2bForm: FC<Props> = ({ stage, setStage }) => {
             {stage === 1 && <Stage handleNext={handleNext} />}
           </AnimatePresence>
           <AnimatePresence>
-            {stage === 2 && <Stage2 handleNext={handleNext} />}
+            {stage === 2 && (
+              <Stage2 handlePrev={handlePrev} handleNext={handleNext} />
+            )}
           </AnimatePresence>
           <AnimatePresence>
-            {stage === 3 && success === false && <Stage3 />}
+            {stage === 3 && success === false && (
+              <Stage3 handlePrev={handlePrev} />
+            )}
           </AnimatePresence>
 
           {success && <FormSuccesStatus />}

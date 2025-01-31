@@ -6,6 +6,7 @@ import {
   News,
   Partners,
   Contacts,
+  HomeOffers,
 } from "../components/home";
 
 interface Props {
@@ -21,6 +22,7 @@ export const Home: FC<Props> = ({ className }) => {
     <div className={cn("pb-20", className)}>
       <HomeHero />
       <HomeAbout />
+      <HomeOffers />
       <Partners />
       {/* <Speakers /> */}
       {/* <Sponsors /> */}

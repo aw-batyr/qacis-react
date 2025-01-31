@@ -12,3 +12,5 @@ export { Stage3 } from "./stage-3";
 export { FormSuccesStatus } from "./form-success-status";
 export { TimeCard } from "./time-card";
 export { Burger } from "./burger";
+export { OfferCard } from "./offer-card";
+export { EmblaDots } from "./embla-dots";

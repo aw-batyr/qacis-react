@@ -33,7 +33,7 @@ export const Program: FC<Props> = ({ className }) => {
           Конференция предложит насыщенную программу:
         </h4>
 
-        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3  gap-4 md:gap-6">
           {data.map((item) => (
             <article className="md:p-4 p-2 rounded-[2px] bg-gradient-to-t from-[#D8E6F3] to-[#EFF5FA]">
               <h4 className="md:text-xl text-base text-on_primary_container mb-2">

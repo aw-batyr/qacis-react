@@ -29,7 +29,7 @@ export const NewsInner: FC = () => {
           </h4>
         </div>
 
-        <div className="w-full max-h-[480px]">
+        <div className="w-full h-[300px] md:h-[480px]">
           <img
             src={data?.featured_images[0]?.path || ""}
             alt="news image"

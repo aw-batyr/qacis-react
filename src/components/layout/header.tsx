@@ -14,7 +14,7 @@ export const Header: FC<Props> = ({ className }) => {
   return (
     <header className={cn("h-20 lg:h-[92px] bg-primary_10 py-2", className)}>
       <Container className="flex items-center justify-between">
-        <div className="flex items-center gap-10">
+        <div className="flex items-center xl:gap-10 gap-4">
           <Link to="/">
             <img
               src="/logo.svg"
@@ -32,8 +32,8 @@ export const Header: FC<Props> = ({ className }) => {
           </div>
         </div>
 
-        <div className="flex items-center lg:gap-10 gap-5">
-          <div className="hidden lg:flex items-center gap-6">
+        <div className="flex items-center xl:gap-10 gap-4">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-6">
             <Link to={"/B2B-B2G"}>
               <Button
                 size={"sm"}
@@ -52,7 +52,9 @@ export const Header: FC<Props> = ({ className }) => {
             </Link>
           </div>
           <LangMenu />
-          <Burger />
+          <div className="lg:hidden">
+            <Burger />
+          </div>
         </div>
       </Container>
     </header>
