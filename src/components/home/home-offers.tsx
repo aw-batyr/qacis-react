@@ -38,6 +38,7 @@ export const HomeOffers: FC = () => {
               img="/offer-1.png"
               className="embla__slide flex-[0_0_300px] sm:flex-[0_0_600px]"
               title="Гостиницы, трансфер, визы"
+              link="https://qacis.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf"
               text="По вопросам размещения в гостиницах, визовой поддержки, транспортного и экскурсионного обслуживания Вы можете обращаться к официальным туроператорам выставки"
             />
             <OfferCard
