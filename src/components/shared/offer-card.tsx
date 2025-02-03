@@ -9,10 +9,18 @@ interface Props {
   text: string;
   className?: string;
   img: string;
-  link?: string;
+  link: string;
+  btnText?: string;
 }
 
-export const OfferCard: FC<Props> = ({ className, title, text, img, link }) => {
+export const OfferCard: FC<Props> = ({
+  className,
+  title,
+  text,
+  img,
+  link,
+  btnText,
+}) => {
   return (
     <article
       className={cn(
@@ -32,23 +40,18 @@ export const OfferCard: FC<Props> = ({ className, title, text, img, link }) => {
         </h4>
         <p className="sm:text-base text-sm normal max-w-[360px] z-20">{text}</p>
 
-        {link ? (
-          <Link to={link} target="_blank">
-            <Button
-              className="text-sm text-white absolute bottom-0 left-0 px-0 mt-4 py-1.5 z-20"
-              variant={"link"}
-            >
-              Путеводитель <ArrowUpRight />
-            </Button>
-          </Link>
-        ) : (
+        <Link
+          className="absolute bottom-0 left-0 z-50"
+          target="_blank"
+          to={link}
+        >
           <Button
-            className="text-sm text-white absolute bottom-0 left-0 px-0 mt-4 py-1.5 z-20"
+            className="text-sm px-0 h-fit py-0 z-20 text-white"
             variant={"link"}
           >
-            Скачать PDF <ArrowUpRight />
+            {btnText} <ArrowUpRight />
           </Button>
-        )}
+        </Link>
       </div>
     </article>
   );
