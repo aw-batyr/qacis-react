@@ -40,7 +40,7 @@ export const HomeOffers: FC = () => {
               title="Гостиницы, трансфер, визы"
               btnText="Скачать путеводитель"
               link="https://qacis.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf"
-              text="По вопросам размещения в гостиницах, визовой поддержки, транспортного и экскурсионного обслуживания Вы можете обращаться к официальным туроператорам выставки"
+              text="По вопросам размещения в гостиницах, визовой поддержки, транспортного и экскурсионного обслуживания Вы можете ознакомиться с путеводителем"
             />
             <OfferCard
               link="https://qacis.turkmenexpo.com/app/storage/app/media/floor%20plan/Floor%20plan.pdf"
