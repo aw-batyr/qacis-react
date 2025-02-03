@@ -23,7 +23,7 @@ export const navData = [
     link: "/about",
   },
   {
-    title: "Гид",
+    title: "Медиа",
     link: "",
   },
   {
