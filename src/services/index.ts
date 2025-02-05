@@ -5,8 +5,12 @@ import { ContactsFormType } from "@/lib/get-contacts-form-details";
 
 const URL = "https://qacis.turkmenexpo.com/app/api/v1";
 
-export const getNews = async () => {
-  const data = axios.get<NewsType>(`${URL}/news`);
+export const getNews = async (lang: string) => {
+  const data = axios.get<NewsType>(`${URL}/news`, {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
 
   return data;
 };

@@ -9,7 +9,7 @@ export const News: FC = () => {
   useScrollTop();
   const lang = useLangStore((state) => state.lang);
 
-  const { data, isPending } = useNews();
+  const { data, isPending } = useNews(lang);
 
   if (isPending) return <Loading />;
 
