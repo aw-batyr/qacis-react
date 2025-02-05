@@ -4,14 +4,12 @@ import { Container } from "../layout";
 import { Link } from "react-router-dom";
 import { Button } from "../ui";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
 
 interface Props {
   className?: string;
 }
 
 export const HomeAbout: FC<Props> = ({ className }) => {
-  const [loading, setLoading] = useState(true);
   const { t } = useTranslation("home");
 
   const buttons = t("buttons", { returnObjects: true }) as Array<{
@@ -60,8 +58,6 @@ export const HomeAbout: FC<Props> = ({ className }) => {
               controls
               src="https://qacis.turkmenexpo.com/app/storage/app/media/video/1%20Conference%202025_1.mp4"
               className="size-full object-cover"
-              onLoadStart={() => setLoading(true)}
-              onLoad={() => setLoading(false)}
             />
           </div>
         </div>
