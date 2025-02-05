@@ -4,57 +4,44 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Container } from "../layout";
 import { ContactCard } from "../shared";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   className?: string;
 }
 
-export const times = [
-  {
-    name: "Монтаж выставки",
-    date: "1 — 27 апреля 2025 года",
-  },
-  {
-    name: "Работа",
-    date: "29 — 1 мая 2025 года",
-  },
-  {
-    name: "Демонтаж",
-    date: "1 — 2 мая 2025 года",
-  },
-];
-
-const contacts = [
-  {
-    title: "contact@turkmenexpo.com",
-    subtitle: "Адрес электронной почты",
-    img: "/mail.svg",
-  },
-  {
-    title: "здание ТПП Туркменистана",
-    subtitle: "Адрес выставки",
-    img: "/location.svg",
-  },
-  {
-    title: "+99371871814; +99363719588",
-    subtitle: "Контактный номер",
-    img: "/mobile.svg",
-  },
-];
-
 export const Contacts: FC<Props> = ({ className }) => {
+  const { t } = useTranslation("home");
+
+  // Получаем контакты из локализации
+  const contacts = t("contacts.data", { returnObjects: true }) as Array<{
+    suptitle: string;
+    title: string;
+  }>;
+
   return (
     <section className={cn("bg-surface_high pt-20 pb-10", className)}>
       <Container>
         <div className="flex flex-col gap-6">
           <div className="md:p-10 md:bg-surface_container flex flex-col md:flex-row items-center gap-6">
-            {contacts.map((item) => (
-              <ContactCard {...item} key={item.title} className="w-full" />
+            {contacts.map((item, i) => (
+              <ContactCard
+                img={
+                  i === 0
+                    ? "/location.svg"
+                    : i === 1
+                    ? "/mail.svg"
+                    : "/mobile.svg"
+                }
+                {...item}
+                key={item.suptitle}
+                className="w-full"
+              />
             ))}
           </div>
 
           <Link to="/become-delegate" className="flex justify-center w-full">
-            <Button className="md:w-fit w-full">Стать делегатом</Button>
+            <Button className="md:w-fit w-full">{t("contacts.button")}</Button>
           </Link>
         </div>
       </Container>

@@ -10,7 +10,7 @@ interface Props {
   className?: string;
   img: string;
   link: string;
-  btnText?: string;
+  button: string;
 }
 
 export const OfferCard: FC<Props> = ({
@@ -19,7 +19,7 @@ export const OfferCard: FC<Props> = ({
   text,
   img,
   link,
-  btnText,
+  button,
 }) => {
   return (
     <article
@@ -49,7 +49,7 @@ export const OfferCard: FC<Props> = ({
             className="text-sm px-0 h-fit py-0 z-20 text-white"
             variant={"link"}
           >
-            {btnText} <ArrowUpRight />
+            {button} <ArrowUpRight />
           </Button>
         </Link>
       </div>

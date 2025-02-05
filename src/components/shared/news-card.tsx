@@ -23,7 +23,10 @@ export const NewsCard: FC<Props> = ({
   return (
     <Link to={`/news/${id}`}>
       <article
-        className={cn("bg-surface_container flex flex-col gap-6", className)}
+        className={cn(
+          "bg-surface_container justify-between h-[400px] flex flex-col gap-6",
+          className
+        )}
       >
         <div className="flex flex-col gap-4 px-6 pt-6">
           <div className="flex items-center justify-between">

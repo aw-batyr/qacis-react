@@ -1,0 +1,58 @@
+{
+  "buttons": [
+    {
+      "text": "Become a delagate",
+      "link": "/become-delegate"
+    },
+    {
+      "text": "List of participants",
+      "link": ""
+    },
+    {
+      "text": "Agenda",
+      "link": ""
+    },
+    {
+      "text": "Become a sponsor",
+      "link": "/become-sponsor"
+    }
+  ],
+
+  "about": {
+    "title": "About the Conference",
+    "paragraph": "Международная конференция «Гарантия качества в Туркменистане, соответствующая международным стандартам» 29–30 апреля, Ашхабад В эпоху глобализации, когда соответствие международным стандартам становится важнейшим условием успешной работы на мировых рынках, проведение специализированных мероприятий, таких как Международная конференция «Гарантия качества в Туркменистане, соответствующая международным стандартам», приобретает особое значение.",
+
+    "button": "More about the Conference"
+  },
+
+  "offers": [
+    {
+      "title": "Hotels, transfers, visa",
+      "text": "Regarding hotel accommodation, visa support, transportation and excursion services you can check out the Travel guide",
+      "button": "Download the Travel guide"
+    },
+    {
+      "title": "Check out the QACIS 2025 Exhibition plan",
+      "text": "How to choose the best place in the exhibition? You should always remember that the good location of the exhibition increases your chance to attract the attention of your potential customers…",
+      "button": "Download the Floor plan"
+    }
+  ],
+
+  "contacts": {
+    "button": "Become a delegate",
+    "data": [
+      {
+        "suptitle": "E-mail Address",
+        "title": "contact@turkmenexpo.com"
+      },
+      {
+        "suptitle": "Exhibition address",
+        "title": "Building of the CCI of Turkmenistan"
+      },
+      {
+        "suptitle": "Contact Number",
+        "title": "+99371871814; +99363719588"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "b2b": "B2B | B2G meetings",
+  "support": "Official Support",
+  "nav": {
+    "data": [
+      { "title": "About Conference", "link": "/about" },
+      { "title": "Media", "link": "" },
+      { "title": "News", "link": "/news" },
+      { "title": "Contacts", "link": "/contacts" }
+    ]
+  }
+}

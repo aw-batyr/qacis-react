@@ -2,15 +2,24 @@ import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { Container } from "./";
 import { Link } from "react-router-dom";
-import { navData } from "@/data";
 import { Burger, LangMenu } from "../shared";
 import { Button } from "../ui";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   className?: string;
 }
 
 export const Header: FC<Props> = ({ className }) => {
+  const { t } = useTranslation("header");
+
+  const navData = t("nav.data", { returnObjects: true }) as Array<{
+    title: string;
+    link: string;
+  }>;
+  const b2b = t("b2b");
+  const support = t("support");
+
   return (
     <header className={cn("h-20 lg:h-[92px] bg-primary_10 py-2", className)}>
       <Container className="flex items-center justify-between">
@@ -39,7 +48,7 @@ export const Header: FC<Props> = ({ className }) => {
                 size={"sm"}
                 className="bg-alternative text-on_alternative hover:bg-alternative/90 "
               >
-                B2B | B2G встречи
+                {b2b}
               </Button>
             </Link>
             <Link to={"/B2B-B2G"}>
@@ -47,7 +56,7 @@ export const Header: FC<Props> = ({ className }) => {
                 size={"sm"}
                 className="bg-alternative text-on_alternative  hover:bg-alternative/90  "
               >
-                Официальная поддержка
+                {support}
               </Button>
             </Link>
           </div>

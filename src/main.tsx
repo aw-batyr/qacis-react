@@ -16,6 +16,8 @@ import "./index.css";
 import App from "./App";
 import Contacts from "./pages/contacts";
 
+import "./i18n";
+
 const router = createBrowserRouter([
   {
     element: <App />,

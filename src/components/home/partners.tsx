@@ -3,6 +3,7 @@ import { FC } from "react";
 import { Container } from "../layout";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useLangStore } from "@/store/lang";
 interface Props {
   className?: string;
 }
@@ -29,6 +30,7 @@ const data = [
 ];
 
 export const Partners: FC<Props> = ({ className }) => {
+  const lang = useLangStore((state) => state.lang);
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "start" }, [
     Autoplay({ delay: 2000 }),
   ]);
@@ -36,7 +38,7 @@ export const Partners: FC<Props> = ({ className }) => {
   return (
     <section className={cn("py-20 bg-surface_container", className)}>
       <Container className="flex flex-col gap-6">
-        <h2 className="text-3xl">Партнёры</h2>
+        <h2 className="text-3xl">{lang === "ru" ? "Партнёры" : "Partners"}</h2>
 
         <div
           ref={emblaRef}
