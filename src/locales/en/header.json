@@ -1,6 +1,10 @@
 {
   "b2b": "B2B | B2G meetings",
-  "support": "Official Support",
+  "support": {
+    "text": "Official Support",
+    "link": "https://qacis.turkmenexpo.com/app/storage/app/media/official_support/en.jpg"
+  },
+
   "nav": {
     "data": [
       { "title": "About Conference", "link": "/about" },

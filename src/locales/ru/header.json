@@ -1,6 +1,9 @@
 {
   "b2b": "B2B | B2G встречи",
-  "support": "Официальная поддержка",
+  "support": {
+    "text": "Официальная поддержка",
+    "link": "https://qacis.turkmenexpo.com/app/storage/app/media/official_support/ru.jpg"
+  },
   "nav": {
     "data": [
       { "title": "О конференции", "link": "/about" },
