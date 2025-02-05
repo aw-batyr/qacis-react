@@ -23,6 +23,9 @@ import { useForm } from "react-hook-form";
 import { FC, useState } from "react";
 import { postSponsor } from "@/services";
 import { Loader } from "lucide-react";
+import { useTranslate } from "@/hooks/use-translate";
+import { Language, useLangStore } from "@/store/lang";
+import { stendData } from "@/data/stend.data";
 
 interface Props {
   className?: string;
@@ -30,6 +33,8 @@ interface Props {
 
 export const BecomeSponsor: FC<Props> = ({ className }) => {
   useScrollTop();
+  const lang = useLangStore((state) => state.lang);
+
   const [success, setSuccess] = useState(false);
   const form = useForm<DelegateFormType>({
     resolver: zodResolver(delegateFormSchema),
@@ -50,7 +55,9 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
 
   return (
     <div className={className}>
-      <Cover title="Стать спонсором" />
+      <Cover
+        title={lang === Language.RU ? "Стать спонсором" : "Become a sponsor"}
+      />
 
       <AnimatePresence>
         {!success && (
@@ -63,42 +70,46 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
               onSubmit={form.handleSubmit(onSubmit)}
             >
               <Field
-                label="Название компании/организации"
+                label={stendData[useTranslate(lang)].label_1}
                 name="company_name"
                 control={form.control}
                 error={errors.company_name}
               />
               <Field
-                label="Имя представителя"
+                label={stendData[useTranslate(lang)].label_2}
                 name="rep_name"
                 control={form.control}
                 error={errors.rep_name}
               />
               <Field
-                label="Название должности/позиция"
+                label={stendData[useTranslate(lang)].label_3}
                 name="job_title"
                 control={form.control}
                 error={errors.job_title}
               />
               <Field
-                label="Страна"
+                label={stendData[useTranslate(lang)].label_4}
                 name="country"
                 control={form.control}
                 error={errors.country}
               />
               <Field
-                label="E-mail адрес"
+                label={stendData[useTranslate(lang)].label_5}
                 name="email"
                 control={form.control}
                 error={errors.email}
               />
               <Field
-                label="Номер телефона"
+                label={stendData[useTranslate(lang)].label_6}
                 name="phone"
                 control={form.control}
                 error={errors.phone}
               />
-              <Field label="Вебсайт" name="website" control={form.control} />
+              <Field
+                label={stendData[useTranslate(lang)].label_7}
+                name="website"
+                control={form.control}
+              />
 
               <FormField
                 control={form.control}
@@ -106,7 +117,7 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
                 render={({ field }) => (
                   <FormItem className="space-y-5">
                     <FormLabel className="text-xl">
-                      Визовая поддержка:
+                      {stendData[useTranslate(lang)].visa}
                     </FormLabel>
 
                     <FormControl>
@@ -122,7 +133,9 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
                               checked={field.value === "yes"}
                             />
                           </FormControl>
-                          <FormLabel className="text-base">Да</FormLabel>
+                          <FormLabel className="text-base">
+                            {stendData[useTranslate(lang)].visa_radio}
+                          </FormLabel>
                         </FormItem>
 
                         <FormItem className="flex items-center space-x-5 space-y-0 ">
@@ -132,7 +145,9 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
                               checked={field.value === "no"}
                             />
                           </FormControl>
-                          <FormLabel className="text-base">Нет</FormLabel>
+                          <FormLabel className="text-base">
+                            {stendData[useTranslate(lang)].visa_radio_2}
+                          </FormLabel>
                         </FormItem>
                       </RadioGroup>
                     </FormControl>
@@ -144,7 +159,7 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
                 {form.formState.isSubmitting ? (
                   <Loader className="animate-spin" />
                 ) : (
-                  "Отправить"
+                  stendData[useTranslate(lang)].button
                 )}
               </Button>
             </motion.form>

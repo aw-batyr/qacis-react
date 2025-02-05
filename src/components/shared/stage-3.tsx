@@ -4,6 +4,9 @@ import { FieldError, useFormContext } from "react-hook-form";
 import { Field } from "./";
 import { Button } from "@/components/ui/button";
 import { Loader } from "lucide-react";
+import { useTranslate } from "@/hooks/use-translate";
+import { b2bStage3 } from "@/data/b2b.data";
+import { Language, useLangStore } from "@/store/lang";
 
 interface Props {
   className?: string;
@@ -11,6 +14,7 @@ interface Props {
 }
 
 export const Stage3: FC<Props> = ({ handlePrev }) => {
+  const lang = useLangStore((state) => state.lang);
   const { control, formState } = useFormContext();
 
   return (
@@ -19,9 +23,7 @@ export const Stage3: FC<Props> = ({ handlePrev }) => {
       animate={{ opacity: 1, y: 0, transition: { delay: 0.5, duration: 0.3 } }}
       transition={{ duration: 1 }}
     >
-      <h3 className="text-3xl mb-8">
-        Детали встречи: {/* Meeting Logistics */}
-      </h3>
+      <h2 className="h2 mb-8">{b2bStage3[useTranslate(lang)].h2}</h2>
 
       <div className="flex flex-col gap-6">
         <Field
@@ -29,24 +31,21 @@ export const Stage3: FC<Props> = ({ handlePrev }) => {
           name={"preferred_meeting_datetime"}
           error={formState.errors.preferred_meeting_datetime as FieldError}
           placeholder=""
-          label="Предпочтительная дата и время "
-          // label="Preferred date and time for the meeting"
+          label={b2bStage3[useTranslate(lang)].data[0].label}
         />
         <Field
           control={control}
           name={"preferred_mode"}
           error={formState.errors.preferred_mode as FieldError}
           placeholder=""
-          label="Предпочтительный способ проведения встречи (лично, виртуально (через zoom/ teams/другое), гибридный)"
-          // label="Preferred mode of meeting (in-person, virtual (via zoom/teams/other), hybrid)"
+          label={b2bStage3[useTranslate(lang)].data[1].label}
         />
         <Field
           control={control}
           name={"language_preference"}
           error={formState.errors.language_preference as FieldError}
           placeholder=""
-          label="Предпочитаемый язык (английский, туркменский, русский, другой)"
-          // label="Additional technical or logistical requirements (e.g. AV equipment, interpreters, etc)"
+          label={b2bStage3[useTranslate(lang)].data[2].label}
         />
 
         <Field
@@ -54,37 +53,36 @@ export const Stage3: FC<Props> = ({ handlePrev }) => {
           name={"additional_technical"}
           error={formState.errors.additional_technical as FieldError}
           placeholder=""
-          label="Дополнительные технические или логистические требования (например, аудио-видео оборудование, переводчики и т.д.)"
-          // label="Additional technical or logistical requirements (e.g. AV equipment, interpreters, etc)"
+          label={b2bStage3[useTranslate(lang)].data[3].label}
         />
       </div>
 
       <div className="flex flex-col gap-8">
-        <div className="">
-          <h3 className="text-3xl mt-10">Приложения:</h3>
+        <div>
+          <h3 className="h2 mt-10">{b2bStage3[useTranslate(lang)].secondH2}</h3>
           <h5 className="text-on_surface_v">
-            (Пожалуйста приложите следующие документы, если это необходимо)
+            {b2bStage3[useTranslate(lang)].subtitle}
           </h5>
         </div>
 
         <Field
           control={control}
           name="company_profile"
-          label="Название компании/организации"
+          label={b2bStage3[useTranslate(lang)].data[4].label}
           type="file"
           textDark
         />
         <Field
           control={control}
           name="proposal_presentation"
-          label="Предложение/презентация"
+          label={b2bStage3[useTranslate(lang)].data[5].label}
           type="file"
           textDark
         />
         <Field
           control={control}
           name="relevant_certification"
-          label="Соответствующие сертификаты/лицензии"
+          label={b2bStage3[useTranslate(lang)].data[6].label}
           type="file"
           textDark
         />
@@ -92,12 +90,12 @@ export const Stage3: FC<Props> = ({ handlePrev }) => {
 
       <div className="flex items-center gap-6 mt-10">
         <Button
+          type="button"
           onClick={handlePrev}
           variant={"outline"}
-          type="button"
           className="text-on_surface"
         >
-          Вернуться назад
+          {lang === Language.RU ? "Вернуться назад" : "Back"}
         </Button>
 
         <Button
@@ -108,7 +106,7 @@ export const Stage3: FC<Props> = ({ handlePrev }) => {
           {formState.isSubmitting ? (
             <Loader className="animate-spin" />
           ) : (
-            "Отправить"
+            b2bStage3[useTranslate(lang)].button
           )}
         </Button>
       </div>

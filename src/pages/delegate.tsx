@@ -21,6 +21,7 @@ import { Loader } from "lucide-react";
 import { Cover } from "@/components/layout";
 import { postDelegate } from "@/services";
 import { useScrollTop } from "@/hooks/use-scroll-top";
+import { Language, useLangStore } from "@/store/lang";
 
 interface Props {
   className?: string;
@@ -28,6 +29,7 @@ interface Props {
 
 export const Delegate: FC<Props> = ({ className }) => {
   useScrollTop();
+  const lang = useLangStore((state) => state.lang);
 
   const [success, setSuccess] = useState(false);
   const form = useForm<DelegateFormType>({
@@ -36,11 +38,6 @@ export const Delegate: FC<Props> = ({ className }) => {
   });
 
   const onSubmit = async (data: DelegateFormType) => {
-    // const res = await axios.post(
-    //   "https://qacis.turkmenexpo.com/app/api/v1/become_delegate",
-    //   data
-    // );
-
     try {
       const status = await postDelegate(data);
 
@@ -54,7 +51,9 @@ export const Delegate: FC<Props> = ({ className }) => {
 
   return (
     <div className={className}>
-      <Cover title="Стать делегатом" />
+      <Cover
+        title={lang === Language.RU ? "Стать делегатом" : "Become a delegate"}
+      />
 
       <AnimatePresence>
         {!success && (
