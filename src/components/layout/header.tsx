@@ -18,7 +18,11 @@ export const Header: FC<Props> = ({ className }) => {
     link: string;
   }>;
   const b2b = t("b2b");
-  const support = t("support");
+
+  const support = t("support", { returnObjects: true }) as {
+    text: string;
+    link: string;
+  };
 
   return (
     <header className={cn("h-20 lg:h-[92px] bg-primary_10 py-2", className)}>
@@ -51,12 +55,12 @@ export const Header: FC<Props> = ({ className }) => {
                 {b2b}
               </Button>
             </Link>
-            <Link to={""}>
+            <Link to={support.link} target="_blank">
               <Button
                 size={"sm"}
                 className="bg-alternative text-on_alternative  hover:bg-alternative/90  "
               >
-                {support}
+                {support.text}
               </Button>
             </Link>
           </div>
