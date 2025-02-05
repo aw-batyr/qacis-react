@@ -3,17 +3,19 @@ import { Loading, NewsCard } from "@/components/shared";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { useNews } from "@/services/hooks/use-news";
 import { useNewsInner } from "@/services/hooks/use-news-inner";
+import { useLangStore } from "@/store/lang";
 import { FC } from "react";
 import { useParams } from "react-router-dom";
 
 export const NewsInner: FC = () => {
   const { id } = useParams();
+  const lang = useLangStore((state) => state.lang);
 
   const pageId = Number(id);
   useScrollTop(pageId);
 
   const { data, isPending } = useNewsInner(pageId);
-  const { data: news } = useNews();
+  const { data: news } = useNews(lang);
 
   if (isPending) return <Loading />;
 

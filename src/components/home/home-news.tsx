@@ -14,7 +14,7 @@ interface Props {
 export const News: FC<Props> = ({ className }) => {
   const lang = useLangStore((state) => state.lang);
 
-  const { data, isPending } = useNews();
+  const { data, isPending } = useNews(lang);
 
   return (
     <section
