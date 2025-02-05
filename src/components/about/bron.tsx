@@ -3,12 +3,15 @@ import { FC } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Container } from "../layout";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   className?: string;
 }
 
 export const Bron: FC<Props> = ({ className }) => {
+  const { t } = useTranslation("about");
+
   return (
     <section
       className={cn("md:py-20 py-10 relative overflow-hidden", className)}
@@ -19,25 +22,22 @@ export const Bron: FC<Props> = ({ className }) => {
       />
 
       <Container>
-        <h2 className="h2 text-center !text-on_primary md:mb-6 mb-1.5">
-          Приглашение к участию
+        <h2 className="h2 text-center container !text-on_primary md:mb-6 mb-1.5">
+          {t("invation.title")}
         </h2>
         <p className="text-center md:text-lg text-sm md:text-primary_02 text-primary_02/60 max-w-[808px] mx-auto mb-10">
-          Торгово-промышленная палата Туркменистана приглашает бизнес-сообщество
-          со всего мира присоединиться к этому уникальному событию, которое
-          станет важным шагом к укреплению позиций Туркменистана на глобальной
-          экономической арене.
+          {t("invation.text")}
         </p>
 
         <div className="flex flex-col md:flex-row items-center gap-6">
           <Link to={"/become-delegate"} className="w-full">
             <Button className="w-full bg-white text-primary hover:bg-white/90 ">
-              Стать делегатом
+              {t("invation.delegate_button")}
             </Button>
           </Link>
           <Link to={"/B2B-B2G"} className="w-full">
             <Button className="w-full bg-white text-primary hover:bg-white/90">
-              B2B | B2G встречи
+              {t("invation.b2b_button")}
             </Button>
           </Link>
         </div>

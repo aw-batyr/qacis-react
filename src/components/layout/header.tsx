@@ -51,7 +51,7 @@ export const Header: FC<Props> = ({ className }) => {
                 {b2b}
               </Button>
             </Link>
-            <Link to={"/B2B-B2G"}>
+            <Link to={""}>
               <Button
                 size={"sm"}
                 className="bg-alternative text-on_alternative  hover:bg-alternative/90  "

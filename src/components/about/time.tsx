@@ -2,33 +2,27 @@ import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { Container } from "../layout";
 import { TimeCard } from "../shared";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   className?: string;
 }
 
-export const times = [
-  {
-    name: "День регистрации",
-    date: "28 апреля 2025 года",
-  },
-  {
-    name: "День 1",
-    date: "29 апреля 2025 года",
-  },
-  {
-    name: "День 2",
-    date: "30 апреля 2025 года",
-  },
-];
-
 export const Time: FC<Props> = ({ className }) => {
+  const { t } = useTranslation("about");
+
+  // Получаем данные времени из i18n
+  const times = t("time.items", { returnObjects: true }) as Array<{
+    name: string;
+    date: string;
+  }>;
+
   return (
     <section
       className={cn("bg-surface_container md:py-[160px] py-10", className)}
     >
       <Container>
-        <h2 className="h2 mb-6">Время работы конференции</h2>
+        <h2 className="h2 mb-6">{t("time.title")}</h2>
         <div className="flex flex-col md:flex-row items-center gap-6">
           {times.map((item) => (
             <TimeCard

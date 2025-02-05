@@ -28,5 +28,86 @@
         "text": "Global standards dictate new rules: manufacturers are required to adhere to strict certification procedures, making participation in such forums a key step for updating knowledge, establishing valuable contacts, and mastering modern solutions in certification."
       }
     ]
+  },
+
+  "theme": {
+    "title": "Who will benefit from the conference?",
+    "items": [
+      {
+        "title": "Business owners,",
+        "subtitle": "striving to enter international markets",
+        "icon": "/theme-1.svg"
+      },
+      {
+        "title": "Certification bodies,",
+        "subtitle": "working on implementing innovative standards",
+        "icon": "/theme-2.svg"
+      },
+      {
+        "title": "Consumers,",
+        "subtitle": "interested in improving product quality",
+        "icon": "/theme-3.svg"
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "The conference will be a significant event, reinforcing Turkmenistan's position on the global stage, promoting the development of business processes, and opening new growth opportunities."
+      },
+      {
+        "text": "The event will take place over two days in Ashgabat. Additionally, before the main program, training seminars will be organized to help participants dive deeper into the conference topics."
+      }
+    ]
+  },
+
+  "program": {
+    "title": "What to expect?",
+    "subtitle": "The conference will offer a rich program, including:",
+    "items": [
+      {
+        "title": "Key Sessions and Discussions",
+        "subtitle": "Experts will highlight global certification trends, challenges companies face, and innovations like blockchain and smart labels, which are becoming integral to certification and labeling processes."
+      },
+      {
+        "title": "Training Seminars",
+        "subtitle": "Experts will cover global certification trends, challenges companies face, and innovations like blockchain and smart labels."
+      },
+      {
+        "title": "Networking",
+        "subtitle": "A great opportunity to meet professionals, discuss current trends, and establish valuable business relationships."
+      }
+    ]
+  },
+
+  "time": {
+    "title": "Conference Schedule",
+    "items": [
+      {
+        "name": "Registration Day",
+        "date": "April 28, 2025"
+      },
+      {
+        "name": "Day 1",
+        "date": "April 29, 2025"
+      },
+      {
+        "name": "Day 2",
+        "date": "April 30, 2025"
+      }
+    ]
+  },
+
+  "venue": {
+    "title": "Venue",
+    "items": [
+      "The Exhibition Centre of the Chamber of Commerce and Industry of Turkmenistan is a modern venue designed for international exhibitions, conferences, forums, and business meetings.",
+      "The centre is equipped with cutting-edge technical solutions, including multimedia equipment, sound and lighting systems, conference rooms with simultaneous translation, and comfortable areas for negotiations. Spacious exhibition pavilions provide ideal conditions for showcasing products and services."
+    ]
+  },
+
+  "invation": {
+    "title": "Invitation to Participate",
+    "text": "The Chamber of Commerce and Industry of Turkmenistan invites the global business community to join this unique event, which will be a significant step toward strengthening Turkmenistan’s position on the global economic stage.",
+    "delegate_button": "Become a delegate",
+    "b2b_button": "B2B | B2G meetings"
   }
 }
