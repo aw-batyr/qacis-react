@@ -4,22 +4,21 @@ import { Container } from "../layout";
 import { Link } from "react-router-dom";
 import { Button } from "../ui";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 interface Props {
   className?: string;
 }
 
 export const HomeAbout: FC<Props> = ({ className }) => {
-  // Указываем namespace "home"
+  const [loading, setLoading] = useState(true);
   const { t } = useTranslation("home");
 
-  // Получаем массив кнопок. Опция returnObjects: true нужна для возврата объектов из массива.
   const buttons = t("buttons", { returnObjects: true }) as Array<{
     text: string;
     link: string;
   }>;
 
-  // Получаем данные секции "about"
   const about = t("about", { returnObjects: true }) as {
     title: string;
     paragraph: string;
@@ -42,14 +41,29 @@ export const HomeAbout: FC<Props> = ({ className }) => {
           ))}
         </div>
 
-        <div className="flex flex-col gap-6 mt-10 md:mt-16">
-          <h2 className="h2 text-on_primary">{about.title}</h2>
-          <p className="p !text-on_primary_v">{about.paragraph}</p>
-          <Link to={"/about"}>
-            <Button variant="outline" className="md:w-fit w-full">
-              {about.button}
-            </Button>
-          </Link>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-end">
+          <div className="flex flex-col gap-6 mt-10 md:mt-16">
+            <h2 className="h2 text-on_primary">{about.title}</h2>
+            <p className="p !text-on_primary_v">{about.paragraph}</p>
+            <Link to={"/about"}>
+              <Button variant="outline" className="md:w-fit w-full">
+                {about.button}
+              </Button>
+            </Link>
+          </div>
+
+          <div className="h-[333px] w-auto rounded-[2px] overflow-hidden">
+            <video
+              muted
+              autoPlay
+              loop
+              controls
+              src="https://qacis.turkmenexpo.com/app/storage/app/media/video/1%20Conference%202025_1.mp4"
+              className="size-full object-cover"
+              onLoadStart={() => setLoading(true)}
+              onLoad={() => setLoading(false)}
+            />
+          </div>
         </div>
       </Container>
     </section>
