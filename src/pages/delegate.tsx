@@ -22,6 +22,8 @@ import { Cover } from "@/components/layout";
 import { postDelegate } from "@/services";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { Language, useLangStore } from "@/store/lang";
+import { delegateData } from "@/data/delegate.data";
+import { useTranslate } from "@/hooks/use-translate";
 
 interface Props {
   className?: string;
@@ -66,37 +68,37 @@ export const Delegate: FC<Props> = ({ className }) => {
               onSubmit={form.handleSubmit(onSubmit)}
             >
               <Field
-                label="Название компании/организации"
+                label={delegateData[useTranslate(lang)].company}
                 name="company_name"
                 control={form.control}
                 error={errors.company_name}
               />
               <Field
-                label="Имя представителя"
+                label={delegateData[useTranslate(lang)].name}
                 name="rep_name"
                 control={form.control}
                 error={errors.rep_name}
               />
               <Field
-                label="Название должности/позиция"
+                label={delegateData[useTranslate(lang)].job}
                 name="job_title"
                 control={form.control}
                 error={errors.job_title}
               />
               <Field
-                label="Страна"
+                label={delegateData[useTranslate(lang)].country}
                 name="country"
                 control={form.control}
                 error={errors.country}
               />
               <Field
-                label="E-mail адрес"
+                label={delegateData[useTranslate(lang)].email}
                 name="email"
                 control={form.control}
                 error={errors.email}
               />
               <Field
-                label="Номер телефона"
+                label={delegateData[useTranslate(lang)].phone}
                 name="phone"
                 control={form.control}
                 error={errors.phone}
@@ -109,7 +111,7 @@ export const Delegate: FC<Props> = ({ className }) => {
                 render={({ field }) => (
                   <FormItem className="space-y-5">
                     <FormLabel className="text-xl">
-                      Визовая поддержка:
+                      {delegateData[useTranslate(lang)].visa}
                     </FormLabel>
 
                     <FormControl>
@@ -125,7 +127,9 @@ export const Delegate: FC<Props> = ({ className }) => {
                               checked={field.value === "yes"}
                             />
                           </FormControl>
-                          <FormLabel className="text-base">Да</FormLabel>
+                          <FormLabel className="text-base">
+                            {delegateData[useTranslate(lang)].radio}
+                          </FormLabel>
                         </FormItem>
 
                         <FormItem className="flex items-center space-x-5 space-y-0 ">
@@ -135,7 +139,9 @@ export const Delegate: FC<Props> = ({ className }) => {
                               checked={field.value === "no"}
                             />
                           </FormControl>
-                          <FormLabel className="text-base">Нет</FormLabel>
+                          <FormLabel className="text-base">
+                            {delegateData[useTranslate(lang)].radio_2}
+                          </FormLabel>
                         </FormItem>
                       </RadioGroup>
                     </FormControl>
@@ -147,7 +153,7 @@ export const Delegate: FC<Props> = ({ className }) => {
                 {form.formState.isSubmitting ? (
                   <Loader className="animate-spin" />
                 ) : (
-                  "Отправить"
+                  delegateData[useTranslate(lang)].button
                 )}
               </Button>
             </motion.form>

@@ -9,6 +9,7 @@ import {
 import { Button } from "../ui";
 import { Link } from "react-router-dom";
 import { navData } from "@/data";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   className?: string;
@@ -16,6 +17,12 @@ interface Props {
 
 export const Burger: FC<Props> = () => {
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation("header");
+
+  const navigation = t("nav.data", { returnObjects: true }) as Array<{
+    title: string;
+    link: string;
+  }>;
 
   return (
     <Sheet onOpenChange={() => setOpen(!open)} open={open}>
@@ -31,15 +38,15 @@ export const Burger: FC<Props> = () => {
         <SheetClose />
 
         <SheetHeader className="mt-16 flex flex-col gap-4">
-          <Link to="">
+          <Link to={t("support.link")}>
             <Button className="text-base w-full" variant="secondary">
-              Официальная поддержка
+              {t("support.text")}
             </Button>
           </Link>
 
           <Link to="/B2B-B2G" onClick={() => setOpen(false)}>
             <Button className="text-base w-full bg-reverse_primary hover:bg-reverse_primary/90 text-primary_10">
-              B2B | B2G встречи
+              {t("b2b")}
             </Button>
           </Link>
         </SheetHeader>
@@ -49,7 +56,7 @@ export const Burger: FC<Props> = () => {
         <div className="my-5 flex flex-col gap-4"></div>
 
         <div className="flex flex-col gap-6">
-          {navData.map((item) => (
+          {navigation.map((item) => (
             <Link
               onClick={() => setOpen(false)}
               className="h-10 text-white"

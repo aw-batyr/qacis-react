@@ -1,6 +1,7 @@
 import { Container } from "@/components/layout";
 import { ContactsForm } from "@/components/forms/contacts-form";
 import { useScrollTop } from "@/hooks/use-scroll-top";
+import { useTranslation } from "react-i18next";
 
 export default function Contacts() {
   useScrollTop();

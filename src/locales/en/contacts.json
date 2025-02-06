@@ -1,0 +1,12 @@
+{
+  "title": "Contact with us",
+
+  "name": "Name",
+  "email": "E-mail",
+  "phone": "Phone",
+  "company": "Company name",
+  "message": "Message",
+
+  "button": "Send",
+  "submited": "Form is sumbited"
+}
