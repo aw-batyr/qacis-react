@@ -33,7 +33,7 @@ export const Stage: FC<Props> = ({ handleNext }) => {
     >
       <h2 className="h2 mb-8">{b2bStage1[useTranslate(lang)].h2}</h2>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-6">
         <FormField
           defaultValue={1}
           control={control}
