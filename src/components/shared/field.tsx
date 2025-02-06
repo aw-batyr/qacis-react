@@ -177,7 +177,7 @@ export const Field = ({
                   {...field}
                   placeholder={placeholder}
                   className={cn(
-                    error && "border-[#BA1A1A]",
+                    error && "ring-[#BA1A1A] ring-1",
                     onPrimary &&
                       "border-primary_outline_reverse focus:border-white hover:border-white focus:border-1 text-on_primary"
                   )}
@@ -189,7 +189,7 @@ export const Field = ({
                   placeholder={placeholder}
                   disabled={disabled}
                   className={cn(
-                    error && "border-[#BA1A1A]",
+                    error && "ring-[#BA1A1A] ring-1",
                     onPrimary &&
                       "border-primary_outline_reverse focus:border-white hover:border-white focus:border-1 text-on_primary"
                   )}
