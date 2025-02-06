@@ -117,6 +117,7 @@ import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { LegacyRef } from "react";
 import { Textarea } from "../ui/textarea";
+import { AnimatePresence } from "motion/react";
 
 type Props = {
   control: any;
@@ -215,10 +216,12 @@ export const Field = ({
               )}
             </>
           </FormControl>
+
           <FormMessage
             className={cn(
-              "absolute -bottom-5 left-0 text-sm font-medium leading-[130%]",
-              Boolean(error) && onPrimary ? "!text-white" : "text-[#BA1A1A]"
+              "transition-all left-0 text-sm font-medium leading-[130%]",
+              Boolean(error) && onPrimary ? "!text-white" : "text-[#BA1A1A]",
+              error ? "opacity-1" : "opacity-0"
             )}
           >
             {error ? error.message : supporText}
