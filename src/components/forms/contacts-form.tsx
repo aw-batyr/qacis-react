@@ -97,7 +97,7 @@ export const ContactsForm: FC<Props> = ({ className }) => {
               variant="secondary"
             >
               {success ? (
-                t("submited")
+                t("Your message is submitted")
               ) : form.formState.isSubmitting ? (
                 <Loader2 className="animate-spin text-white" />
               ) : (
