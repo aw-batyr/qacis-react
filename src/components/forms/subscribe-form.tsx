@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Container } from "../layout";
 import { useLang } from "@/hooks/use-lang";
 import { Button } from "../ui";
-import { Field } from "../shared";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";

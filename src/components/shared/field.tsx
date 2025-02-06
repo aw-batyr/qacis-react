@@ -117,7 +117,6 @@ import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { LegacyRef } from "react";
 import { Textarea } from "../ui/textarea";
-import { AnimatePresence } from "motion/react";
 
 type Props = {
   control: any;

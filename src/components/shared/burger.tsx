@@ -8,7 +8,6 @@ import {
 } from "../ui/sheet";
 import { Button } from "../ui";
 import { Link } from "react-router-dom";
-import { navData } from "@/data";
 import { useTranslation } from "react-i18next";
 
 interface Props {
