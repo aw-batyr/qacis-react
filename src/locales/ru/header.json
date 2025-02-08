@@ -8,7 +8,16 @@
     "data": [
       { "title": "О конференции", "link": "/about" },
       { "title": "Медиа", "link": "" },
-      { "title": "Новости", "link": "/news" },
+      {
+        "title": "Новости",
+        "drop": true,
+        "dropDownContent": [
+          { "text": "Новости", "link": "/news" },
+          {
+            "text": "Подписаться на новости"
+          }
+        ]
+      },
       { "title": "Контакты", "link": "/contacts" }
     ]
   }
