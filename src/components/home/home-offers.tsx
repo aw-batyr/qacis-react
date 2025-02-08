@@ -55,7 +55,7 @@ export const HomeOffers: FC = () => {
                 link={
                   index === 0
                     ? "https://qacis.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf"
-                    : "https://qacis.turkmenexpo.com/app/storage/app/media/floor%20plan/Floor%20plan.pdf"
+                    : "https://itse.turkmenexpo.com/"
                 }
               />
             ))}
