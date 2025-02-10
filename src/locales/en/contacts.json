@@ -1,12 +1,13 @@
 {
-  "title": "Contact with us",
-
+  "title": "Contact us",
   "name": "Name",
-  "email": "E-mail",
   "phone": "Phone",
   "company": "Company name",
   "message": "Message",
-
   "button": "Send",
-  "submited": "Form is sumbited"
+
+  "title_2": "Contact details",
+  "address": "Address",
+  "venue": "744000, Ashgabat, Bitarap Turkmenistan ave., 183",
+  "submitted": "Your message is submitted"
 }

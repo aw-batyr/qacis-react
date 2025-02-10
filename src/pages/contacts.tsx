@@ -1,9 +1,12 @@
 import { Container } from "@/components/layout";
 import { ContactsForm } from "@/components/forms/contacts-form";
 import { useScrollTop } from "@/hooks/use-scroll-top";
+import { useTranslation } from "react-i18next";
 
 export default function Contacts() {
   useScrollTop();
+
+  const { t } = useTranslation("contacts");
 
   return (
     <div className={"flex flex-col gap-20 pt-10 md:pt-20"}>
@@ -12,16 +15,16 @@ export default function Contacts() {
           <ContactsForm />
 
           <div className="p-6 bg-bg_surface_container rounded-[8px]">
-            <h2 className="h2 mb-10 xl:mb-8">Контакты</h2>
+            <h2 className="h2 mb-10 xl:mb-8">{t("title_2")}</h2>
 
             <div className="flex flex-col gap-20">
               <div className="flex items-center gap-6">
                 <img src="/contacts/map.svg" alt="address" />
 
                 <div>
-                  <h3 className="text-xl mb-2">Адрес офиса:</h3>
+                  <h3 className="text-xl mb-2">{t("address")}</h3>
                   <address className="text-base normal not-italic">
-                    744000, г. Ашхабад, просп. Битарап Туркменистан, 183
+                    {t("venue")}
                   </address>
                 </div>
               </div>
@@ -29,7 +32,7 @@ export default function Contacts() {
                 <img src="/contacts/phone.svg" alt="phone" />
 
                 <div>
-                  <h3 className="text-xl mb-2">Телефон:</h3>
+                  <h3 className="text-xl mb-2">{t("phone")}</h3>
                   <h4 className="text-base normal">
                     +99371871812; 99363719588
                   </h4>
@@ -37,19 +40,10 @@ export default function Contacts() {
               </div>
 
               <div className="flex items-center gap-6">
-                <img src="/contacts/fax.svg" alt="fax" />
-
-                <div>
-                  <h3 className="text-xl mb-2">Факс:</h3>
-                  <h4 className="text-base normal">+99312454111</h4>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-6">
                 <img src="/contacts/email.svg" alt="email" />
 
                 <div>
-                  <h3 className="text-xl mb-2">E-mail:</h3>
+                  <h3 className="text-xl mb-2">Email:</h3>
                   <h4 className="text-base normal">contact@turkmenexpo.com</h4>
                 </div>
               </div>

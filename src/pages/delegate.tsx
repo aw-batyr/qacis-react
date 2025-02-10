@@ -103,7 +103,7 @@ export const Delegate: FC<Props> = ({ className }) => {
                 control={form.control}
                 error={errors.phone}
               />
-              <Field label="Вебсайт" name="website" control={form.control} />
+              <Field label="Веб-сайт" name="website" control={form.control} />
 
               <FormField
                 control={form.control}

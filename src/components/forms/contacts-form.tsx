@@ -64,7 +64,7 @@ export const ContactsForm: FC<Props> = ({ className }) => {
                 onPrimary
                 name="email"
                 control={form.control}
-                label="E-mail"
+                label="Email"
                 error={errors.email}
               />
               <Field
@@ -97,7 +97,7 @@ export const ContactsForm: FC<Props> = ({ className }) => {
               variant="secondary"
             >
               {success ? (
-                t("Your message is submitted")
+                t("submitted")
               ) : form.formState.isSubmitting ? (
                 <Loader2 className="animate-spin text-white" />
               ) : (
