@@ -19,7 +19,7 @@ export const HomeAbout: FC<Props> = ({ className }) => {
 
   const about = t("about", { returnObjects: true }) as {
     title: string;
-    paragraph: string;
+    paragraph: string[];
     button: string;
   };
 
@@ -42,7 +42,11 @@ export const HomeAbout: FC<Props> = ({ className }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-end">
           <div className="flex flex-col gap-6 mt-10 md:mt-16">
             <h2 className="h2 text-on_primary">{about.title}</h2>
-            <p className="p !text-on_primary_v">{about.paragraph}</p>
+            <div className="p flex flex-col gap-6 !text-on_primary_v">
+              {about.paragraph.map((item) => (
+                <p>{item}</p>
+              ))}
+            </div>
             <Link to={"/about"}>
               <Button variant="outline" className="md:w-fit w-full">
                 {about.button}

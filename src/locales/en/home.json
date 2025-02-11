@@ -26,7 +26,10 @@
 
   "about": {
     "title": "About the Conference",
-    "paragraph": "On April 29-30, participants will gather in Ashgabat on a unique platform to discuss key trends in product certification and labelling, exchange experiences, and implement best practices. This event will bring together leading experts, business representatives, and government officials to collectively discuss strategies for improving product quality and ensuring its compliance with international standards.",
+    "paragraph": [
+      "In the era of globalization, where compliance with international standards is becoming a crucial condition for success in global markets, the organization of specialized events like the International Conference \"Quality Assurance in Compliance with International Standards in Turkmenistan\" gains particular importance.",
+      "On April 29-30, participants will gather in Ashgabat on a unique platform to discuss key trends in product certification and labelling, exchange experiences, and implement best practices."
+    ],
 
     "button": "More about the Conference"
   },
