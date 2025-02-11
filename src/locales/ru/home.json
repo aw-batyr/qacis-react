@@ -1,4 +1,9 @@
 {
+  "banners": {
+    "lg": "https://qacis.turkmenexpo.com/app/storage/app/media/banners/ru/l.jpg",
+    "md": "https://qacis.turkmenexpo.com/app/storage/app/media/banners/ru/m.jpg",
+    "sm": "https://qacis.turkmenexpo.com/app/storage/app/media/banners/ru/s.jpg"
+  },
   "buttons": [
     {
       "text": "Стать делегатом",
