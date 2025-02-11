@@ -1,19 +1,17 @@
-import { Language, useLangStore } from "@/store/lang";
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "usehooks-ts";
 
 export const HomeHero: FC = () => {
-  const lang = useLangStore((state) => state.lang);
+  const { t } = useTranslation("home");
 
   const lg = useMediaQuery("(min-width: 1024px)");
   const md = useMediaQuery("(min-width: 768px)");
 
-  const folder = lang === Language.RU ? Language.RU : Language.EN;
-
   function getBanner() {
-    if (lg) return `/banners/${folder}/lg.jpg`;
-    else if (md) return `/banners/${folder}/md.jpg`;
-    else return `/banners/${folder}/sm.jpg`;
+    if (lg) return t("banners.lg");
+    else if (md) return t("banners.md");
+    else return t("banners.sm");
   }
 
   return (
