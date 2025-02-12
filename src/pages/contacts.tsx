@@ -1,7 +1,6 @@
 import { Container } from "@/components/layout";
 import { ContactsForm } from "@/components/forms/contacts-form";
 import { useScrollTop } from "@/hooks/use-scroll-top";
-import { useTranslation } from "react-i18next";
 import { useContacts } from "@/services/hooks/use-contacts";
 import { useLangStore } from "@/store/lang";
 import { HOSTING } from "@/services/hosting";

@@ -1,9 +1,7 @@
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { Container } from "../layout";
-import { useTranslation } from "react-i18next";
 import { useStaticWords } from "@/services/hooks/use-static-words";
-import { CloudCog } from "lucide-react";
 import { Loading } from "../shared";
 
 interface Props {
