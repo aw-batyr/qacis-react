@@ -4,6 +4,8 @@ import { Container } from "../layout";
 import { Link } from "react-router-dom";
 import { Button } from "../ui";
 import { useTranslation } from "react-i18next";
+import { useStaticWords } from "@/services/hooks/use-static-words";
+import { Loading } from "../shared";
 
 interface Props {
   className?: string;
@@ -23,6 +25,11 @@ export const HomeAbout: FC<Props> = ({ className }) => {
     button: string;
   };
 
+  const { data, isPending } = useStaticWords("1");
+
+  const title = data?.find((item) => item.key === "index_1")?.text;
+  const text = data?.find((item) => item.key === "index_2")?.text;
+
   return (
     <section className={cn("bg-[url('/geo-bg.png')] pb-16", className)}>
       <Container>
@@ -40,19 +47,22 @@ export const HomeAbout: FC<Props> = ({ className }) => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-end">
-          <div className="flex flex-col gap-6 mt-10 md:mt-16">
-            <h2 className="h2 text-on_primary">{about.title}</h2>
-            <div className="p flex flex-col gap-6 !text-on_primary_v">
-              {about.paragraph.map((item) => (
-                <p>{item}</p>
-              ))}
+          {isPending ? (
+            <Loading />
+          ) : (
+            <div className="flex flex-col gap-6 mt-10 md:mt-16">
+              <h2 className="h2 text-on_primary">{title}</h2>
+              <div
+                dangerouslySetInnerHTML={{ __html: text ?? "" }}
+                className="p flex flex-col gap-6 !text-on_primary_v"
+              />
+              <Link to={"/about"} className="md:w-fit w-full">
+                <Button variant="outline" className="w-full">
+                  {about.button}
+                </Button>
+              </Link>
             </div>
-            <Link to={"/about"}>
-              <Button variant="outline" className="md:w-fit w-full">
-                {about.button}
-              </Button>
-            </Link>
-          </div>
+          )}
 
           <div className="h-[333px] w-auto rounded-[2px] overflow-hidden">
             <video

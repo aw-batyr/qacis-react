@@ -18,8 +18,11 @@ export const Place: FC<Props> = ({ className }) => {
         <div className="">
           <h3 className="h2 mb-6 xl:max-w-[496px]">{t("venue.title")}</h3>
           <div className="flex flex-col gap-6">
-            {items.map((item) => (
-              <p className="text-lg text-on_surface_v normal xl:max-w-[496px]">
+            {items.map((item, i) => (
+              <p
+                key={i}
+                className="text-lg text-on_surface_v normal xl:max-w-[496px]"
+              >
                 {item}
               </p>
             ))}

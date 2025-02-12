@@ -3,21 +3,21 @@ import { FC } from "react";
 
 interface Props {
   className?: string;
-  name: string;
-  date: string;
+  title: string;
+  text: string;
   bottomClassName?: string;
 }
 
 export const TimeCard: FC<Props> = ({
   className,
-  name,
-  date,
+  title,
+  text,
   bottomClassName,
 }) => {
   return (
     <div className={cn("rounded-t-[4px] overflow-hidden", className)}>
       <div className="bg-alternative flex items-center text-on_alternative h-11 px-4">
-        {name}
+        {title}
       </div>
 
       <div
@@ -26,7 +26,7 @@ export const TimeCard: FC<Props> = ({
           bottomClassName
         )}
       >
-        {date}
+        {text}
       </div>
     </div>
   );

@@ -51,6 +51,7 @@ export const Header: FC<Props> = ({ className }) => {
                 </Link>
               ) : (
                 <Menu
+                  key={item.title}
                   title={item.title}
                   dropDownContent={item.dropDownContent}
                 />

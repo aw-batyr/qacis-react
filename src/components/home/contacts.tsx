@@ -3,8 +3,9 @@ import { FC } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Container } from "../layout";
-import { ContactCard } from "../shared";
+import { ContactCard, Loading } from "../shared";
 import { useTranslation } from "react-i18next";
+import { useHomeContacts } from "@/services/hooks/use-home-contacts";
 
 interface Props {
   className?: string;
@@ -12,31 +13,17 @@ interface Props {
 
 export const Contacts: FC<Props> = ({ className }) => {
   const { t } = useTranslation("home");
+  const { data, isPending } = useHomeContacts();
 
-  // Получаем контакты из локализации
-  const contacts = t("contacts.data", { returnObjects: true }) as Array<{
-    suptitle: string;
-    title: string;
-  }>;
+  if (isPending) return <Loading className="!p-32" />;
 
   return (
     <section className={cn("bg-surface_high pt-20 pb-10", className)}>
       <Container>
         <div className="flex flex-col gap-6">
           <div className="md:p-10 md:bg-surface_container flex flex-col md:flex-row items-center gap-6">
-            {contacts.map((item, i) => (
-              <ContactCard
-                img={
-                  i === 0
-                    ? "/location.svg"
-                    : i === 1
-                    ? "/mail.svg"
-                    : "/mobile.svg"
-                }
-                {...item}
-                key={item.suptitle}
-                className="w-full"
-              />
+            {data?.map((item, i) => (
+              <ContactCard {...item} key={i} className="w-full" />
             ))}
           </div>
 

@@ -4,39 +4,21 @@ import { Container } from "../layout";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useLangStore } from "@/store/lang";
-interface Props {
-  className?: string;
-}
+import { usePartners } from "@/services/hooks/use-partners";
+import { Loading } from "../shared";
 
-const data = [
-  {
-    logo: "/partners/1.png",
-  },
-  {
-    logo: "/partners/2.png",
-  },
-  {
-    logo: "/partners/3.png",
-  },
-  {
-    logo: "/partners/4.png",
-  },
-  {
-    logo: "/partners/5.png",
-  },
-  {
-    logo: "/partners/6.png",
-  },
-];
-
-export const Partners: FC<Props> = ({ className }) => {
+export const Partners: FC = () => {
   const lang = useLangStore((state) => state.lang);
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "start" }, [
     Autoplay({ delay: 2000 }),
   ]);
 
+  const { data, isPending } = usePartners();
+
+  if (isPending) return <Loading />;
+
   return (
-    <section className={cn("py-20 bg-surface_container", className)}>
+    <section className={cn("py-20 bg-surface_container")}>
       <Container className="flex flex-col gap-6">
         <h2 className="text-3xl">{lang === "ru" ? "Партнёры" : "Partners"}</h2>
 
@@ -45,12 +27,16 @@ export const Partners: FC<Props> = ({ className }) => {
           className="embla overflow-hidden flex items-center gap-6"
         >
           <div className="embla__container flex items-center">
-            {data.map((item) => (
+            {data?.map((item, i) => (
               <div
-                key={item.logo}
+                key={i}
                 className="bg-[#E0E6EB] flex embla__slide mr-6 min-w-0 flex-[0_0_288px] items-center justify-center h-[128px] w-full"
               >
-                <img src={item.logo} alt="logo" className="object-contain" />
+                <img
+                  src={item?.image?.path}
+                  alt="logo"
+                  className="object-contain"
+                />
               </div>
             ))}
           </div>

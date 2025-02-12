@@ -1,8 +1,9 @@
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { Container } from "../layout";
-import { TimeCard } from "../shared";
+import { Loading, TimeCard } from "../shared";
 import { useTranslation } from "react-i18next";
+import { useExhibitionTime } from "@/services/hooks/use-exhibition-time";
 
 interface Props {
   className?: string;
@@ -10,25 +11,20 @@ interface Props {
 
 export const Time: FC<Props> = ({ className }) => {
   const { t } = useTranslation("about");
+  const { data, isPending } = useExhibitionTime();
 
-  // Получаем данные времени из i18n
-  const times = t("time.items", { returnObjects: true }) as Array<{
-    name: string;
-    date: string;
-  }>;
+  if (isPending) return <Loading />;
 
   return (
-    <section
-      className={cn("bg-surface_container md:py-[160px] py-10", className)}
-    >
+    <section className={cn("bg-surface_container md:py-20 py-10", className)}>
       <Container>
         <h2 className="h2 mb-6">{t("time.title")}</h2>
         <div className="flex flex-col md:flex-row items-center gap-6">
-          {times.map((item) => (
+          {data?.map((item, i) => (
             <TimeCard
               bottomClassName="!bg-white rounded-b-[2px]"
               {...item}
-              key={item.name}
+              key={i}
               className="w-full"
             />
           ))}
