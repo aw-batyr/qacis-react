@@ -17,6 +17,7 @@ export const HomeAbout: FC<Props> = ({ className }) => {
   const buttons = t("buttons", { returnObjects: true }) as Array<{
     text: string;
     link: string;
+    blank?: boolean;
   }>;
 
   const about = t("about", { returnObjects: true }) as {
@@ -34,8 +35,13 @@ export const HomeAbout: FC<Props> = ({ className }) => {
     <section className={cn("bg-[url('/geo-bg.png')] pb-16", className)}>
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center gap-6 -mt-5">
-          {buttons.map(({ text, link }) => (
-            <Link key={text} to={link} className="w-full">
+          {buttons.map(({ text, link, blank }) => (
+            <Link
+              target={blank ? "_blank" : ""}
+              key={text}
+              to={link}
+              className="w-full"
+            >
               <Button
                 className="bg-alternative w-full hover:bg-alternative/90"
                 size="xl"
