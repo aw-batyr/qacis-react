@@ -19,6 +19,7 @@ export const Info: FC<Props> = ({ className }) => {
   const about_2 = data?.find((item) => item.key === "about_2")?.text;
   const about_3 = data?.find((item) => item.key === "about_3")?.text;
   const about_4 = data?.find((item) => item.key === "about_4")?.list;
+  const about_4_text = data?.find((item) => item.key === "about_4")?.text;
 
   if (isPending) return <Loading />;
 
@@ -35,6 +36,9 @@ export const Info: FC<Props> = ({ className }) => {
 
         <div className="flex flex-col gap-6">
           <h2 className="h2">{about_3}</h2>
+
+          <p className="p">{about_4_text}</p>
+
           <div className="flex flex-col gap-3 p">
             {about_4?.map((item) => (
               <p>{lang === "ru" ? item.text_ru : item.text_en}</p>
