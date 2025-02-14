@@ -1,9 +1,7 @@
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { Container } from "../layout";
-import { useTranslation } from "react-i18next";
 import { useStaticWords } from "@/services/hooks/use-static-words";
-import { useLang } from "@/hooks/use-lang";
 import { useLangStore } from "@/store/lang";
 
 interface Props {
@@ -11,7 +9,6 @@ interface Props {
 }
 
 export const Program: FC<Props> = ({ className }) => {
-  const { t } = useTranslation("about");
   const { data } = useStaticWords("2");
   const lang = useLangStore((state) => state.lang);
 
