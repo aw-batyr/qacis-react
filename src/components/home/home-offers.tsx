@@ -3,8 +3,10 @@ import useEmblaCarousel from "embla-carousel-react";
 import { Container } from "@/components/layout";
 import { EmblaDots, OfferCard } from "../shared";
 import { useTranslation } from "react-i18next";
+import { useLangStore } from "@/store/lang";
 
 export const HomeOffers: FC = () => {
+  const lang = useLangStore((state) => state.lang);
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start" });
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -54,7 +56,9 @@ export const HomeOffers: FC = () => {
                 className="embla__slide flex-[0_0_300px] sm:flex-[0_0_600px]"
                 link={
                   index === 0
-                    ? "https://qacis.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf"
+                    ? lang === "en"
+                      ? "https://qacis.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_eng.pdf"
+                      : "https://qacis.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf"
                     : "https://itse.turkmenexpo.com/"
                 }
               />
