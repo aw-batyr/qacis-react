@@ -24,6 +24,7 @@ import { useScrollTop } from "@/hooks/use-scroll-top";
 import { Language, useLangStore } from "@/store/lang";
 import { delegateData } from "@/data/delegate.data";
 import { useTranslate } from "@/hooks/use-translate";
+import { CheckboxField } from "@/components/shared/checkbox";
 
 interface Props {
   className?: string;
@@ -107,6 +108,12 @@ export const Delegate: FC<Props> = ({ className }) => {
                 label={delegateData[useTranslate(lang)].website}
                 name="website"
                 control={form.control}
+              />
+
+              <CheckboxField
+                name="become_speaker"
+                control={form.control}
+                label={delegateData[useTranslate(lang)].checkbox}
               />
 
               <FormField

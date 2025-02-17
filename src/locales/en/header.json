@@ -15,7 +15,8 @@
         "dropDownContent": [
           { "text": "News", "link": "/news" },
           {
-            "text": "Subscribe to the news"
+            "text": "Subscribe to the news",
+            "modal": true
           }
         ]
       },

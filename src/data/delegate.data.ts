@@ -7,6 +7,9 @@ export const delegateData = [
     email: "Email",
     phone: "Номер телефона",
     website: "Веб-сайт",
+
+    checkbox: "Стать спикром",
+
     visa: "Визовая поддержка:",
 
     radio: "Да",
@@ -23,6 +26,9 @@ export const delegateData = [
     email: "Email",
     phone: "Phone number",
     website: "Website",
+
+    checkbox: "Become a speaker",
+
     visa: "Visa support:",
 
     radio: "Yes",

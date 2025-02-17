@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Chevron } from "./";
 import { Link } from "react-router-dom";
+import { Modal } from "./modal";
 
 interface Props {
   className?: string;
@@ -41,6 +42,8 @@ export const Menu: FC<Props> = ({ title, dropDownContent, color, onMenu }) => {
                 {item.text}
                 {item.blank && <img src="/pdf.svg" />}
               </Link>
+            ) : item.modal ? (
+              <Modal key={item.text} title={item.text} />
             ) : (
               <div
                 key={item.text}

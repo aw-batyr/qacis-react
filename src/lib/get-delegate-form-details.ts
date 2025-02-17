@@ -27,6 +27,8 @@ export const delegateFormSchema = z.object({
 
   website: z.string().optional(),
 
+  become_speaker: z.boolean(),
+
   visa_support: z.string().optional(),
 });
 
@@ -38,5 +40,6 @@ export const delegateDefaultValues = {
   email: "",
   phone: "",
   website: "",
+  become_speaker: false,
   visa_support: "",
 };
