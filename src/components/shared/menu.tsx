@@ -12,6 +12,7 @@ interface Props {
   onMenu?: VoidFunction;
 
   dropDownContent?: {
+    modal?: boolean;
     text: string;
     link?: string;
     blank?: boolean;
