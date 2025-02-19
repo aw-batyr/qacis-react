@@ -9,6 +9,7 @@ export const delegateData = [
     website: "Веб-сайт",
 
     checkbox: "Стать спикером",
+    checkbox_2: "Стать спонсором",
 
     visa: "Визовая поддержка:",
 
@@ -28,6 +29,7 @@ export const delegateData = [
     website: "Website",
 
     checkbox: "Become a speaker",
+    checkbox_2: "Become a sponsor",
 
     visa: "Visa support:",
 

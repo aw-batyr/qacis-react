@@ -116,6 +116,12 @@ export const Delegate: FC<Props> = ({ className }) => {
                 label={delegateData[useTranslate(lang)].checkbox}
               />
 
+              <CheckboxField
+                name="become_sponsor"
+                control={form.control}
+                label={delegateData[useTranslate(lang)].checkbox_2}
+              />
+
               <FormField
                 control={form.control}
                 name="visa_support"
