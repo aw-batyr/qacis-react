@@ -8,7 +8,7 @@ export const delegateData = [
     phone: "Номер телефона",
     website: "Веб-сайт",
 
-    checkbox: "Стать спикром",
+    checkbox: "Стать спикером",
 
     visa: "Визовая поддержка:",
 
