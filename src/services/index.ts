@@ -25,8 +25,12 @@ export const getNews = async (lang: "ru" | "en") => {
   return data;
 };
 
-export const getNewsInner = async (id: number) => {
-  const data = axios.get<NewsInnerType>(`${URL}/news/${id}`);
+export const getNewsInner = async (id: number, lang: string) => {
+  const data = axios.get<NewsInnerType>(`${URL}/news/${id}`, {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
 
   return data;
 };

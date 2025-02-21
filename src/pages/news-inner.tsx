@@ -14,7 +14,7 @@ export const NewsInner: FC = () => {
   const pageId = Number(id);
   useScrollTop(pageId);
 
-  const { data, isPending } = useNewsInner(pageId);
+  const { data, isPending } = useNewsInner(pageId, lang);
   const { data: news } = useNews(lang);
 
   if (isPending) return <Loading />;
