@@ -6,11 +6,12 @@ import Autoplay from "embla-carousel-autoplay";
 import { useLangStore } from "@/store/lang";
 import { usePartners } from "@/services/hooks/use-partners";
 import { Loading } from "../shared";
+import { Link } from "react-router-dom";
 
 export const Partners: FC = () => {
   const lang = useLangStore((state) => state.lang);
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "start" }, [
-    Autoplay({ delay: 2000 }),
+    Autoplay({ delay: 2000, stopOnInteraction: false }),
   ]);
 
   const { data, isPending } = usePartners();
@@ -27,18 +28,33 @@ export const Partners: FC = () => {
           className="embla overflow-hidden flex items-center gap-6"
         >
           <div className="embla__container flex items-center">
-            {data?.map((item, i) => (
-              <div
-                key={i}
-                className="bg-[#E0E6EB] flex embla__slide mr-6 min-w-0 flex-[0_0_288px] items-center justify-center h-[128px] w-full"
-              >
-                <img
-                  src={item?.image?.path}
-                  alt="logo"
-                  className="object-contain"
-                />
-              </div>
-            ))}
+            {data?.map((item, i) =>
+              item.link ? (
+                <Link
+                  target="_blank"
+                  to={item.link}
+                  key={i}
+                  className="bg-[#E0E6EB] flex embla__slide mr-6 min-w-0 flex-[0_0_288px] items-center justify-center h-[128px] w-full"
+                >
+                  <img
+                    src={item?.image?.path}
+                    alt="logo"
+                    className="object-contain"
+                  />
+                </Link>
+              ) : (
+                <div
+                  key={i}
+                  className="bg-[#E0E6EB] flex embla__slide mr-6 min-w-0 flex-[0_0_288px] items-center justify-center h-[128px] w-full"
+                >
+                  <img
+                    src={item?.image?.path}
+                    alt="logo"
+                    className="object-contain"
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </Container>
