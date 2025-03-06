@@ -36,18 +36,12 @@ export const HomeAbout: FC<Props> = ({ className }) => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center gap-6 -mt-5">
           {buttons.map(({ text, link, blank }) => (
-            <Link
-              target={blank ? "_blank" : ""}
-              key={text}
-              to={link}
-              className="w-full"
-            >
+            <Link target={blank ? "_blank" : ""} key={text} to={link}>
               <Button
-                className="bg-alternative w-full hover:bg-alternative/90"
+                className="bg-alternative w-full  hover:bg-alternative/90"
                 size="xl"
-              >
-                {text}
-              </Button>
+                dangerouslySetInnerHTML={{ __html: text }}
+              />
             </Link>
           ))}
         </div>
