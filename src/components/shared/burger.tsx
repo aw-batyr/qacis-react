@@ -9,6 +9,7 @@ import {
 import { Button } from "../ui";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Menu } from "./menu";
 
 interface Props {
   className?: string;
@@ -20,7 +21,13 @@ export const Burger: FC<Props> = () => {
 
   const navigation = t("nav.data", { returnObjects: true }) as Array<{
     title: string;
-    link: string;
+    link?: string;
+    drop?: boolean;
+    dropDownContent?: {
+      text: string;
+      link?: string;
+      modal?: boolean;
+    }[];
   }>;
 
   return (
@@ -55,16 +62,25 @@ export const Burger: FC<Props> = () => {
         <div className="my-5 flex flex-col gap-4"></div>
 
         <div className="flex flex-col gap-6">
-          {navigation.map((item) => (
-            <Link
-              onClick={() => setOpen(false)}
-              className="h-10 text-white"
-              key={item.title}
-              to={item.link}
-            >
-              {item.title}
-            </Link>
-          ))}
+          {navigation.map((item) =>
+            !item.drop ? (
+              <Link
+                onClick={() => setOpen(false)}
+                className="h-10 text-white"
+                key={item.title}
+                to={item.link ?? ""}
+              >
+                {item.title}
+              </Link>
+            ) : (
+              <Menu
+                color="white"
+                key={item.title}
+                title={item.title}
+                dropDownContent={item.dropDownContent}
+              />
+            )
+          )}
         </div>
       </SheetContent>
     </Sheet>
