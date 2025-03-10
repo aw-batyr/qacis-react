@@ -7,7 +7,7 @@ import {
   Partners,
   Contacts,
   HomeOffers,
-  Speakers,
+  SpeakersSection,
 } from "../components/home";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 
@@ -24,7 +24,7 @@ export const Home: FC<Props> = ({ className }) => {
       <HomeAbout />
       <HomeOffers />
       <Partners />
-      <Speakers />
+      <SpeakersSection section />
       {/* <Sponsors /> */}
       <News />
       <Contacts />
