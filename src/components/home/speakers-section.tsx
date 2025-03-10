@@ -15,6 +15,10 @@ interface Props {
 export const SpeakersSection: FC<Props> = ({ className, section = false }) => {
   const { data, isPending } = useSpeakers();
 
+  const sortedItems = [...(data ?? [])].sort(
+    (a, b) => a?.sort_order - b?.sort_order
+  );
+
   const { t } = useTranslation("home");
 
   if (isPending) return <Loading />;
@@ -24,7 +28,7 @@ export const SpeakersSection: FC<Props> = ({ className, section = false }) => {
       <Container className="flex flex-col gap-6">
         {section && <h2 className="text-3xl">{t("speakers.title")}</h2>}
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-          {data?.map((item, i) => (
+          {sortedItems?.map((item, i) => (
             <SpeakerCard key={i} {...item} />
           ))}
         </div>
