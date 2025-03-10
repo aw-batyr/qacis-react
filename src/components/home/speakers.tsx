@@ -20,7 +20,7 @@ export const Speakers: FC<Props> = ({ className }) => {
   return (
     <section className={cn("my-20", className)}>
       <Container className="flex flex-col gap-6">
-        <h2 className="text-3xl md:text-center">{t("speakers.title")}</h2>
+        <h2 className="text-3xl">{t("speakers.title")}</h2>
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
           {data?.map((item, i) => (
             <SpeakerCard key={i} {...item} />
