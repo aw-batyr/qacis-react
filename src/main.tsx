@@ -9,6 +9,7 @@ import {
   News,
   NewsInner,
   BecomeSponsor,
+  Speakers,
 } from "./pages";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         element: <Contacts />,
         path: "contacts",
+      },
+      {
+        element: <Speakers />,
+        path: "speakers",
       },
     ],
   },
