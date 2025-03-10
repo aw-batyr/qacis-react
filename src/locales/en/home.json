@@ -48,6 +48,11 @@
     }
   ],
 
+  "speakers": {
+    "title": "Speakers",
+    "btn": "All sperakers"
+  },
+
   "contacts": {
     "button": "Become a delegate",
     "data": [

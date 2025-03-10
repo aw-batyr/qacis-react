@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import {
   HomeHero,
   HomeAbout,
@@ -7,16 +7,16 @@ import {
   Partners,
   Contacts,
   HomeOffers,
+  Speakers,
 } from "../components/home";
+import { useScrollTop } from "@/hooks/use-scroll-top";
 
 interface Props {
   className?: string;
 }
 
 export const Home: FC<Props> = ({ className }) => {
-  useEffect(() => {
-    window.scrollTo({ behavior: "smooth", top: 0 });
-  }, []);
+  useScrollTop();
 
   return (
     <div className={cn("pb-20", className)}>
@@ -24,7 +24,7 @@ export const Home: FC<Props> = ({ className }) => {
       <HomeAbout />
       <HomeOffers />
       <Partners />
-      {/* <Speakers /> */}
+      <Speakers />
       {/* <Sponsors /> */}
       <News />
       <Contacts />

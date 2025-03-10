@@ -8,15 +8,14 @@ import { HomeContactsType } from "./types/home-contacts.type";
 import { ExhibitionTimeType } from "./types/exhibition-time.type";
 import { StaticType } from "./types/static-words.type";
 import { PartnersType } from "./types/partners.type";
-
-const URL = "https://qacis.turkmenexpo.com/app/api/v1";
+import { SpeakersType } from "./types/speakers.type";
 
 export const axios_url = axios.create({
-  baseURL: "https://qacis.turkmenexpo.com/app/api/v1",
+  baseURL: "https://qacis.turkmenexpo.com/app/api/v1/",
 });
 
 export const getNews = async (lang: "ru" | "en") => {
-  const data = axios.get<NewsType>(`${URL}/news`, {
+  const data = axios_url.get<NewsType>(`news`, {
     headers: {
       "Accept-Language": lang,
     },
@@ -26,7 +25,7 @@ export const getNews = async (lang: "ru" | "en") => {
 };
 
 export const getNewsInner = async (id: number, lang: string) => {
-  const data = axios.get<NewsInnerType>(`${URL}/news/${id}`, {
+  const data = axios_url.get<NewsInnerType>(`news/${id}`, {
     headers: {
       "Accept-Language": lang,
     },
@@ -38,25 +37,25 @@ export const getNewsInner = async (id: number, lang: string) => {
 export const postDelegate = async (
   data: DelegateFormType
 ): Promise<boolean> => {
-  const res = axios.post(`${URL}/become_delegate`, data);
+  const res = axios_url.post(`become_delegate`, data);
 
   return (await res).status === 201;
 };
 
 export const postB2b = async (data: FormData): Promise<boolean> => {
-  const res = axios.post(`${URL}/form`, data);
+  const res = axios.post(`form`, data);
 
   return (await res).status === 201;
 };
 
 export const postSponsor = async (data: DelegateFormType): Promise<boolean> => {
-  const res = axios.post(`${URL}/become_sponsor`, data);
+  const res = axios_url.post(`become_sponsor`, data);
 
   return (await res).status === 201;
 };
 
 export const postContact = async (data: ContactsFormType) => {
-  const res = axios.post(`${URL}/contact_form`, data);
+  const res = axios_url.post(`contact_form`, data);
 
   return (await res).status === 201;
 };
@@ -105,6 +104,16 @@ export const getPartners = async () => {
 
 export const getStaticWords = async (lang: LangState["lang"], id: string) => {
   const data = axios_url<StaticType>("pages/" + id, {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
+
+  return data;
+};
+
+export const getSpeakers = async (lang: LangState["lang"]) => {
+  const data = axios_url<SpeakersType>("speakers", {
     headers: {
       "Accept-Language": lang,
     },

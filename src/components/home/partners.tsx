@@ -10,9 +10,15 @@ import { Link } from "react-router-dom";
 
 export const Partners: FC = () => {
   const lang = useLangStore((state) => state.lang);
-  const [emblaRef] = useEmblaCarousel({ loop: true, align: "start" }, [
-    Autoplay({ delay: 2000, stopOnInteraction: false }),
-  ]);
+  const [emblaRef] = useEmblaCarousel(
+    {
+      loop: true,
+      align: "start",
+      skipSnaps: true,
+      duration: 75,
+    },
+    [Autoplay({ stopOnInteraction: false, delay: 3000 })]
+  );
 
   const { data, isPending } = usePartners();
 

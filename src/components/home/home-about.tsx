@@ -38,7 +38,7 @@ export const HomeAbout: FC<Props> = ({ className }) => {
           {buttons.map(({ text, link, blank }) => (
             <Link target={blank ? "_blank" : ""} key={text} to={link}>
               <Button
-                className="bg-alternative w-full  hover:bg-alternative/90"
+                className="bg-alternative w-full md:h-[84px] h-16 hover:bg-alternative/90"
                 size="xl"
                 dangerouslySetInnerHTML={{ __html: text }}
               />
