@@ -6,7 +6,20 @@
   },
   "nav": {
     "data": [
-      { "title": "О конференции", "link": "/about" },
+      {
+        "title": "О конференции",
+        "drop": true,
+        "dropDownContent": [
+          {
+            "text": "О конференции",
+            "link": "/about"
+          },
+          {
+            "text": "Спикеры",
+            "link": "/speakers"
+          }
+        ]
+      },
       { "title": "Медиа", "link": "" },
       {
         "title": "Новости",
