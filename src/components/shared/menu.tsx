@@ -3,6 +3,8 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Chevron } from "./";
 import { Link } from "react-router-dom";
 import { Modal } from "./modal";
+import { cn } from "@/lib/utils";
+import { useUiStore } from "@/store/ui";
 
 interface Props {
   className?: string;
@@ -20,11 +22,17 @@ interface Props {
 }
 
 export const Menu: FC<Props> = ({ title, dropDownContent, color, onMenu }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const setBurger = useUiStore((state) => state.setBurger);
+  const [open, setOpen] = useState(false);
 
   return (
-    <Popover open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
-      <PopoverTrigger className="flex items-center gap-2">
+    <Popover onOpenChange={() => setOpen(!open)} open={open}>
+      <PopoverTrigger
+        className={cn(
+          "flex items-center gap-2 h-10",
+          color === "white" && "text-white"
+        )}
+      >
         {title}
         <Chevron color={color} />
       </PopoverTrigger>
@@ -34,8 +42,13 @@ export const Menu: FC<Props> = ({ title, dropDownContent, color, onMenu }) => {
           dropDownContent.map((item) =>
             item.link ? (
               <Link
-                onClick={() => setIsOpen(false)}
-                className="h-14 px-3 flex gap-3 items-center hover:bg-slate-300/50 transition-all"
+                onClick={() => {
+                  setBurger(false);
+                  setOpen(false);
+                }}
+                className={cn(
+                  "h-14 px-3 flex gap-3 items-center hover:bg-slate-300/50 transition-all"
+                )}
                 key={item.text}
                 target={item.blank ? "_blank" : ""}
                 to={item.link}
@@ -48,9 +61,14 @@ export const Menu: FC<Props> = ({ title, dropDownContent, color, onMenu }) => {
             ) : (
               <div
                 key={item.text}
-                className="h-14 px-3 flex items-center hover:bg-slate-300/50 transition-all"
+                className={cn(
+                  "h-14 px-3 flex items-center hover:bg-slate-300/50 transition-all"
+                )}
                 onClick={() => {
-                  setIsOpen(false);
+                  {
+                    setBurger(false);
+                    setOpen(false);
+                  }
                   onMenu?.();
                 }}
               >
