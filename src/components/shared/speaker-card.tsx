@@ -25,7 +25,10 @@ export const SpeakerCard: FC<Props> = ({
 
       <div className="mt-4 mx-6 mb-6">
         <h3 className="text-xl">{name}</h3>
-        <h5 className="text-sm text-on_surface_v">{job_title}</h5>
+        <h5
+          className="text-sm text-on_surface_v"
+          dangerouslySetInnerHTML={{ __html: job_title ?? "" }}
+        />
       </div>
     </article>
   );
