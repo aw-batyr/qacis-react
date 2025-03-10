@@ -7,7 +7,20 @@
 
   "nav": {
     "data": [
-      { "title": "About Conference", "link": "/about" },
+      {
+        "title": "About Conference",
+        "drop": true,
+        "dropDownContent": [
+          {
+            "text": "About Conference",
+            "link": "/about"
+          },
+          {
+            "text": "Speakers",
+            "link": "/speakers"
+          }
+        ]
+      },
       { "title": "Media", "link": "" },
       {
         "title": "News",
