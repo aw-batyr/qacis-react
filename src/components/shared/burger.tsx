@@ -10,13 +10,14 @@ import { Button } from "../ui";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Menu } from "./menu";
+import { useUiStore } from "@/store/ui";
 
 interface Props {
   className?: string;
 }
 
 export const Burger: FC<Props> = () => {
-  const [open, setOpen] = useState(false);
+  const { burger, setBurger } = useUiStore((state) => state);
   const { t } = useTranslation("header");
 
   const navigation = t("nav.data", { returnObjects: true }) as Array<{
@@ -31,7 +32,7 @@ export const Burger: FC<Props> = () => {
   }>;
 
   return (
-    <Sheet onOpenChange={() => setOpen(!open)} open={open}>
+    <Sheet onOpenChange={() => setBurger(!burger)} open={burger}>
       <SheetTrigger>
         <div className="flex flex-col gap-1 lg:hidden items-center justify-center size-10">
           <div className="w-[18px] h-0.5 bg-white rounded-[2px]" />
@@ -50,7 +51,7 @@ export const Burger: FC<Props> = () => {
             </Button>
           </Link>
 
-          <Link to="/B2B-B2G" onClick={() => setOpen(false)}>
+          <Link to="/B2B-B2G" onClick={() => setBurger(false)}>
             <Button className="text-base w-full bg-reverse_primary hover:bg-reverse_primary/90 text-primary_10">
               {t("b2b")}
             </Button>
@@ -65,8 +66,8 @@ export const Burger: FC<Props> = () => {
           {navigation.map((item) =>
             !item.drop ? (
               <Link
-                onClick={() => setOpen(false)}
-                className="h-10 text-white"
+                onClick={() => setBurger(false)}
+                className="flex items-center h-10 text-white"
                 key={item.title}
                 to={item.link ?? ""}
               >
