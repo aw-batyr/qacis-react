@@ -41,7 +41,7 @@ export const NewsInner: FC = () => {
 
         <div
           dangerouslySetInnerHTML={{ __html: data?.content ?? "" }}
-          className="md:text-lg flex flex-col gap-6 text-base md:medium normal text-on_surface_v"
+          className="news-inner md:text-lg flex flex-col gap-6 text-base md:medium normal text-on_surface_v"
         />
       </section>
 
