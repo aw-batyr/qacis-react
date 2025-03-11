@@ -21,7 +21,7 @@ export const Contacts: FC<Props> = ({ className }) => {
     <section className={cn("bg-surface_high pt-20 pb-10", className)}>
       <Container>
         <div className="flex flex-col gap-6">
-          <div className="md:p-10 md:bg-surface_container flex flex-col md:flex-row items-center gap-6">
+          <div className="md:p-10  flex flex-col md:flex-row items-center gap-6">
             {data?.map((item, i) => (
               <ContactCard {...item} key={i} className="w-full" />
             ))}
