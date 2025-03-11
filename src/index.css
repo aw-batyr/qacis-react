@@ -46,7 +46,7 @@
   }
 
   .news-inner img {
-    @apply object-contain;
+    @apply object-cover !h-[500px];
   }
 
   .semibold {
