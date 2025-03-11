@@ -49,6 +49,10 @@
     @apply object-cover !h-[500px];
   }
 
+  .news-inner a {
+    @apply text-primary underline;
+  }
+
   .semibold {
     @apply font-["Gilroy-Semibold"] font-semibold;
   }
