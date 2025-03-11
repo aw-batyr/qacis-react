@@ -19,15 +19,15 @@ export const Home: FC<Props> = ({ className }) => {
   useScrollTop();
 
   return (
-    <div className={cn("pb-20", className)}>
+    <div className={cn("", className)}>
       <HomeHero />
       <HomeAbout />
+      <SpeakersSection section />
       <HomeOffers />
       <Partners />
-      <SpeakersSection section />
       {/* <Sponsors /> */}
-      <News />
       <Contacts />
+      <News />
     </div>
   );
 };
