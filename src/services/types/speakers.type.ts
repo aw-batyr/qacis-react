@@ -7,11 +7,13 @@ export interface Datum {
   id: number;
   name: string;
   job_title: string;
-  created_at: string;
-  updated_at: string;
+  created_at: Date;
+  updated_at: Date;
   main: number;
   sort_order: number;
-  image: Image | null;
+  country: string;
+  image: Image;
+  image_country: Image | null;
 }
 
 export interface Image {
@@ -24,5 +26,8 @@ export interface Image {
   description: null;
   field: string;
   sort_order: number;
+  created_at: Date;
+  updated_at: Date;
   path: string;
+  extension: string;
 }
