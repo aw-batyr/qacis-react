@@ -7,7 +7,7 @@
 
   "buttons": [
     {
-      "text": "Become a delagate / <br /> speaker",
+      "text": "Become a delegate / <br /> speaker",
       "link": "/become-delegate"
     },
     {
@@ -50,7 +50,7 @@
 
   "speakers": {
     "title": "Speakers",
-    "btn": "All sperakers"
+    "btn": "All speakers"
   },
 
   "contacts": {
