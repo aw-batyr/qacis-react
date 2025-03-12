@@ -28,9 +28,11 @@ export const SpeakersSection: FC<Props> = ({ className, section = false }) => {
       <Container className="flex flex-col gap-6">
         {section && <h2 className="text-3xl">{t("speakers.title")}</h2>}
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-          {sortedItems?.map((item, i) => (
-            <SpeakerCard key={i} {...item} />
-          ))}
+          {section
+            ? sortedItems
+                ?.slice(0, 8)
+                .map((item, i) => <SpeakerCard key={i} {...item} />)
+            : sortedItems.map((item, i) => <SpeakerCard key={i} {...item} />)}
         </div>
 
         {section && (
