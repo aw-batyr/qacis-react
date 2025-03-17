@@ -21,7 +21,7 @@ export const HomeHero: FC = () => {
           <img
             src={getBanner()}
             alt="banner"
-            className="size-full object-cover lg:max-h-[600px] "
+            className="size-full object-cover lg:max-h-[600px]"
           />
         </div>
       </div>
