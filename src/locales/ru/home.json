@@ -1,8 +1,8 @@
 {
   "banners": {
-    "lg": "https://qacis.turkmenexpo.com/app/storage/app/media/banners/ru/l.jpg",
-    "md": "https://qacis.turkmenexpo.com/app/storage/app/media/banners/ru/m.jpg",
-    "sm": "https://qacis.turkmenexpo.com/app/storage/app/media/banners/ru/s.jpg"
+    "lg": "https://qacis.turkmenexpo.com/app/storage/app/media/surat/ru/l.jpg",
+    "md": "https://qacis.turkmenexpo.com/app/storage/app/media/surat/ru/m.jpg",
+    "sm": "https://qacis.turkmenexpo.com/app/storage/app/media/surat/ru/s.jpg"
   },
   "buttons": [
     {
