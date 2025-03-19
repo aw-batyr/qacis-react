@@ -6,12 +6,13 @@
   },
   "buttons": [
     {
-      "text": "Стать делегатом / <br />  cпикером",
+      "text": "Зарегистрироваться",
       "link": "/become-delegate"
     },
     {
-      "text": "Список участников",
-      "link": ""
+      "text": "Брошура",
+      "link": "https://qacis.turkmenexpo.com/app/storage/app/media/brochure/Brochure_ru.pdf",
+      "blank": true
     },
     {
       "text": "Программа",

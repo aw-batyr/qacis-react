@@ -4,15 +4,15 @@
     "md": "https://qacis.turkmenexpo.com/app/storage/app/media/surat/en/m.jpg",
     "sm": "https://qacis.turkmenexpo.com/app/storage/app/media/surat/en/s.jpg"
   },
-
   "buttons": [
     {
-      "text": "Become a delegate / <br /> speaker",
+      "text": "Registration",
       "link": "/become-delegate"
     },
     {
-      "text": "List of participants",
-      "link": ""
+      "text": "Brochure",
+      "link": "https://qacis.turkmenexpo.com/app/storage/app/media/brochure/Brochure_eng.pdf",
+      "blank": true
     },
     {
       "text": "Agenda",
