@@ -25,7 +25,7 @@ export const Stage3: FC<Props> = ({ handlePrev }) => {
     >
       <h2 className="h2 mb-8">{b2bStage3[useTranslate(lang)].h2}</h2>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-8">
         <Field
           control={control}
           name={"preferred_meeting_datetime"}
