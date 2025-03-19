@@ -149,7 +149,6 @@ export const Field = ({
   textDark,
   supporText,
   handleChange,
-
   onPrimary = false,
 }: Props) => {
   return (
@@ -218,7 +217,7 @@ export const Field = ({
 
           <FormMessage
             className={cn(
-              "transition-all left-0 text-sm font-medium leading-[130%]",
+              "transition-all left-0 sm:text-sm text-xs font-medium absolute -bottom-6 leading-[130%]",
               Boolean(error) && onPrimary ? "!text-white" : "text-[#BA1A1A]",
               error ? "opacity-1" : "opacity-0"
             )}
