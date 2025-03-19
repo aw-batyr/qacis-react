@@ -55,7 +55,7 @@ export const Delegate: FC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <Cover
-        title={lang === Language.RU ? "зарегистрироваться" : "Registration"}
+        title={lang === Language.RU ? "Зарегистрироваться" : "Registration"}
       />
 
       <AnimatePresence>
