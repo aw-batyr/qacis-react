@@ -110,6 +110,10 @@ export const Delegate: FC<Props> = ({ className }) => {
                 control={form.control}
               />
 
+              <h2 className="text-xl">
+                {delegateData[useTranslate(lang)].checkbox_title}
+              </h2>
+
               <CheckboxField
                 name="become_delegate"
                 control={form.control}

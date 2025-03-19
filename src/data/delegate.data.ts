@@ -8,6 +8,8 @@ export const delegateData = [
     phone: "Номер телефона",
     website: "Веб-сайт",
 
+    checkbox_title: "Выберите нужную опцию",
+
     checkbox: "Стать спикером",
     checkbox_2: "Стать спонсором",
     checkbox_3: "Стать делегатом",
@@ -28,6 +30,8 @@ export const delegateData = [
     email: "Email",
     phone: "Phone number",
     website: "Website",
+
+    checkbox_title: "What is your preference?",
 
     checkbox: "Become a speaker",
     checkbox_2: "Become a sponsor",
