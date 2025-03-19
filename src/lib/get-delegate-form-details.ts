@@ -29,6 +29,8 @@ export const delegateFormSchema = z.object({
 
   become_speaker: z.boolean(),
 
+  become_delegate: z.boolean(),
+
   become_sponsor: z.boolean(),
 
   visa_support: z.string().optional(),

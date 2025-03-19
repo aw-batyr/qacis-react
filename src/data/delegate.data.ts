@@ -10,6 +10,7 @@ export const delegateData = [
 
     checkbox: "Стать спикером",
     checkbox_2: "Стать спонсором",
+    checkbox_3: "Стать делегатом",
 
     visa: "Визовая поддержка:",
 
@@ -30,6 +31,7 @@ export const delegateData = [
 
     checkbox: "Become a speaker",
     checkbox_2: "Become a sponsor",
+    checkbox_3: "Become a delegate",
 
     visa: "Visa support:",
 
