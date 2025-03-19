@@ -55,7 +55,7 @@ export const Delegate: FC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <Cover
-        title={lang === Language.RU ? "Стать делегатом" : "Become a delegate"}
+        title={lang === Language.RU ? "зарегистрироваться" : "Registration"}
       />
 
       <AnimatePresence>
@@ -65,7 +65,7 @@ export const Delegate: FC<Props> = ({ className }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="max-w-[828px] mx-auto  px-5 mt-20 mb-[120px] flex flex-col gap-8"
+              className="max-w-[828px] mx-auto px-5 mt-20 mb-[120px] flex flex-col sm:gap-8 gap-10"
               onSubmit={form.handleSubmit(onSubmit)}
             >
               <Field
@@ -108,6 +108,12 @@ export const Delegate: FC<Props> = ({ className }) => {
                 label={delegateData[useTranslate(lang)].website}
                 name="website"
                 control={form.control}
+              />
+
+              <CheckboxField
+                name="become_delegate"
+                control={form.control}
+                label={delegateData[useTranslate(lang)].checkbox_3}
               />
 
               <CheckboxField
