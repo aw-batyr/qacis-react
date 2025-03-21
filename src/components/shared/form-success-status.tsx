@@ -16,7 +16,9 @@ export const FormSuccesStatus: FC<Props> = ({ className, delay = 0.15 }) => {
       animate={{ opacity: 1, y: 0, transition: { delay: delay } }}
       className={cn("flex flex-col gap-8 my-20 ", className)}
     >
-      <h3 className="text-3xl text-center ">Форма успешно отправлена!</h3>
+      <h3 className="md:text-3xl text-2xl text-center ">
+        Форма успешно отправлена!
+      </h3>
 
       <Link className="w-fit mx-auto" to="/">
         <Button variant={"outline"} className="!text-on_surface">

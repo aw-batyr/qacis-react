@@ -8,11 +8,7 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-import {
-  delegateDefaultValues,
-  delegateFormSchema,
-  DelegateFormType,
-} from "@/lib/get-delegate-form-details";
+import { DelegateFormType } from "@/lib/get-delegate-form-details";
 
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { AnimatePresence, motion } from "motion/react";
@@ -26,6 +22,11 @@ import { Loader } from "lucide-react";
 import { useTranslate } from "@/hooks/use-translate";
 import { Language, useLangStore } from "@/store/lang";
 import { stendData } from "@/data/stend.data";
+import {
+  sponsorDefaultValues,
+  sponsorFormSchema,
+  SponsorFormType,
+} from "@/lib/get-sponsor-form-details";
 
 interface Props {
   className?: string;
@@ -36,12 +37,12 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
   const lang = useLangStore((state) => state.lang);
 
   const [success, setSuccess] = useState(false);
-  const form = useForm<DelegateFormType>({
-    resolver: zodResolver(delegateFormSchema),
-    defaultValues: delegateDefaultValues,
+  const form = useForm<SponsorFormType>({
+    resolver: zodResolver(sponsorFormSchema),
+    defaultValues: sponsorDefaultValues,
   });
 
-  const onSubmit = async (data: DelegateFormType) => {
+  const onSubmit = async (data: SponsorFormType) => {
     try {
       const status = await postSponsor(data, lang);
 
@@ -66,7 +67,7 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="max-w-[828px] mx-auto  px-5 mt-20 mb-[120px] flex flex-col gap-8"
+              className="max-w-[828px] mx-auto px-5 mt-20 mb-[120px] flex flex-col gap-8"
               onSubmit={form.handleSubmit(onSubmit)}
             >
               <Field

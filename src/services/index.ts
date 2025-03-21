@@ -9,6 +9,7 @@ import { ExhibitionTimeType } from "./types/exhibition-time.type";
 import { StaticType } from "./types/static-words.type";
 import { PartnersType } from "./types/partners.type";
 import { SpeakersType } from "./types/speakers.type";
+import { SponsorFormType } from "@/lib/get-sponsor-form-details";
 
 export const axios_url = axios.create({
   baseURL: "https://qacis.turkmenexpo.com/app/api/v1/",
@@ -61,7 +62,7 @@ export const postB2b = async (
 };
 
 export const postSponsor = async (
-  data: DelegateFormType,
+  data: SponsorFormType,
   lang: LangState["lang"]
 ): Promise<boolean> => {
   const res = axios_url.post(`become_sponsor`, data, {
@@ -79,15 +80,8 @@ export const postContact = async (data: ContactsFormType) => {
   return (await res).status === 201;
 };
 
-export const postSubscribe = async (
-  data: { email: string },
-  lang: LangState["lang"]
-) => {
-  const res = axios_url.post("subscribe_news_form", data, {
-    headers: {
-      "Accept-Language": lang,
-    },
-  });
+export const postSubscribe = async (data: { email: string }) => {
+  const res = axios_url.post("subscribe_news_form", data);
 
   return (await res).status === 201;
 };

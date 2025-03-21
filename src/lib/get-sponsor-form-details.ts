@@ -1,8 +1,8 @@
 import { z } from "zod";
 
-export type DelegateFormType = z.infer<typeof delegateFormSchema>;
+export type SponsorFormType = z.infer<typeof sponsorFormSchema>;
 
-export const delegateFormSchema = z.object({
+export const sponsorFormSchema = z.object({
   company_name: z
     .string()
     .min(3, { message: "Название компании должно быть не менее 3 символов" }),
@@ -27,16 +27,10 @@ export const delegateFormSchema = z.object({
 
   website: z.string().optional(),
 
-  become_speaker: z.boolean(),
-
-  become_delegate: z.boolean(),
-
-  become_sponsor: z.boolean(),
-
   visa_support: z.string().optional(),
 });
 
-export const delegateDefaultValues = {
+export const sponsorDefaultValues = {
   company_name: "",
   rep_name: "",
   job_title: "",
@@ -44,8 +38,5 @@ export const delegateDefaultValues = {
   email: "",
   phone: "",
   website: "",
-  become_speaker: false,
-  become_sponsor: false,
-  become_delegate: false,
   visa_support: "",
 };
