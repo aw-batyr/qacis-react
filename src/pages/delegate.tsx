@@ -42,7 +42,7 @@ export const Delegate: FC<Props> = ({ className }) => {
 
   const onSubmit = async (data: DelegateFormType) => {
     try {
-      const status = await postDelegate(data);
+      const status = await postDelegate(data, lang);
 
       if (status) setSuccess(true);
     } catch (error) {

@@ -10,6 +10,7 @@ import {
 } from "@/lib/get-b2b-form-details";
 import { Form } from "../ui/form";
 import { FormSuccesStatus, Stage, Stage2, Stage3 } from "./";
+import { useLangStore } from "@/store/lang";
 
 interface Props {
   stage: number;
@@ -18,6 +19,7 @@ interface Props {
 
 export const B2bForm: FC<Props> = ({ stage, setStage }) => {
   const [success, setSuccess] = useState(false);
+  const lang = useLangStore((state) => state.lang);
 
   const form = useForm<FormType>({
     resolver: zodResolver(formSchema),
@@ -95,6 +97,7 @@ export const B2bForm: FC<Props> = ({ stage, setStage }) => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            "Accept-Language": lang,
           },
         }
       );

@@ -43,7 +43,7 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
 
   const onSubmit = async (data: DelegateFormType) => {
     try {
-      const status = await postSponsor(data);
+      const status = await postSponsor(data, lang);
 
       if (status) setSuccess(true);
     } catch (error) {

@@ -7,6 +7,7 @@ import { useLang } from "@/hooks/use-lang";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { postSubscribe } from "@/services";
+import { useLangStore } from "@/store/lang";
 
 interface Props {
   className?: string;
@@ -21,6 +22,7 @@ export type SubscribeType = z.infer<typeof schema>;
 
 export const SubscribeForm: FC<Props> = ({ modal = false }) => {
   const [success, setSuccess] = useState(false);
+  const lang = useLangStore((state) => state.lang);
 
   const form = useForm<SubscribeType>({
     resolver: zodResolver(schema),
@@ -31,7 +33,7 @@ export const SubscribeForm: FC<Props> = ({ modal = false }) => {
 
   async function onSubmit(data: SubscribeType) {
     try {
-      const status = await postSubscribe(data);
+      const status = await postSubscribe(data, lang);
 
       form.reset();
       setSuccess(status);

@@ -35,21 +35,40 @@ export const getNewsInner = async (id: number, lang: string) => {
 };
 
 export const postDelegate = async (
-  data: DelegateFormType
+  data: DelegateFormType,
+  lang: LangState["lang"]
 ): Promise<boolean> => {
-  const res = axios_url.post(`become_delegate`, data);
+  const res = axios_url.post(`become_delegate`, data, {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
 
   return (await res).status === 201;
 };
 
-export const postB2b = async (data: FormData): Promise<boolean> => {
-  const res = axios.post(`form`, data);
+export const postB2b = async (
+  data: FormData,
+  lang: LangState["lang"]
+): Promise<boolean> => {
+  const res = axios.post(`form`, data, {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
 
   return (await res).status === 201;
 };
 
-export const postSponsor = async (data: DelegateFormType): Promise<boolean> => {
-  const res = axios_url.post(`become_sponsor`, data);
+export const postSponsor = async (
+  data: DelegateFormType,
+  lang: LangState["lang"]
+): Promise<boolean> => {
+  const res = axios_url.post(`become_sponsor`, data, {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
 
   return (await res).status === 201;
 };
@@ -60,8 +79,15 @@ export const postContact = async (data: ContactsFormType) => {
   return (await res).status === 201;
 };
 
-export const postSubscribe = async (data: { email: string }) => {
-  const res = axios_url.post("subscribe_news_form", data);
+export const postSubscribe = async (
+  data: { email: string },
+  lang: LangState["lang"]
+) => {
+  const res = axios_url.post("subscribe_news_form", data, {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
 
   return (await res).status === 201;
 };
