@@ -8,7 +8,6 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-import { DelegateFormType } from "@/lib/get-delegate-form-details";
 
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { AnimatePresence, motion } from "motion/react";
