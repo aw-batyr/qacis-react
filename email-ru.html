@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>QACIS 2025</title>
 
     <style>
       @font-face {
@@ -24,33 +24,13 @@
         display: flex;
         justify-content: center;
         font-family: "Gilroy-Regular";
-        color: #26292e;
-        font-size: 16px;
         line-height: 24px;
-      }
-
-      .text-start {
-        text-align: start;
-      }
-
-      .text-end {
-        text-align: end;
+        padding: 0 16px 16px;
       }
 
       table {
         border-collapse: collapse;
-        max-width: 600px;
         width: 100%;
-      }
-
-      th {
-        font-size: 16px;
-        line-height: 20px;
-        font-weight: 400;
-      }
-
-      .logo {
-        padding: 14px 24px;
       }
 
       thead {
@@ -75,24 +55,44 @@
     </style>
   </head>
   <body>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" style="max-width: 600px">
       <thead class="thead" style="background-color: #1d4062; width: 600px">
         <tr>
           <th colspan="2" style="text-align: start">
-            <img src="public/email-logo.svg" alt="logo" class="logo" />
+            <img
+              src="public/email-logo.svg"
+              alt="logo"
+              style="padding: 14px 24px"
+            />
           </th>
         </tr>
       </thead>
 
       <tbody>
         <tr>
-          <th style="text-align: start; padding: 40px 24px 0" colspan="2">
+          <th
+            style="
+              text-align: start;
+              font-weight: normal;
+              color: #26292e;
+              padding: 40px 0 0 16px;
+            "
+            colspan="2"
+          >
             Уважаемый участник,
           </th>
         </tr>
 
         <tr>
-          <th colspan="2" class="text-start" style="padding: 16px 24px 0">
+          <th
+            style="
+              text-align: start;
+              font-weight: normal;
+              color: #26292e;
+              padding: 16px 0 0 16px;
+            "
+            colspan="2"
+          >
             Благодарим Вас за предоставление всей необходимой информации. Наша
             команда рассмотрит информацию, и мы свяжемся с вами в ближайшее
             время, чтобы обсудить дальнейшие шаги.
@@ -100,14 +100,31 @@
         </tr>
 
         <tr>
-          <th colspan="2" class="text-start" style="padding: 16px 24px 0">
+          <th
+            style="
+              text-align: start;
+              font-weight: normal;
+              color: #26292e;
+              padding: 16px 0 0 16px;
+            "
+            colspan="2"
+          >
             Мы ценим вашу оперативность и с нетерпением ждем сотрудничества с
             вами на предстоящем мероприятии.
           </th>
         </tr>
 
         <tr>
-          <th class="text-start" style="padding: 16px 24px 24px">
+          <th
+            style="
+              text-align: start;
+              font-weight: normal;
+              color: #26292e;
+              padding: 16px 0 24px 16px;
+              font-weight: normal;
+            "
+            colspan="2"
+          >
             С уважением,
             <br />
             TurkmenExpo
@@ -115,22 +132,32 @@
         </tr>
       </tbody>
 
-      <tfoot style="padding: 16px 24px 0">
+      <tfoot>
         <tr>
-          <th colspan="2" class="text-start" style="padding: 24px 24px 24px">
+          <th
+            style="
+              text-align: start;
+              font-weight: normal;
+              color: #26292e;
+              padding: 24px 0 0 16px;
+            "
+            colspan="2"
+          >
             Если у вас возникнут вопросы, пожалуйста, не стесняйтесь связаться с
             нами:
           </th>
         </tr>
 
-        <tr>
+        <tr style="padding-top: 24px">
           <th
             class="text-start"
             style="
               display: table-cell;
               vertical-align: middle;
               width: 50%;
-              padding: 12px 24px 0;
+              padding: 12px 0;
+              font-weight: normal;
+              color: #26292e;
             "
           >
             <div style="display: inline-block; vertical-align: middle">
@@ -149,11 +176,15 @@
               display: table-cell;
               vertical-align: middle;
               width: 50%;
-              padding: 12px 24px 0;
+              padding: 12px 0;
             "
           >
-            <div
+            <a
+              href="mailto:contact@turkmenexpo.com
+            "
               style="
+                color: #26292e;
+                font-weight: normal;
                 display: inline-block;
                 vertical-align: middle;
                 text-align: right;
@@ -162,15 +193,18 @@
               <img
                 src="public/contacts/email-mail.svg"
                 alt="contact"
-                style="vertical-align: middle; margin-right: 8px"
+                style="
+                  vertical-align: middle;
+                  font-weight: normal;
+                  color: #26292e;
+                  margin-right: 8px;
+                "
               />
               contact@turkmenexpo.com
-            </div>
+            </a>
           </th>
         </tr>
       </tfoot>
     </table>
-
-    <script></script>
   </body>
 </html>

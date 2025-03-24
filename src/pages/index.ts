@@ -1,3 +1,4 @@
+export { Faq } from "./faq";
 export { B2b } from "./b2b";
 export { Home } from "./home";
 export { News } from "./news";

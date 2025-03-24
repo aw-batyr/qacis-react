@@ -16,3 +16,4 @@ export { OfferCard } from "./offer-card";
 export { EmblaDots } from "./embla-dots";
 export { Menu } from "./menu";
 export { Chevron } from "./chevron";
+export { Dropdown } from "./dropdown";
