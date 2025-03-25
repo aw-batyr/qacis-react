@@ -17,6 +17,10 @@
           {
             "text": "Спикеры",
             "link": "/speakers"
+          },
+          {
+            "text": "FAQ",
+            "link": "/faq"
           }
         ]
       },
