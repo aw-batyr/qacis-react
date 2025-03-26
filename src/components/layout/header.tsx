@@ -33,7 +33,7 @@ export const Header: FC<Props> = ({ className }) => {
 
   return (
     <header className={cn("h-20 lg:h-[92px] bg-primary_10 py-2", className)}>
-      <Container className="flex items-center justify-between">
+      <Container className="flex md:items-center items-end justify-between">
         <div className="flex items-center xl:gap-10 gap-4">
           <Link to="/">
             <img
