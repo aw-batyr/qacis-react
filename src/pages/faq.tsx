@@ -22,12 +22,12 @@ export const Faq: FC<Props> = ({ className }) => {
       ) : (
         <Container className="md:mt-20 mt-10 md:mb-[120px] mb-20 gap-10 flex flex-col">
           {data?.map((item) => (
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
-              <h2 className="h2">{item?.name}</h2>
+            <div key={item.id} className="flex flex-col md:flex-row gap-6">
+              <h2 className="h2 md:flex-[0_1_33%]">{item?.name}</h2>
 
-              <div className="flex flex-col gap-4 md:gap-6">
+              <div className="flex flex-col gap-4 md:gap-6 md:flex-[0_1_67%]">
                 {item?.faqs.map((faq) => (
-                  <Dropdown key={faq?.answer} {...faq} />
+                  <Dropdown key={faq.id} {...faq} />
                 ))}
               </div>
             </div>
