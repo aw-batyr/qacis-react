@@ -31,7 +31,7 @@ export const Dropdown: FC<Props> = ({ className, question, answer }) => {
 
       <motion.div
         initial={{
-          height: 0,
+          maxHeight: 0,
           opacity: 0,
           paddingBottom: 0,
           paddingTop: 0,
@@ -41,7 +41,7 @@ export const Dropdown: FC<Props> = ({ className, question, answer }) => {
         animate={
           active
             ? {
-                height: "fit-content",
+                maxHeight: "fit-content",
                 opacity: 1,
                 paddingTop: 24,
                 paddingBottom: 24,
