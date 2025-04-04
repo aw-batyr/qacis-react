@@ -11,6 +11,7 @@ export interface Datum {
   updated_at: Date;
   main: number;
   sort_order: number;
+  about_speaker: string;
   country: string;
   image: Image;
   image_country: Image | null;

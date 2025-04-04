@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Modal } from "./modal";
 import { cn } from "@/lib/utils";
 import { useUiStore } from "@/store/ui";
+import { SubscribeForm } from "../forms/subscribe-form";
 
 interface Props {
   className?: string;
@@ -57,7 +58,9 @@ export const Menu: FC<Props> = ({ title, dropDownContent, color, onMenu }) => {
                 {item.blank && <img src="/pdf.svg" />}
               </Link>
             ) : item.modal ? (
-              <Modal key={item.text} title={item.text} />
+              <Modal key={item.text} title={item.text}>
+                <SubscribeForm className="" modal />
+              </Modal>
             ) : (
               <div
                 key={item.text}

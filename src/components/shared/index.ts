@@ -17,3 +17,4 @@ export { EmblaDots } from "./embla-dots";
 export { Menu } from "./menu";
 export { Chevron } from "./chevron";
 export { Dropdown } from "./dropdown";
+export { SpeakerModal } from "./speaker-modal";

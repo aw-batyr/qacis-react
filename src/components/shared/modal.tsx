@@ -1,14 +1,22 @@
 import { FC } from "react";
 import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
-import { SubscribeForm } from "../forms/subscribe-form";
 
 interface Props {
   className?: string;
-  title: string;
+  title?: string;
+  contentClassName?: string;
+  children: React.ReactNode;
+  triggerChildren?: React.ReactNode;
 }
 
-export const Modal: FC<Props> = ({ className, title }) => {
+export const Modal: FC<Props> = ({
+  className,
+  title,
+  children,
+  contentClassName,
+  triggerChildren,
+}) => {
   return (
     <Dialog>
       <DialogTrigger
@@ -17,11 +25,11 @@ export const Modal: FC<Props> = ({ className, title }) => {
           className
         )}
       >
-        {title}
+        {title ? title : triggerChildren}
       </DialogTrigger>
 
-      <DialogContent>
-        <SubscribeForm className="" modal />
+      <DialogContent className={cn("overflow-auto", contentClassName)}>
+        {children}
       </DialogContent>
     </Dialog>
   );

@@ -45,6 +45,10 @@
     @apply md:text-[28px] leading-8 text-2xl;
   }
 
+  .speaker-modal {
+    @apply flex flex-col gap-3;
+  }
+
   .news-inner img {
     @apply object-cover !h-[500px];
   }
