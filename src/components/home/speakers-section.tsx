@@ -32,12 +32,12 @@ export const SpeakersSection: FC<Props> = ({ className, section = false }) => {
           {section
             ? sortedItems?.slice(0, 8).map((item, i) => (
                 <Modal
+                  key={i}
                   className="!h-auto !px-0 !items-start hover:!bg-none "
-                  triggerChildren={
-                    <SpeakerCard key={i} {...item} className="h-full" />
-                  }
+                  triggerChildren={<SpeakerCard {...item} className="h-full" />}
                 >
                   <SpeakerModal
+                    name={item?.name}
                     info={item?.about_speaker}
                     img={item?.image?.path ?? ""}
                   />
@@ -45,13 +45,13 @@ export const SpeakersSection: FC<Props> = ({ className, section = false }) => {
               ))
             : sortedItems.map((item, i) => (
                 <Modal
+                  key={i}
                   className="!h-auto !px-0 overflow-auto !items-start hover:!bg-none"
                   contentClassName="overflow-auto"
-                  triggerChildren={
-                    <SpeakerCard key={i} {...item} className="h-full" />
-                  }
+                  triggerChildren={<SpeakerCard {...item} className="h-full" />}
                 >
                   <SpeakerModal
+                    name={item?.name}
                     info={item?.about_speaker}
                     img={item?.image?.path ?? ""}
                   />

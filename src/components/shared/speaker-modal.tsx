@@ -5,10 +5,12 @@ interface Props {
   className?: string;
   img: string;
   info: string;
-  name?: string;
+  name: string;
 }
 
 export const SpeakerModal: FC<Props> = ({ className, img, info, name }) => {
+  console.log(name);
+
   return (
     <div
       className={cn(
@@ -16,13 +18,18 @@ export const SpeakerModal: FC<Props> = ({ className, img, info, name }) => {
         className
       )}
     >
+      <h3 className="text-xl lg:hidden">{name}</h3>
       <div className="flex flex-[0_0_30%] justify-center items-start">
         <img src={img ?? ""} alt={name} className="size-full object-contain" />
       </div>
-      <div
-        dangerouslySetInnerHTML={{ __html: info ?? "" }}
-        className="speaker-modal flex-[0_0_68%] normal !pb-4"
-      />
+      <div>
+        <h3 className="text-xl hidden lg:block">{name}</h3>
+        <hr className="my-4 border-outline_v" />
+        <div
+          dangerouslySetInnerHTML={{ __html: info ?? "" }}
+          className="speaker-modal flex-[0_0_68%] normal !pb-4"
+        />
+      </div>
     </div>
   );
 };

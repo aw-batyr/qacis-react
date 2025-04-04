@@ -41,52 +41,50 @@ export const SubscribeForm: FC<Props> = ({ modal = false }) => {
   }
 
   return (
-    <>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
+    <form
+      onSubmit={form.handleSubmit(onSubmit)}
+      className={cn(
+        "py-8",
+        modal ? "max-w-[392px] mx-auto" : "bg-surface_container"
+      )}
+    >
+      <Container
         className={cn(
-          "py-8",
-          modal ? "max-w-[392px] mx-auto" : "bg-surface_container"
+          "flex gap-8 justify-between",
+          modal ? "flex-col w-full" : "lg:flex-row flex-col lg:items-center"
         )}
       >
-        <Container
-          className={cn(
-            "flex gap-8 justify-between",
-            modal ? "flex-col w-full" : "lg:flex-row flex-col lg:items-center"
-          )}
-        >
-          <h2 className="h2 !text-left">
-            {useLang("Подпишитесь на новости:", "Subscribe to the news:")}
-          </h2>
+        <h2 className="h2 !text-left">
+          {useLang("Подпишитесь на новости:", "Subscribe to the news:")}
+        </h2>
 
-          <div className="relative">
-            <input
-              {...form.register("email")}
-              placeholder="Email"
-              className={cn("input", {
-                "w-full": modal,
-                "xl:w-[392px] lg:w-[320px] w-full": !modal,
-              })}
-            />
-            <span className="text-error absolute  -bottom-6 text-sm left-0">
-              {form.formState.errors?.email?.message}
-            </span>
-          </div>
-
-          <Button
-            loading={form.formState.isSubmitting}
-            disabled={success}
-            className={cn({
-              "xl:w-[288px] lg:w-[220px] w-full": !modal,
+        <div className="relative">
+          <input
+            {...form.register("email")}
+            placeholder="Email"
+            className={cn("input", {
               "w-full": modal,
+              "xl:w-[392px] lg:w-[320px] w-full": !modal,
             })}
-          >
-            {success
-              ? useLang("Отправлено", "Submitted")
-              : useLang("Подписаться", "Subscribe")}
-          </Button>
-        </Container>
-      </form>
-    </>
+          />
+          <span className="text-error absolute  -bottom-6 text-sm left-0">
+            {form.formState.errors?.email?.message}
+          </span>
+        </div>
+
+        <Button
+          loading={form.formState.isSubmitting}
+          disabled={success}
+          className={cn({
+            "xl:w-[288px] lg:w-[220px] w-full": !modal,
+            "w-full": modal,
+          })}
+        >
+          {success
+            ? useLang("Отправлено", "Submitted")
+            : useLang("Подписаться", "Subscribe")}
+        </Button>
+      </Container>
+    </form>
   );
 };

@@ -28,7 +28,7 @@ export const SpeakerCard: FC<Props> = ({
           className
         )}
       >
-        <div className="h-[288px] w-full ">
+        <div className="h-[288px] w-full">
           <img
             src={image?.path || "/speaker.svg"}
             alt={name ?? "speaker"}

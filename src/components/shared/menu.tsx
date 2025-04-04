@@ -58,7 +58,11 @@ export const Menu: FC<Props> = ({ title, dropDownContent, color, onMenu }) => {
                 {item.blank && <img src="/pdf.svg" />}
               </Link>
             ) : item.modal ? (
-              <Modal key={item.text} title={item.text}>
+              <Modal
+                key={item.text}
+                title={item.text}
+                contentClassName="!max-w-2xl"
+              >
                 <SubscribeForm className="" modal />
               </Modal>
             ) : (
