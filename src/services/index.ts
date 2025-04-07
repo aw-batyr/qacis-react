@@ -123,6 +123,12 @@ export const getPartners = async () => {
   return data;
 };
 
+export const getMediaPartners = async () => {
+  const data = axios_url<PartnersType>("media_partner");
+
+  return data;
+};
+
 export const getStaticWords = async (lang: LangState["lang"], id: string) => {
   const data = axios_url<StaticType>("pages/" + id, {
     headers: {

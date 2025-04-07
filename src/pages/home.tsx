@@ -23,8 +23,9 @@ export const Home: FC<Props> = ({ className }) => {
       <HomeHero />
       <HomeAbout />
       <SpeakersSection section />
-      <HomeOffers />
       <Partners />
+      <HomeOffers />
+      {/* <MediaPartners /> */}
       {/* <Sponsors /> */}
       <Contacts />
       <News />
