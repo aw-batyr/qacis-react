@@ -51,7 +51,11 @@ export const Burger: FC<Props> = () => {
             </Button>
           </Link>
 
-          <Link to="/B2B-B2G" onClick={() => setBurger(false)}>
+          <Link
+            to="https://docs.google.com/forms/d/e/1FAIpQLSd3Fi6liioA_SXCJxxDv0-2DW3SRKuCUmHkkAwK075n0qAExw/viewform"
+            target="_blank"
+            onClick={() => setBurger(false)}
+          >
             <Button className="text-base w-full bg-reverse_primary hover:bg-reverse_primary/90 text-primary_10">
               {t("b2b")}
             </Button>

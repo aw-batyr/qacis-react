@@ -62,7 +62,12 @@ export const Header: FC<Props> = ({ className }) => {
 
         <div className="flex items-center xl:gap-10 gap-4">
           <div className="hidden lg:flex items-center gap-3 xl:gap-6">
-            <Link to={"/B2B-B2G"}>
+            <Link
+              to={
+                "https://docs.google.com/forms/d/e/1FAIpQLSd3Fi6liioA_SXCJxxDv0-2DW3SRKuCUmHkkAwK075n0qAExw/viewform"
+              }
+              target="_blank"
+            >
               <Button
                 size={"sm"}
                 className="bg-alternative text-on_alternative hover:bg-alternative/90 "

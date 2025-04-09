@@ -35,7 +35,13 @@ export const Bron: FC<Props> = ({ className }) => {
               {t("invation.delegate_button")}
             </Button>
           </Link>
-          <Link to={"/B2B-B2G"} className="w-full">
+          <Link
+            to={
+              "https://docs.google.com/forms/d/e/1FAIpQLSd3Fi6liioA_SXCJxxDv0-2DW3SRKuCUmHkkAwK075n0qAExw/viewform"
+            }
+            target="_blank"
+            className="w-full"
+          >
             <Button className="w-full bg-white text-primary hover:bg-white/90">
               {t("invation.b2b_button")}
             </Button>
