@@ -11,6 +11,7 @@ import { PartnersType } from "./types/partners.type";
 import { SpeakersType } from "./types/speakers.type";
 import { SponsorFormType } from "@/lib/get-sponsor-form-details";
 import { FAQType } from "./types/faq.type";
+import { ParticipantsType } from "./types/participants.type";
 
 export const axios_url = axios.create({
   baseURL: "https://qacis.turkmenexpo.com/app/api/v1/",
@@ -151,6 +152,16 @@ export const getSpeakers = async (lang: LangState["lang"]) => {
 
 export const getFaq = async (lang: LangState["lang"]) => {
   const data = axios_url.get<FAQType>("faqs", {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
+
+  return data;
+};
+
+export const getParticipants = async (lang: LangState["lang"]) => {
+  const data = axios_url<ParticipantsType>("participants", {
     headers: {
       "Accept-Language": lang,
     },
