@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLangStore } from "@/store/lang";
 import { Container } from "@/components/layout";
-import { Loading, ParticipantsItem, Tabs } from "@/components/shared";
+import { Loading, ParticipantItem, Tabs } from "@/components/shared";
 import { useParticipants } from "@/services/hooks/use-participants";
 
 interface Props {
@@ -53,8 +53,8 @@ export const Participants: FC<Props> = ({ className }) => {
             <Loading />
           ) : activeTab === 0 ? (
             splitedDatat?.map((item, index, arr) => (
-              <ParticipantsItem
-                arr={arr}
+              <ParticipantItem
+                arr={arr?.length ?? 0}
                 {...item}
                 index={index}
                 image={item.image ?? { path: "" }}
@@ -63,8 +63,8 @@ export const Participants: FC<Props> = ({ className }) => {
             ))
           ) : (
             filteredData?.[0]?.participants?.map((item, index, arr) => (
-              <ParticipantsItem
-                arr={arr}
+              <ParticipantItem
+                arr={arr?.length ?? 0}
                 {...item}
                 index={index}
                 image={item.image ?? { path: "" }}

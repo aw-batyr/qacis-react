@@ -6,7 +6,7 @@ export const useParticipants = () => {
   const lang = useLangStore((state) => state.lang);
 
   const { data, isPending } = useQuery({
-    queryKey: ["participants"],
+    queryKey: ["participants", lang],
     queryFn: () => getParticipants(lang),
     select: ({ data }) => data.data,
   });
