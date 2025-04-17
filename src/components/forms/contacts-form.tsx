@@ -9,7 +9,7 @@ import {
   contactsSchema,
   defaultValuesContacts,
 } from "@/lib/get-contacts-form-details";
-import { postContact } from "@/services";
+import { postContact } from "@/services/services";
 import { Loader2 } from "lucide-react";
 import { Field } from "../shared";
 import { useTranslation } from "react-i18next";
