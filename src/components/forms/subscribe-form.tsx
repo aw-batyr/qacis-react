@@ -6,7 +6,7 @@ import { Container } from "@/components/layout";
 import { useLang } from "@/hooks/use-lang";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { postSubscribe } from "@/services";
+import { postSubscribe } from "@/services/services";
 
 interface Props {
   className?: string;
