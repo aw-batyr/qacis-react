@@ -11,8 +11,7 @@
     },
     {
       "text": "Список участников",
-      "link": "/participants",
-      "blank": true
+      "link": "/participants"
     },
     {
       "text": "Программа",
