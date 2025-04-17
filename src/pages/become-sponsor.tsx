@@ -16,7 +16,7 @@ import { useScrollTop } from "@/hooks/use-scroll-top";
 import { Cover } from "@/components/layout";
 import { useForm } from "react-hook-form";
 import { FC, useState } from "react";
-import { postSponsor } from "@/services";
+import { postSponsor } from "@/services/services";
 import { Loader } from "lucide-react";
 import { useTranslate } from "@/hooks/use-translate";
 import { Language, useLangStore } from "@/store/lang";

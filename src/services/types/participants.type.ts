@@ -19,8 +19,8 @@ export interface Participant {
   participant_category_id: number;
   created_at: Date;
   updated_at: Date;
-  image: Image;
-  image_country: Image;
+  image: Image | null;
+  image_country: Image | null;
 }
 
 export interface Image {
@@ -28,13 +28,26 @@ export interface Image {
   disk_name: string;
   file_name: string;
   file_size: number;
-  content_type: string;
+  content_type: ContentType;
   title: null;
   description: null;
-  field: string;
+  field: Field;
   sort_order: number;
   created_at: Date;
   updated_at: Date;
   path: string;
-  extension: string;
+  extension: Extension;
+}
+
+export enum ContentType {
+  ImagePNG = "image/png",
+}
+
+export enum Extension {
+  PNG = "png",
+}
+
+export enum Field {
+  Image = "image",
+  ImageCountry = "image_country",
 }

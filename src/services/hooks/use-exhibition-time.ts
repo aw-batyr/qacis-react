@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getExhibionTime } from "../";
+import { getExhibionTime } from "../services";
 import { useLangStore } from "@/store/lang";
 
 export const useExhibitionTime = () => {

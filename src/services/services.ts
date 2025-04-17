@@ -150,6 +150,16 @@ export const getSpeakers = async (lang: LangState["lang"]) => {
   return data;
 };
 
+export const getSponsors = async (lang: LangState["lang"]) => {
+  const data = axios_url<SpeakersType>("sponsors", {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
+
+  return data;
+};
+
 export const getFaq = async (lang: LangState["lang"]) => {
   const data = axios_url.get<FAQType>("faqs", {
     headers: {

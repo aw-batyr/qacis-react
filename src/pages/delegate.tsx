@@ -19,7 +19,7 @@ import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Loader } from "lucide-react";
 import { Cover } from "@/components/layout";
-import { postDelegate } from "@/services";
+import { postDelegate } from "@/services/services";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { Language, useLangStore } from "@/store/lang";
 import { delegateData } from "@/data/delegate.data";

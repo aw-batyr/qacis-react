@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getSpeakers } from "..";
+import { getSpeakers } from "../services";
 import { useLangStore } from "@/store/lang";
 
 export const useSpeakers = () => {

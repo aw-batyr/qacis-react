@@ -7,6 +7,8 @@ interface Props {
 }
 
 export const Sponsors: FC<Props> = ({ className }) => {
+  // const { data, isPending } = useSponsors();
+
   return (
     <section className={cn("py-20 bg-surface_container", className)}>
       <Container className="flex flex-col gap-6">

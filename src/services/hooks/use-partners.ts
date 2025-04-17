@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getPartners } from "../";
+import { getPartners } from "../services";
 
 export const usePartners = () => {
   const { data, isPending } = useQuery({

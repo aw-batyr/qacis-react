@@ -1,13 +1,13 @@
-import { useLangStore } from "@/store/lang";
 import { useQuery } from "@tanstack/react-query";
-import { getParticipants } from "../services";
+import { getSponsors } from "../services";
+import { useLangStore } from "@/store/lang";
 
-export const useParticipants = () => {
+export const useSponsors = () => {
   const lang = useLangStore((state) => state.lang);
 
   const { data, isPending } = useQuery({
-    queryKey: ["participants"],
-    queryFn: () => getParticipants(lang),
+    queryKey: ["sponsors", lang],
+    queryFn: () => getSponsors(lang),
     select: ({ data }) => data.data,
   });
 

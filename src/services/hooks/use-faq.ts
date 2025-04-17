@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getFaq } from "..";
+import { getFaq } from "../services";
 import { useLangStore } from "@/store/lang";
 
 export const useFaq = () => {

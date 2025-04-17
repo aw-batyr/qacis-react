@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getNewsInner } from "../";
+import { getNewsInner } from "../services";
 
 export const useNewsInner = (id: number, lang: string) => {
   const { data, isPending } = useQuery({

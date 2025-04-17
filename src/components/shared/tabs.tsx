@@ -6,6 +6,8 @@ import { useLangStore } from "@/store/lang";
 
 interface Props {
   className?: string;
+  state: number;
+  setState: (val: number) => void;
 }
 
 const tabs = [
@@ -22,9 +24,8 @@ const tabs = [
   },
 ];
 
-export const Tabs: FC<Props> = ({ className }) => {
+export const Tabs: FC<Props> = ({ className, setState, state }) => {
   const lang = useLangStore((state) => state.lang);
-  const [activeTab, setActiveTab] = useState(0);
   const tab = useMediaQuery("(min-width: 550px)");
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -38,39 +39,39 @@ export const Tabs: FC<Props> = ({ className }) => {
 
     const onSelect = () => {
       const index = emblaApi.selectedScrollSnap();
-      setActiveTab(index);
+      setState(index);
     };
 
     emblaApi.on("select", onSelect);
     return () => {
       emblaApi.off("select", onSelect);
     };
-  }, [emblaApi]);
+  }, [emblaApi, setState]);
 
   // Обновление позиции индикатора
   useEffect(() => {
-    const activeTabElement = tabRefs.current[activeTab];
+    const activeTabElement = tabRefs.current[state];
     if (activeTabElement) {
       const { offsetLeft, offsetWidth } = activeTabElement;
       setIndicatorStyle({ left: offsetLeft, width: offsetWidth });
     }
-  }, [activeTab]);
+  }, [setState, state]);
 
   // Обработчик клика по табу
   const handleTabClick = useCallback(
     (index: number) => {
       if (emblaApi) {
         emblaApi.scrollTo(index);
-        setActiveTab(index); // Для немедленного обновления состояния
+        setState(index); // Для немедленного обновления состояния
       }
     },
-    [emblaApi]
+    [emblaApi, setState]
   );
   return (
     <div
       role="tablist"
       ref={!tab ? emblaRef : null}
-      className={cn("w-[506px] mx-auto embla relative", className)}
+      className={cn("md:w-[506px] mx-auto embla relative", className)}
     >
       <div className="embla__container flex w-full">
         {tabs.map((tab, index) => (
@@ -79,10 +80,10 @@ export const Tabs: FC<Props> = ({ className }) => {
             key={tab.id}
             role="tab"
             className={cn(
-              "embla__slide text-center h-12 mx-4 py-2 text-sm md:text-base w-fit transition-all",
-              activeTab === tab.id ? "text-primary" : "text-on_surface_v"
+              "embla__slide text-center  h-12 mx-4 py-2 text-sm md:text-base w-fit transition-all",
+              state === tab.id ? "text-primary" : "text-on_surface_v"
             )}
-            onClick={() => (!tab ? handleTabClick(index) : setActiveTab(index))}
+            onClick={() => (!tab ? handleTabClick(index) : setState(index))}
           >
             {lang === "ru" ? tab.title : tab.titleEn}
           </button>

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getHomeContacts } from "..";
+import { getHomeContacts } from "../services";
 import { useLangStore } from "@/store/lang";
 
 export const useHomeContacts = () => {

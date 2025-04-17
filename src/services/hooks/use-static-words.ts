@@ -1,6 +1,6 @@
 import { useLangStore } from "@/store/lang";
 import { useQuery } from "@tanstack/react-query";
-import { getStaticWords } from "..";
+import { getStaticWords } from "../services";
 
 export const useStaticWords = (id: string) => {
   const lang = useLangStore((state) => state.lang);

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getNews } from "../";
+import { getNews } from "../services";
 
 export const useNews = (lang: "ru" | "en") => {
   const { data, isPending } = useQuery({
