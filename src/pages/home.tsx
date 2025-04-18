@@ -23,11 +23,11 @@ export const Home: FC<Props> = ({ className }) => {
     <div className={cn("", className)}>
       <HomeHero />
       <HomeAbout />
+      <Sponsors />
       <SpeakersSection section />
       <Partners />
       <HomeOffers />
       {/* <MediaPartners /> */}
-      <Sponsors />
       <Contacts />
       <News />
     </div>

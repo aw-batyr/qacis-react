@@ -45,24 +45,30 @@ export const Sponsors: FC<Props> = ({ className }) => {
                   target="_blank"
                   to={item.link}
                   key={i}
-                  className="bg-[#E0E6EB] flex embla__slide mr-6 min-w-0 flex-[0_0_288px] items-center justify-center h-[128px] w-full"
+                  className="bg-[#E0E6EB] embla__slide mr-6 min-w-0 flex-[0_0_288px] items-center justify-center h-[128px] w-full"
                 >
                   <img
                     src={item?.image?.path}
                     alt="logo"
                     className="object-contain"
                   />
+                  <div className="bg-secondary_container text-xs text-center py-1 px-2">
+                    {item.name}
+                  </div>
                 </Link>
               ) : (
                 <div
                   key={i}
-                  className="bg-[#E0E6EB] flex embla__slide mr-6 min-w-0 flex-[0_0_288px] items-center justify-center h-[128px] w-full"
+                  className="bg-[#E0E6EB] embla__slide mr-6 min-w-0 flex-[0_0_288px] items-center justify-center min-h-[128px] w-full"
                 >
                   <img
                     src={item?.image?.path}
                     alt="logo"
                     className="object-contain"
                   />
+                  <div className="bg-secondary_container text-xs text-center py-1 px-2">
+                    {item.name}
+                  </div>
                 </div>
               )
             )}
