@@ -41,41 +41,39 @@ export const ParticipantItem: FC<Props> = ({
       >
         <div className="flex flex-1 flex-col items-start gap-4">
           <div className="flex items-center w-full">
-            <div className="flex items-center flex-[0_0_95%] gap-3">
-              <h3 className="text-xs normal flex-[0_0_40%]">
+            <div className="flex items-center flex-[0_0_80%] gap-3">
+              <h3 className="text-xs normal flex-[0_0_90px]">
                 {lang === "ru" ? "Название" : "Company"}:
               </h3>
-              <h4 className="text-xs flex-1">{name}</h4>
+              <h4 className="text-xs flex-[0_0_70%]">{name}</h4>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="flex items-center">
-              <div className="flex items-center flex-[0_0_95%] gap-3">
-                <h3 className="text-xs normal flex-[0_0_40%]">
+            <div className="flex items-center w-full">
+              <div className="flex items-center flex-[0_0_80%] gap-3">
+                <h3 className="text-xs normal flex-[0_0_90px]">
                   {lang === "ru" ? "Страна" : "Country"}:
                 </h3>
 
-                <div className="flex items-center flex-1 gap-2">
+                <div className="flex items-center flex-[0_0_50%] gap-2">
                   <img
                     src={image_country?.path}
                     alt="flag"
-                    className="size-4"
+                    className="size-4 flex-[0_0_16px] object-contain"
                   />
-                  <h4 className="text-xs">{country}</h4>
+                  <h4 className="text-xs flex-1">{country}</h4>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-1 flex-col items-start gap-4">
-            <div className="flex items-center w-full">
-              <div className="flex items-center flex-[0_0_95%] gap-3">
-                <h3 className="text-xs normal flex-[0_0_40%]">
-                  {lang === "ru" ? "Сфера" : "Industry"}:
-                </h3>
-                <h4 className="text-xs flex-1">{about}</h4>
-              </div>
+          <div className="flex items-center ">
+            <div className="flex items-center flex-[0_0_80%] gap-3">
+              <h3 className="text-xs normal flex-[0_0_90px]">
+                {lang === "ru" ? "Сфера" : "Industry"}:
+              </h3>
+              <h4 className="text-xs flex-1">{about}</h4>
             </div>
           </div>
         </div>

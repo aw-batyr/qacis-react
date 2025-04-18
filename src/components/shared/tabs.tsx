@@ -13,6 +13,11 @@ interface Props {
 const tabs = [
   { id: 0, title: "Все компании", titleEn: "All companies" },
   {
+    id: 3,
+    title: "Государственные учреждения ",
+    titleEn: "Government Institutions",
+  },
+  {
     id: 1,
     title: "Местные компании",
     titleEn: "Local companies",
@@ -42,11 +47,13 @@ export const Tabs: FC<Props> = ({ className, setState, state }) => {
       setState(index);
     };
 
+    emblaApi.scrollTo(state);
+
     emblaApi.on("select", onSelect);
     return () => {
       emblaApi.off("select", onSelect);
     };
-  }, [emblaApi, setState]);
+  }, [emblaApi, setState, state]);
 
   // Обновление позиции индикатора
   useEffect(() => {
@@ -71,7 +78,7 @@ export const Tabs: FC<Props> = ({ className, setState, state }) => {
     <div
       role="tablist"
       ref={!tab ? emblaRef : null}
-      className={cn("md:w-[506px] mx-auto embla relative", className)}
+      className={cn("w-[506px] mx-auto embla relative", className)}
     >
       <div className="embla__container flex w-full">
         {tabs.map((tab, index) => (
@@ -81,7 +88,7 @@ export const Tabs: FC<Props> = ({ className, setState, state }) => {
             role="tab"
             className={cn(
               "embla__slide text-center  h-12 mx-4 py-2 text-sm md:text-base w-fit transition-all",
-              state === tab.id ? "text-primary" : "text-on_surface_v"
+              state === index ? "text-primary" : "text-on_surface_v"
             )}
             onClick={() => (!tab ? handleTabClick(index) : setState(index))}
           >

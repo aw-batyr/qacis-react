@@ -22,13 +22,20 @@ export const Participants: FC<Props> = ({ className }) => {
 
   const [activeTab, setActiveTab] = useState(0);
 
-  const splitedDatat = data?.[0]?.participants.concat(data?.[1]?.participants);
-
-  const filteredData = data?.filter((item) =>
-    activeTab === 1 ? item.id === 1 : item.id === 2
+  const splitedDatat = data?.[0]?.participants.concat(
+    data?.[1]?.participants,
+    data?.[2]?.participants
   );
 
-  console.log("splitedData", splitedDatat);
+  const filteredData = data?.filter((item) =>
+    activeTab === 1
+      ? item.id === 3
+      : activeTab === 2
+      ? item.id === 1
+      : item.id === 2
+  );
+
+  console.log(activeTab);
 
   return (
     <Container>
@@ -54,8 +61,8 @@ export const Participants: FC<Props> = ({ className }) => {
           ) : activeTab === 0 ? (
             splitedDatat?.map((item, index, arr) => (
               <ParticipantItem
-                arr={arr?.length ?? 0}
                 {...item}
+                arr={arr?.length}
                 index={index}
                 image={item.image ?? { path: "" }}
                 image_country={item.image_country ?? { path: "" }}
@@ -64,8 +71,8 @@ export const Participants: FC<Props> = ({ className }) => {
           ) : (
             filteredData?.[0]?.participants?.map((item, index, arr) => (
               <ParticipantItem
-                arr={arr?.length ?? 0}
                 {...item}
+                arr={arr?.length}
                 index={index}
                 image={item.image ?? { path: "" }}
                 image_country={item.image_country ?? { path: "" }}

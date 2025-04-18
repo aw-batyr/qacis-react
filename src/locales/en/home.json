@@ -52,6 +52,10 @@
     "btn": "All speakers"
   },
 
+  "sponsors": {
+    "title": "Sponsors"
+  },
+
   "contacts": {
     "button": "Become a delegate",
     "data": [
