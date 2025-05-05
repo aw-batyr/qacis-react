@@ -27,7 +27,7 @@ interface Props {
   className?: string;
   state: number;
   setState: (val: number) => void;
-  data: typeof tabs;
+  data?: typeof tabs;
 }
 
 export const Tabs: FC<Props> = ({
