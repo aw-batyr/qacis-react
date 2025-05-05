@@ -32,7 +32,7 @@ export const Media: FC<Props> = ({ className }) => {
 
   return (
     <section className={cn("", className)}>
-      <Cover title={lang === "ru" ? "Моменты ITSE" : "Moments ITSE"} />
+      <Cover title={lang === "ru" ? "Моменты QACIS" : "Moments QACIS"} />
 
       <Container className="page-padding">
         {isPending ? (
