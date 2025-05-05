@@ -13,6 +13,7 @@ import { SponsorFormType } from "@/lib/get-sponsor-form-details";
 import { FAQType } from "./types/faq.type";
 import { ParticipantsType } from "./types/participants.type";
 import { SponsorsType } from "./types/sponsors.type";
+import { PhotoTypes } from "./types/photo.type";
 
 export const axios_url = axios.create({
   baseURL: "https://qacis.turkmenexpo.com/app/api/v1/",
@@ -173,6 +174,26 @@ export const getFaq = async (lang: LangState["lang"]) => {
 
 export const getParticipants = async (lang: LangState["lang"]) => {
   const data = axios_url<ParticipantsType>("participants", {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
+
+  return data;
+};
+
+export const getPhotos = async (lang: LangState["lang"], id: number) => {
+  const data = axios_url<PhotoTypes>("photos/category/" + id, {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
+
+  return data;
+};
+
+export const getVideos = async (lang: LangState["lang"]) => {
+  const data = axios_url<PhotoTypes>("videos", {
     headers: {
       "Accept-Language": lang,
     },

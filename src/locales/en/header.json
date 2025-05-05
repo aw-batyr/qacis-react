@@ -25,7 +25,7 @@
           }
         ]
       },
-      { "title": "Media", "link": "" },
+      { "title": "Media", "link": "/media" },
       {
         "title": "News",
         "drop": true,

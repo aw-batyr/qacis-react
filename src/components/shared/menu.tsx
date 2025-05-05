@@ -9,6 +9,7 @@ import { SubscribeForm } from "../forms/subscribe-form";
 
 interface Props {
   className?: string;
+  triggerClassName?: string;
   title: string;
   color?: string;
 
@@ -22,7 +23,13 @@ interface Props {
   }[];
 }
 
-export const Menu: FC<Props> = ({ title, dropDownContent, color, onMenu }) => {
+export const Menu: FC<Props> = ({
+  title,
+  dropDownContent,
+  color,
+  onMenu,
+  triggerClassName,
+}) => {
   const setBurger = useUiStore((state) => state.setBurger);
   const [open, setOpen] = useState(false);
 
@@ -31,11 +38,12 @@ export const Menu: FC<Props> = ({ title, dropDownContent, color, onMenu }) => {
       <PopoverTrigger
         className={cn(
           "flex items-center gap-2 h-10",
-          color === "white" && "text-white"
+          color === "white" && "text-white",
+          triggerClassName
         )}
       >
         {title}
-        <Chevron color={color} />
+        {<Chevron color={color} />}
       </PopoverTrigger>
 
       <PopoverContent className="w-fit px-0 py-2 cursor-pointer bg-surface_container">

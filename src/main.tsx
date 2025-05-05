@@ -12,6 +12,7 @@ import {
   Speakers,
   Faq,
   Participants,
+  Media,
 } from "./pages";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         element: <Participants />,
         path: "participants",
+      },
+      {
+        element: <Media />,
+        path: "media",
       },
     ],
   },

@@ -4,12 +4,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useMediaQuery } from "usehooks-ts";
 import { useLangStore } from "@/store/lang";
 
-interface Props {
-  className?: string;
-  state: number;
-  setState: (val: number) => void;
-}
-
 const tabs = [
   { id: 0, title: "Все компании", titleEn: "All companies" },
   {
@@ -29,7 +23,19 @@ const tabs = [
   },
 ];
 
-export const Tabs: FC<Props> = ({ className, setState, state }) => {
+interface Props {
+  className?: string;
+  state: number;
+  setState: (val: number) => void;
+  data: typeof tabs;
+}
+
+export const Tabs: FC<Props> = ({
+  className,
+  setState,
+  state,
+  data = tabs,
+}) => {
   const lang = useLangStore((state) => state.lang);
   const isDesktop = useMediaQuery("(min-width: 550px)");
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
@@ -119,7 +125,7 @@ export const Tabs: FC<Props> = ({ className, setState, state }) => {
     >
       <div ref={emblaRef} className="" role="tablist">
         <div className="flex">
-          {tabs.map((tab, index) => (
+          {data?.map((tab, index) => (
             <button
               ref={(el) => (tabRefs.current[index] = el)}
               key={tab.id}

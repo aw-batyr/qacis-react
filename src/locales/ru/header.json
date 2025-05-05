@@ -24,7 +24,7 @@
           }
         ]
       },
-      { "title": "Медиа", "link": "" },
+      { "title": "Медиа", "link": "/media" },
       {
         "title": "Новости",
         "drop": true,
