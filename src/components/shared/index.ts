@@ -19,4 +19,5 @@ export { Chevron } from "./chevron";
 export { Dropdown } from "./dropdown";
 export { Tabs } from "./tabs";
 export { SpeakerModal } from "./speaker-modal";
+export { MediaModal } from "./media-modal";
 export { ParticipantItem } from "./participant-item";
