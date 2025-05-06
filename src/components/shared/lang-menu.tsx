@@ -22,8 +22,6 @@ export const LangMenu: FC<Props> = ({ className }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(langs.filter((item) => item.lang === lang));
-
   return (
     <Popover open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
       <PopoverTrigger
