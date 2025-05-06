@@ -13,6 +13,9 @@ import aboutRu from "./locales/ru/about.json";
 import contactsEn from "./locales/en/contacts.json";
 import contactsRu from "./locales/ru/contacts.json";
 
+import mainEn from "./locales/en/main.json";
+import mainRu from "./locales/ru/main.json";
+
 import { useLangStore } from "./store/lang";
 
 const initialLanguage = useLangStore.getState().lang;
@@ -24,17 +27,19 @@ i18n.use(initReactI18next).init({
       home: homeEn,
       about: aboutEn,
       contacts: contactsEn,
+      main: mainEn,
     },
     ru: {
       header: headerRu,
       home: homeRu,
       about: aboutRu,
       contacts: contactsRu,
+      main: mainRu,
     },
   },
   lng: initialLanguage, // Язык по умолчанию
   fallbackLng: "en",
-  ns: ["header", "home", "about", "contacts"], // список namespaces
+  ns: ["header", "home", "about", "contacts", "main"], // список namespaces
   defaultNS: "header", // namespace по умолчанию (можно менять в компонентах)
   interpolation: {
     escapeValue: false, // React уже экранирует значения
