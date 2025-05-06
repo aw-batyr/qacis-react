@@ -29,11 +29,8 @@ export const Partners: FC = () => {
       <Container className="flex flex-col gap-6">
         <h2 className="text-3xl">{lang === "ru" ? "Партнёры" : "Partners"}</h2>
 
-        <div
-          ref={emblaRef}
-          className="embla overflow-hidden flex items-center gap-6"
-        >
-          <div className="embla__container flex items-center">
+        <div ref={emblaRef} className="embla overflow-hidden">
+          <div className="embla__container flex">
             {data?.map((item, i) =>
               item.link ? (
                 <Link

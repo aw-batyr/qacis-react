@@ -13,7 +13,7 @@ export const MediaPartners: FC = () => {
   const [emblaRef] = useEmblaCarousel(
     {
       loop: true,
-      align: "start",
+      align: "center",
       skipSnaps: true,
       duration: 75,
     },
@@ -31,11 +31,8 @@ export const MediaPartners: FC = () => {
           {lang === "ru" ? "Медиа-партнёры" : "Media Partners"}
         </h2>
 
-        <div
-          ref={emblaRef}
-          className="embla overflow-hidden flex items-center gap-6"
-        >
-          <div className="embla__container flex items-center">
+        <div ref={emblaRef} className="embla">
+          <div className="embla__container flex">
             {data?.map((item, i) =>
               item.link ? (
                 <Link

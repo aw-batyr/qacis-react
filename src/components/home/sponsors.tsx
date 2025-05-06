@@ -34,11 +34,8 @@ export const Sponsors: FC<Props> = ({ className }) => {
       <Container className="flex flex-col gap-6">
         <h2 className="text-3xl">{t("title")}</h2>
 
-        <div
-          ref={emblaRef}
-          className="embla overflow-hidden flex items-center gap-6"
-        >
-          <div className="embla__container flex items-center">
+        <div ref={emblaRef} className="embla overflow-hidden ">
+          <div className="embla__container flex">
             {data?.map((item, i) =>
               item.link ? (
                 <Link
