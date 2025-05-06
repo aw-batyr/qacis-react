@@ -1,9 +1,12 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLangStore } from "@/store/lang";
 import { Container, Cover } from "@/components/layout";
-import { Loading, Menu } from "@/components/shared";
+import { Loading, MediaModal } from "@/components/shared";
 import { usePhotos } from "@/services/hooks/use-photos";
+import { AnimatePresence } from "motion/react";
+import { Button } from "@/components/ui";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   className?: string;
@@ -25,46 +28,72 @@ interface Props {
 export const Media: FC<Props> = ({ className }) => {
   // const [state, setState] = useState(0);
   const { data, isPending } = usePhotos(1);
-
-  console.log(data);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState(0);
 
   const lang = useLangStore((state) => state.lang);
 
-  return (
-    <section className={cn("", className)}>
-      <Cover title={lang === "ru" ? "Моменты QACIS" : "Moments QACIS"} />
+  const onItem = (id: number) => {
+    setIsModalOpen(true);
+    setActiveItem(id);
+  };
 
-      <Container className="page-padding">
-        {isPending ? (
-          <Loading />
-        ) : (
-          <>
-            {/* <Tabs
+  const { t } = useTranslation("main");
+
+  const [isCollapse, setIsCollapse] = useState(false);
+
+  return (
+    <>
+      <AnimatePresence>
+        {isModalOpen && (
+          <MediaModal activeItem={activeItem} setIsOpen={setIsModalOpen} />
+        )}
+      </AnimatePresence>
+
+      <section className={cn("", className)}>
+        <Cover title={lang === "ru" ? "Моменты QACIS" : "Moments QACIS"} />
+
+        <Container className="page-padding">
+          {isPending ? (
+            <Loading />
+          ) : (
+            <div className="flex justify-center flex-col">
+              {/* <Tabs
               state={state}
               setState={setState}
               data={momentsTabs}
               className="mb-6"
-            /> */}
-
-            <Menu
-              title="2025"
-              triggerClassName="md:text-3xl text-2xl medium mb-10"
-            />
-
-            <div className="grid lg:grid-cols-4 lg:gap-y-4 lg:gap-x-6 md:gap-6 gap-4 grid-cols-2 place-items-center">
-              {data?.map((photo, i) => (
-                <div key={i} className=" size-full">
-                  <img
-                    src={photo?.photo?.path ?? ""}
-                    alt={photo?.photo?.file_name ?? "photo"}
-                    className="size-full object-cover"
-                  />
-                </div>
-              ))}
+              /> */}
+              <h3 className="text-3xl mb-6">2025 QACIS</h3>
+              <div className="grid lg:grid-cols-4 lg:gap-y-4 lg:gap-x-6 md:gap-6 gap-4 grid-cols-2 place-items-center">
+                {data?.slice(0, isCollapse ? 1000 : 16)?.map((photo, i) => (
+                  <div
+                    onClick={() => onItem(i)}
+                    key={i}
+                    className="cursor-pointer embla__slide basis-1/1"
+                  >
+                    <img
+                      src={photo?.photo?.path ?? ""}
+                      alt={photo?.photo?.file_name ?? "photo"}
+                      className="size-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+              {data?.length && data.length > 16 && !isCollapse && (
+                <Button
+                  onClick={() => setIsCollapse(true)}
+                  className="mx-auto w-[288px] mt-10 text-on_surface"
+                  size={"lg"}
+                  variant={"outline"}
+                >
+                  {t("media.button")}
+                </Button>
+              )}
             </div>
-          </>
-        )}
-      </Container>
-    </section>
+          )}
+        </Container>
+      </section>
+    </>
   );
 };
