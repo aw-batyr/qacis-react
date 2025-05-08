@@ -20,7 +20,7 @@ export const axios_url = axios.create({
 });
 
 export const getNews = async (lang: "ru" | "en") => {
-  const data = axios_url.get<NewsType>(`news`, {
+  const data = axios_url.get<NewsType>(`news?page=1&per_page=100`, {
     headers: {
       "Accept-Language": lang,
     },
