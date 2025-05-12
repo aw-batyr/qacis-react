@@ -46,7 +46,7 @@ export const MediaModal: FC<Props> = ({ className, setIsOpen, activeItem }) => {
     >
       <X
         onClick={() => setIsOpen(false)}
-        className="absolute top-10 right-10 p-3 lg:size-20 size-16 cursor-pointer z-50 text-white hover:scale-110 transition-all duration-300"
+        className="absolute top-10 right-10 p-3 lg:size-20 md:size-16  cursor-pointer z-50 text-white hover:scale-110 transition-all duration-300"
       />
 
       <div className="hidden md:block">

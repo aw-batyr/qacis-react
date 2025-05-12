@@ -8,7 +8,7 @@ interface Props {
   answer: string;
 }
 
-export const Dropdown: FC<Props> = ({ className, question, answer }) => {
+export const FaqDropdown: FC<Props> = ({ className, question, answer }) => {
   const [active, setActive] = useState(false);
 
   return (

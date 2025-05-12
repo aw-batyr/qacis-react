@@ -16,6 +16,10 @@
             "link": "/about"
           },
           {
+            "text": "Documents",
+            "link": "/documents"
+          },
+          {
             "text": "Speakers",
             "link": "/speakers"
           },

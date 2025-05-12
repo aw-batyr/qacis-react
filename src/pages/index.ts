@@ -6,6 +6,7 @@ export { About } from "./about";
 export { Media } from "./media";
 export { Speakers } from "./speakers";
 export { Delegate } from "./delegate";
+export { Documents } from "./documents";
 export { NewsInner } from "./news-inner";
 export { Participants } from "./participants";
 export { BecomeSponsor } from "./become-sponsor";

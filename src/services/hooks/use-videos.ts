@@ -1,13 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { useLangStore } from "@/store/lang";
 import { getVideos } from "../services";
 
-export const useVideos = () => {
-  const lang = useLangStore((state) => state.lang);
-
+export const useVideos = (id: number) => {
   const { data, isPending } = useQuery({
-    queryKey: ["photos", lang],
-    queryFn: () => getVideos(lang),
+    queryKey: ["photos"],
+    queryFn: () => getVideos(id),
     select: ({ data }) => data.data,
   });
 

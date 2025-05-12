@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { cn } from "@/lib/utils";
 import { Container, Cover } from "@/components/layout";
-import { Dropdown, Loading } from "@/components/shared";
+import { FaqDropdown, Loading } from "@/components/shared";
 import { useFaq } from "@/services/hooks/use-faq";
 
 interface Props {
@@ -27,7 +27,7 @@ export const Faq: FC<Props> = ({ className }) => {
 
               <div className="flex flex-col gap-4 md:gap-6 md:flex-[0_1_67%]">
                 {item?.faqs.map((faq) => (
-                  <Dropdown key={faq.id} {...faq} />
+                  <FaqDropdown key={faq.id} {...faq} />
                 ))}
               </div>
             </div>

@@ -183,17 +183,13 @@ export const getParticipants = async (lang: LangState["lang"]) => {
 };
 
 export const getPhotos = async (id: number) => {
-  const data = axios_url<PhotoTypes>("photos/category/" + id, {});
+  const data = axios_url<PhotoTypes>("photos/category/" + id);
 
   return data;
 };
 
-export const getVideos = async (lang: LangState["lang"]) => {
-  const data = axios_url<PhotoTypes>("videos", {
-    headers: {
-      "Accept-Language": lang,
-    },
-  });
+export const getVideos = async (id: number) => {
+  const data = axios_url<PhotoTypes>("videos/category/" + id);
 
   return data;
 };
