@@ -62,7 +62,7 @@ export const MediaModal: FC<Props> = ({ className, setIsOpen, activeItem }) => {
 
       <div ref={emblaRef} className="embla overflow-hidden">
         <div className="embla__container flex">
-          {data?.map((item) => (
+          {data?.photos?.map((item) => (
             <div
               key={item.id}
               className="embla__slide flex-[0_0_100%] h-[350px] md:h-[500px] lg:h-[700px] lg:px-[20%] flex items-center justify-center"
