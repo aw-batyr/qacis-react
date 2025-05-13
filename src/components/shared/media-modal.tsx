@@ -1,14 +1,16 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronLeftIcon, ChevronRightIcon, X } from "lucide-react";
 import { motion } from "motion/react";
 import useEmblaCarousel from "embla-carousel-react";
-import { usePhotos } from "@/services/hooks/use-photos";
 import { useScrollLock } from "usehooks-ts";
+import { usePhotos } from "@/services/hooks/use-photos";
+import { useVideos } from "@/services/hooks/use-videos";
 
 interface Props {
   setIsOpen: (isOpen: boolean) => void;
-  activeItem: number; // индекс активного слайда
+  activeItem: { id: number; type: string };
+  setActiveItem: ({ id, type }: { id: number; type: "string" }) => void;
   className?: string;
 }
 
@@ -21,18 +23,63 @@ export const MediaModal: FC<Props> = ({ className, setIsOpen, activeItem }) => {
   });
 
   const { data } = usePhotos(1);
+  const { data: videos } = useVideos(1);
 
   useScrollLock();
+
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setCanScrollPrev(emblaApi.canScrollPrev());
+      setCanScrollNext(emblaApi.canScrollNext());
+    };
+
+    emblaApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi || !data) return;
 
-    emblaApi.scrollTo(activeItem, true);
+    emblaApi.scrollTo(activeItem.id, true);
+  }, [emblaApi, data, activeItem.id]);
 
-    return () => {
-      emblaApi.off("select", () => {});
-    };
-  }, [emblaApi, data, activeItem]);
+  const slides =
+    activeItem.type === "photo"
+      ? data?.photos?.map((item) => (
+          <div
+            key={item.id}
+            className="embla__slide flex-[0_0_100%] h-[350px] md:h-[500px] lg:h-[700px] lg:px-[20%] flex items-center justify-center"
+          >
+            <img
+              src={item?.photo?.path}
+              alt={item.photo.file_name}
+              className="max-h-full max-w-full object-contain"
+            />
+          </div>
+        ))
+      : videos?.videos?.map((item) => (
+          <div
+            key={item.id}
+            className="embla__slide flex-[0_0_100%] h-[350px] md:h-[500px] lg:h-[700px] lg:px-[20%] flex items-center justify-center"
+          >
+            <video
+              src={item?.video?.path ?? ""}
+              controls
+              autoPlay
+              muted
+              className="max-h-full max-w-full object-contain"
+            />
+          </div>
+        ));
 
   return (
     <motion.div
@@ -40,41 +87,35 @@ export const MediaModal: FC<Props> = ({ className, setIsOpen, activeItem }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className={cn(
-        "fixed z-[100] flex items-center justify-center top-0 left-0 pb-40 pt-28 lg:px-28 px-10 overflow-hidden min-h-screen w-full bg-black/90",
+        "fixed z-[100] top-0 left-0 pb-40 pt-28 lg:px-28 px-6 overflow-hidden min-h-screen w-full bg-black/90",
         className
       )}
     >
       <X
         onClick={() => setIsOpen(false)}
-        className="absolute top-10 right-10 p-3 lg:size-20 md:size-16  cursor-pointer z-50 text-white hover:scale-110 transition-all duration-300"
+        className="absolute top-10 right-6 p-3 md:size-20 size-16  cursor-pointer z-50 text-white hover:scale-110 transition-all duration-300"
       />
-
-      <div className="hidden md:block">
-        <ChevronLeftIcon
-          onClick={() => emblaApi?.scrollPrev()}
-          className="absolute left-10 top-1/2 -translate-y-1/2 text-white size-20 cursor-pointer hover:scale-110 transition-all duration-300 z-40"
-        />
-        <ChevronRightIcon
-          onClick={() => emblaApi?.scrollNext()}
-          className="absolute right-10 top-1/2 -translate-y-1/2 text-white size-20 cursor-pointer hover:scale-110 transition-all duration-300 z-40"
-        />
-      </div>
+      {
+        <div className="hidden md:block">
+          <ChevronLeftIcon
+            onClick={() => canScrollPrev && emblaApi?.scrollPrev()}
+            className={cn(
+              "absolute left-10 top-1/2 -translate-y-1/2 text-white size-20 cursor-pointer hover:scale-110 transition-all duration-300 z-40",
+              !canScrollPrev && "opacity-20 pointer-events-none"
+            )}
+          />
+          <ChevronRightIcon
+            onClick={() => canScrollNext && emblaApi?.scrollNext()}
+            className={cn(
+              "absolute right-10 top-1/2 -translate-y-1/2 text-white size-20 cursor-pointer hover:scale-110 transition-all duration-300 z-40",
+              !canScrollNext && "opacity-20 pointer-events-none"
+            )}
+          />
+        </div>
+      }
 
       <div ref={emblaRef} className="embla overflow-hidden">
-        <div className="embla__container flex">
-          {data?.photos?.map((item) => (
-            <div
-              key={item.id}
-              className="embla__slide flex-[0_0_100%] h-[350px] md:h-[500px] lg:h-[700px] lg:px-[20%] flex items-center justify-center"
-            >
-              <img
-                src={item?.photo?.path}
-                alt={item.photo.file_name}
-                className="size-full object-contain"
-              />
-            </div>
-          ))}
-        </div>
+        <div className="embla__container flex">{slides}</div>
       </div>
     </motion.div>
   );

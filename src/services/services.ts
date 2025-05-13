@@ -14,6 +14,9 @@ import { FAQType } from "./types/faq.type";
 import { ParticipantsType } from "./types/participants.type";
 import { SponsorsType } from "./types/sponsors.type";
 import { PhotoTypes } from "./types/photo.type";
+import { VideoTypes } from "./types/videos.type";
+import { PresentationCategoriesTypes } from "./types/presentaion-categories.type";
+import { PresentationsTypes } from "./types/presentations.type";
 
 export const axios_url = axios.create({
   baseURL: "https://qacis.turkmenexpo.com/app/api/v1/",
@@ -189,7 +192,30 @@ export const getPhotos = async (id: number) => {
 };
 
 export const getVideos = async (id: number) => {
-  const data = axios_url<PhotoTypes>("videos/category/" + id);
+  const data = axios_url<VideoTypes>("videos/category/" + id);
+
+  return data;
+};
+
+export const getPresentationsCategories = async (lang: LangState["lang"]) => {
+  const data = axios_url<PresentationCategoriesTypes>(
+    "presentation-categories",
+    {
+      headers: {
+        "Accept-Language": lang,
+      },
+    }
+  );
+
+  return data;
+};
+
+export const getPresentations = async (lang: LangState["lang"], id: number) => {
+  const data = axios_url<PresentationsTypes>("presentations/category/" + id, {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
 
   return data;
 };

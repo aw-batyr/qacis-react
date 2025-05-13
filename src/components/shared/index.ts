@@ -22,3 +22,4 @@ export { SpeakerModal } from "./speaker-modal";
 export { MediaModal } from "./media-modal";
 export { ParticipantItem } from "./participant-item";
 export { DocumentDropdown } from "./document-dropdown";
+export { TitlePopup } from "./title-popup";
