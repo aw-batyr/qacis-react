@@ -5,22 +5,24 @@ import { AnimatePresence, motion } from "motion/react";
 
 interface Props {
   className?: string;
-  title: string;
-  data: {
-    text: string;
+  name: string;
+  files: {
+    title: string;
+    path: string;
+    file_name: string;
   }[];
 }
 
-export const DocumentDropdown: FC<Props> = ({ className, title, data }) => {
+export const DocumentDropdown: FC<Props> = ({ className, name, files }) => {
   const [active, setActive] = useState(false);
 
   return (
     <div className={cn("relative", className)}>
       <div
         onClick={() => setActive(!active)}
-        className="rounded-t-[8px] bg-[#F3F5F7] cursor-pointer flex items-center justify-between gap-6 px-6"
+        className="rounded-t-[2px] bg-[#F3F5F7] cursor-pointer flex items-center justify-between gap-6 px-6"
       >
-        <h3 className="text-sm py-[18px]">{title}</h3>
+        <h3 className="text-sm py-[18px]">{name}</h3>
         <AnimatePresence>
           {active ? (
             <motion.img
@@ -65,9 +67,9 @@ export const DocumentDropdown: FC<Props> = ({ className, title, data }) => {
             : {}
         }
         transition={{ type: "tween", duration: 0.2 }}
-        className="rounded-b-[8px] px-10 py-6 bg-[#E0E6EB] overflow-hidden"
+        className="rounded-b-[2px] px-10 py-6 bg-[#E0E6EB] overflow-hidden"
       >
-        {data.map((item, i) => (
+        {files.map((item, i) => (
           <>
             <div
               key={i}
@@ -75,10 +77,14 @@ export const DocumentDropdown: FC<Props> = ({ className, title, data }) => {
                 "flex items-center justify-between gap-2.5 pb-4 cursor-pointer"
               )}
             >
-              <div className="text-sm">{item.text}</div>
+              <a target="_blank" download href={item.path} className="text-sm">
+                {item?.file_name}
+              </a>
               <Download size={18} />
             </div>
-            {i !== data.length - 1 && <hr className="border-outline_v pt-4" />}
+            {i !== files?.length - 1 && (
+              <hr className="border-outline_v pt-4" />
+            )}
           </>
         ))}
       </motion.div>
