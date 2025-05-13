@@ -1,5 +1,5 @@
 import { Container, Cover } from "@/components/layout";
-import { TitlePopup } from "@/components/shared";
+import { Loading, TitlePopup } from "@/components/shared";
 import { DocumentDropdown } from "@/components/shared/document-dropdown";
 import { usePresentations } from "@/services/hooks/use-presentaions";
 import { usePresentationsCategories } from "@/services/hooks/use-presentaions-categories";
@@ -21,7 +21,7 @@ export const Documents = () => {
     }
   }, [cats]);
 
-  const { data } = usePresentations(activeTitle?.id ?? 1);
+  const { data, isPending } = usePresentations(activeTitle?.id ?? 1);
 
   const coverTitle = lang === "ru" ? "Документы" : "Documents";
 
@@ -32,18 +32,24 @@ export const Documents = () => {
       <Cover title={coverTitle} />
 
       <Container className="page-padding">
-        <TitlePopup
-          setActiveTitle={setActiveTitle}
-          activeTitle={activeTitle}
-          triggerClassName="text-3xl mb-6"
-          data={cats ?? []}
-        />
+        {isPending ? (
+          <Loading />
+        ) : (
+          <>
+            <TitlePopup
+              setActiveTitle={setActiveTitle}
+              activeTitle={activeTitle}
+              triggerClassName="text-3xl mb-6"
+              data={cats ?? []}
+            />
 
-        <div className="flex flex-col gap-6">
-          {data?.presentations?.map((item, i) => (
-            <DocumentDropdown {...item} key={i} />
-          ))}
-        </div>
+            <div className="flex flex-col gap-6">
+              {data?.presentations?.map((item, i) => (
+                <DocumentDropdown {...item} key={i} />
+              ))}
+            </div>
+          </>
+        )}
       </Container>
     </section>
   );
