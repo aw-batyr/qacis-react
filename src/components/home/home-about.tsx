@@ -64,7 +64,7 @@ export const HomeAbout: FC<Props> = ({ className }) => {
             </div>
           )}
 
-          <div className="h-[333px] w-auto rounded-[2px] overflow-hidden">
+          <div className="h-auto w-full rounded-[2px] overflow-hidden">
             <video
               muted
               autoPlay

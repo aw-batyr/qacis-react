@@ -6,7 +6,7 @@ import { usePresentationsCategories } from "@/services/hooks/use-presentaions-ca
 import { useLangStore } from "@/store/lang";
 import { useEffect, useState } from "react";
 
-export const Documents = () => {
+export const Presentations = () => {
   const lang = useLangStore((state) => state.lang);
   const { data: cats } = usePresentationsCategories();
 
@@ -23,7 +23,7 @@ export const Documents = () => {
 
   const { data, isPending } = usePresentations(activeTitle?.id ?? 1);
 
-  const coverTitle = lang === "ru" ? "Документы" : "Documents";
+  const coverTitle = lang === "ru" ? "Презентации" : "Presentations";
 
   console.log(data);
 

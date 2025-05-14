@@ -4,7 +4,7 @@ import LanguageSync from "./lang-sync";
 
 export default function App() {
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen overflow-x-hidden">
       <LanguageSync />
       <Header />
 
